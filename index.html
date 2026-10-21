@@ -1,4 +1,174 @@
-<!doctype html><html lang="zh"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>货运追踪</title>
-<style>body{background:#0d1117;color:#e6edf3;font-family:system-ui;margin:0;padding:20px}h1{font-size:20px}.g{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}.c{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:16px}.t{display:inline-block;padding:2px 8px;border-radius:8px;font-size:12px;margin-right:6px}.air{background:#1f6feb}.sea{background:#238636}.st{background:#9e6a03}.k{color:#8b949e;font-size:13px}.w{color:#f0883e}</style>
-<h1>📦 货运追踪 Dashboard <span class="k" id="u"></span></h1><div class="g" id="g"></div>
-<script>fetch('shipments.json?'+Date.now()).then(r=>r.json()).then(d=>{u.textContent='更新于 '+d.updated;g.innerHTML=d.shipments.map(s=>`<div class=c><span class="t ${s.mode}">${s.mode=='air'?'✈ 空运':'🚢 海运'}</span><span class="t st">${s.status}</span><h3>${s.tracking_no}</h3><div class=k>${s.carrier} · 唛头 ${s.mark} · ${s.ctns} 箱 · ${s.weight}</div><p>货物：<b class="${s.contents=='待确认'?'w':''}">${s.contents}</b> · 厂家：<b class="${s.supplier=='待确认'?'w':''}">${s.supplier}</b></p><div class=k>国内段：${s.china_ref}</div><p>${s.last_event||''}</p><div class=k>检查：${s.last_checked}</div></div>`).join('')})</script></html>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0a0d14">
+<title>集运追踪 · Shipment Tracker</title>
+<style>
+:root{--bg:#0a0d14;--card:#121722;--card2:#171d2b;--line:#232b3b;--tx:#e8edf5;--mut:#8a94a8;--dim:#5b6578;
+--sea:#22c3a6;--air:#5b8cff;--ok:#3ddc84;--warn:#f5a524;--bad:#ff5d6c;--acc:#7c9cff;--r:16px}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--tx);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Noto Sans SC","Microsoft YaHei",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+body{background:radial-gradient(1200px 500px at 10% -10%,#16203a 0,transparent 60%),radial-gradient(900px 400px at 100% 0,#10261f 0,transparent 55%),var(--bg);min-height:100vh}
+.wrap{max-width:1240px;margin:0 auto;padding:28px 20px 60px}
+header{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+h1{margin:0;font-size:24px;letter-spacing:.2px;display:flex;align-items:center;gap:10px}
+.logo{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,#5b8cff,#22c3a6);display:grid;place-items:center;font-size:18px;box-shadow:0 6px 20px #5b8cff40}
+.sub{color:var(--mut);font-size:13px;margin-top:4px}
+.stats{display:flex;gap:10px;flex-wrap:wrap}
+.stat{background:#ffffff08;border:1px solid var(--line);border-radius:12px;padding:8px 14px;min-width:84px}
+.stat b{display:block;font-size:20px;font-variant-numeric:tabular-nums}.stat span{color:var(--mut);font-size:12px}
+.bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;background:#ffffff06;border:1px solid var(--line);border-radius:var(--r);padding:12px;margin-bottom:18px;position:sticky;top:8px;z-index:5;backdrop-filter:blur(12px)}
+.search{flex:1 1 260px;position:relative}
+.search input{width:100%;background:var(--card);border:1px solid var(--line);color:var(--tx);border-radius:12px;padding:10px 12px 10px 36px;font-size:14px;outline:none}
+.search input:focus{border-color:var(--acc);box-shadow:0 0 0 3px #7c9cff26}
+.search:before{content:"⌕";position:absolute;left:12px;top:7px;color:var(--mut);font-size:18px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--mut);border-radius:999px;padding:7px 12px;font-size:13px;cursor:pointer;white-space:nowrap}
+.chip.on{color:#fff;border-color:var(--acc);background:#7c9cff22}
+select{background:var(--card);color:var(--tx);border:1px solid var(--line);border-radius:12px;padding:9px 10px;font-size:13px;max-width:180px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+.card{background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:var(--r);padding:18px;cursor:pointer;transition:.18s;position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);border-color:#34405a;box-shadow:0 12px 30px #0006}
+.card:before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:var(--m)}
+.card.sea{--m:var(--sea)}.card.air{--m:var(--air)}
+.top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.mode{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--m);background:color-mix(in srgb,var(--m) 14%,transparent);padding:4px 10px;border-radius:999px}
+.pill{font-size:12px;padding:4px 10px;border-radius:999px;background:#ffffff0d;color:var(--mut);border:1px solid var(--line)}
+.pill.ok{color:var(--ok);border-color:#3ddc8455}.pill.warn{color:var(--warn);border-color:#f5a52455}.pill.bad{color:var(--bad);border-color:#ff5d6c55}.pill.go{color:var(--acc);border-color:#7c9cff55}
+.no{font-size:19px;font-weight:700;margin:12px 0 2px;letter-spacing:.3px;font-variant-numeric:tabular-nums;word-break:break-all}
+.carrier{color:var(--mut);font-size:12.5px}
+.kv{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0}
+.kv div{background:#ffffff05;border:1px solid #ffffff0a;border-radius:10px;padding:8px 10px;min-width:0}
+.kv small{display:block;color:var(--dim);font-size:11px}.kv b{font-weight:600;font-size:13.5px;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.na{color:var(--dim);font-weight:400!important}
+.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:4px;margin:6px 0 6px}
+.steps i{height:6px;border-radius:4px;background:#ffffff12}
+.steps i.d{background:var(--m)}.steps i.c{background:var(--m);box-shadow:0 0 10px var(--m);animation:p 1.8s infinite}
+@keyframes p{50%{opacity:.55}}
+.labels{display:grid;grid-template-columns:repeat(6,1fr);gap:4px;font-size:11px;color:var(--dim);text-align:center}
+.labels span.d{color:var(--mut)}.labels span.c{color:var(--tx);font-weight:600}
+.last{margin-top:14px;padding-top:12px;border-top:1px dashed var(--line);font-size:13px}
+.last .t{color:var(--mut);font-size:12px;margin-top:2px}
+.empty{grid-column:1/-1;text-align:center;color:var(--mut);padding:60px 0}
+/* drawer */
+.ov{position:fixed;inset:0;background:#000a;backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:.2s;z-index:20}
+.dr{position:fixed;top:0;right:0;height:100%;width:min(560px,100%);background:#0e131d;border-left:1px solid var(--line);transform:translateX(100%);transition:.25s ease;z-index:21;overflow:auto;-webkit-overflow-scrolling:touch}
+.open .ov{opacity:1;pointer-events:auto}.open .dr{transform:none}
+.dh{position:sticky;top:0;background:#0e131df2;backdrop-filter:blur(10px);padding:18px 20px 14px;border-bottom:1px solid var(--line);z-index:2}
+.x{position:absolute;right:14px;top:14px;width:34px;height:34px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--tx);font-size:18px;cursor:pointer}
+.db{padding:18px 20px 40px}
+.hero{border-radius:14px;padding:16px;background:linear-gradient(135deg,color-mix(in srgb,var(--m) 22%,#121722),#121722);border:1px solid var(--line);margin-bottom:16px}
+.hero .s{font-size:20px;font-weight:700}.hero .e{color:#c9d2e3;margin-top:4px}
+.sec{font-size:12px;color:var(--mut);text-transform:uppercase;letter-spacing:1px;margin:22px 0 10px}
+.tl .day{font-size:12.5px;color:var(--mut);font-weight:600;margin:16px 0 8px;display:flex;gap:8px;align-items:center}
+.tl .day:after{content:"";flex:1;height:1px;background:var(--line)}
+.ev{display:grid;grid-template-columns:52px 18px 1fr;gap:8px;position:relative}
+.ev .tm{color:var(--mut);font-size:12.5px;font-variant-numeric:tabular-nums;padding-top:1px;text-align:right}
+.ev .dot{position:relative}.ev .dot:before{content:"";position:absolute;left:8px;top:6px;bottom:-6px;width:2px;background:var(--line)}
+.ev:last-child .dot:before{display:none}
+.ev .dot:after{content:"";position:absolute;left:4px;top:5px;width:10px;height:10px;border-radius:50%;background:#2b3446;border:2px solid #0e131d}
+.ev.first .dot:after{background:var(--m);box-shadow:0 0 0 4px color-mix(in srgb,var(--m) 25%,transparent)}
+.ev .bd{padding-bottom:14px}.ev .ds{font-size:14px}.ev.first .ds{font-weight:600}
+.ev .lc{color:var(--mut);font-size:12.5px;margin-top:2px}.ev .src{display:inline-block;font-size:10.5px;color:var(--dim);border:1px solid var(--line);border-radius:6px;padding:0 6px;margin-left:6px}
+.nodata{color:var(--mut);background:#ffffff05;border:1px dashed var(--line);border-radius:12px;padding:18px;text-align:center}
+.foot{color:var(--dim);font-size:12px;text-align:center;margin-top:30px}
+@media(max-width:640px){.wrap{padding:18px 14px 40px}h1{font-size:20px}.grid{grid-template-columns:1fr;gap:12px}
+.stats{width:100%}.stat{flex:1;min-width:0;padding:8px 10px}.stat b{font-size:18px}
+.bar{padding:10px;top:4px}.bar .chips{overflow-x:auto;flex-wrap:nowrap;width:100%;scrollbar-width:none}select{flex:1;max-width:none}
+.labels{font-size:10px}.dh{padding:16px 16px 12px}.db{padding:16px 16px 40px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+ <div><h1><span class="logo">📦</span>集运追踪</h1><div class="sub" id="upd">加载中…</div></div>
+ <div class="stats" id="stats"></div>
+</header>
+<div class="bar">
+ <div class="search"><input id="q" placeholder="搜索 单号 / 货物 / 厂家" autocomplete="off"></div>
+ <div class="chips" id="modes"></div>
+ <select id="fStage"></select><select id="fSup"></select>
+</div>
+<div class="grid" id="grid"></div>
+<div class="foot">所有时间均为马来西亚时间 (MYT, UTC+8) · 数据仅含物流事件，不含个人信息</div>
+</div>
+<div class="ov" id="ov"></div>
+<aside class="dr" id="dr" aria-hidden="true"></aside>
+<script>
+const STAGES=['国内','入仓','出运','清关','派送','签收'];
+const KW=[[5,/签收|已送达|delivered|signed|妥投/i],[4,/派送|派件|out for delivery|配送中|delivering/i],[3,/清关|customs|海关|放行|到港|抵达|arrived at destination|到达目的/i],
+[2,/出运|起飞|离港|开船|装柜|departed|in transit|运输中|航班|上船|已发出|出库/i],[1,/入仓|入库|仓库签收|received at warehouse|收货|到仓/i],[0,/国内|揽收|揽件|已下单|picked up|快递/i]];
+const NA='暂无',esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+// privacy: mask phone-like numbers in free text
+const scrub=s=>String(s??'').replace(/(\+?6?01\d[-\s]?\d{3,4}[-\s]?\d{4})|(\+?86[-\s]?)?\b1[3-9]\d{9}\b/g,'[已隐藏]');
+const has=v=>v!=null&&String(v).trim()!==''&&!/^(待确认|unknown|n\/a|null)$/i.test(String(v).trim());
+const val=v=>has(v)?esc(scrub(v)):`<span class="na">${has(v)||v==null||v===''?NA:esc(v)}</span>`;
+const fmt=new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Kuala_Lumpur',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false,weekday:'short'});
+function parseT(t){if(!t)return null;let s=String(t).trim().replace(/\s*MYT$/i,'+08:00');
+ if(/^\d{4}-\d{2}-\d{2}[ T]\d{2}:\d{2}(:\d{2})?$/.test(s))s=s.replace(' ','T')+'+08:00'; // no zone -> assume MYT
+ if(/^\d{4}-\d{2}-\d{2}$/.test(s))s+='T00:00:00+08:00';s=s.replace(/^(\d{4}-\d{2}-\d{2}) /,'$1T');const d=new Date(s);return isNaN(d)?null:d}
+function parts(d){const o={};fmt.formatToParts(d).forEach(p=>o[p.type]=p.value);return o}
+const dayK=d=>{const p=parts(d);return `${p.year}-${p.month}-${p.day}`},dayL=d=>{const p=parts(d);return `${p.year}年${+p.month}月${+p.day}日 ${p.weekday}`},hm=d=>{const p=parts(d);return `${p.hour}:${p.minute}`};
+function normEv(e){if(typeof e!=='object'||!e)return {description:String(e)};
+ return {time:e.time??e.datetime??e.date??e.timestamp??e.eventTime??e.trackTime??e.createTime,
+ location:e.location??e.place??e.city??e.site??e.trackLocation,
+ description:e.description??e.desc??e.event??e.status??e.context??e.content??e.trackContent??e.remark,
+ source:e.source??e.carrier}}
+function hist(s){return (Array.isArray(s.history)?s.history:[]).map(normEv).map(e=>({...e,d:parseT(e.time)})).sort((a,b)=>(b.d||0)-(a.d||0))}
+function stageOf(s,h){if(s.stage!=null){const n=typeof s.stage==='number'?s.stage:STAGES.findIndex(x=>String(s.stage).includes(x));if(n>=0)return n}
+ const txt=[s.status,s.last_event,...h.map(e=>e.description)].filter(Boolean).join(' | ');
+ for(const[i,r]of KW)if(r.test(txt))return i;return -1}
+function tone(s,st){const t=String(s.status||'');if(st===5)return'ok';if(/未查到|异常|失败|退回|exception|fail/i.test(t))return'warn';if(/扣|hold|问题/i.test(t))return'bad';return st>=0?'go':''}
+const modeL=m=>m==='air'?'✈︎ 空运':m==='sea'?'⛴ 海运':'📦 '+esc(m||'未知');
+let D=[],F={m:'all',st:'all',sup:'all',q:''};
+function steps(st){return `<div class="steps">${STAGES.map((_,i)=>`<i class="${i<st?'d':i===st?(st===5?'d':'c'):''}"></i>`).join('')}</div>
+<div class="labels">${STAGES.map((x,i)=>`<span class="${i<st?'d':i===st?'c':''}">${x}</span>`).join('')}</div>`}
+function card(s,i){const h=s._h,st=s._st,l=h[0];
+ const lastTxt=l?scrub(l.description||NA):scrub(s.last_event||NA),lastT=l&&l.d?`${dayL(l.d)} ${hm(l.d)} MYT${l.location?' · '+esc(scrub(l.location)):''}`:(s.last_checked?'最近检查 '+esc(s.last_checked):'');
+ return `<article class="card ${esc(s.mode)}" data-i="${i}" tabindex="0">
+ <div class="top"><span class="mode">${modeL(s.mode)}</span><span class="pill ${tone(s,st)}">${val(s.status)}</span></div>
+ <div class="no">${val(s.tracking_no)}</div><div class="carrier">${val(s.carrier)}${s.ctns?` · ${esc(s.ctns)} 箱`:''}</div>
+ <div class="kv"><div><small>货物</small><b>${val(s.contents)}</b></div><div><small>厂家</small><b>${val(s.supplier)}</b></div></div>
+ ${steps(st)}
+ <div class="last"><div>${esc(lastTxt)}</div><div class="t">${lastT}</div></div></article>`}
+function render(){const q=F.q.toLowerCase();
+ const L=D.map((s,i)=>[s,i]).filter(([s])=>(F.m==='all'||s.mode===F.m)&&(F.st==='all'||String(s._st)===F.st)&&(F.sup==='all'||(s.supplier||'')===F.sup)
+ &&(!q||[s.tracking_no,s.contents,s.supplier,s.id,s.china_ref,s.carrier].join(' ').toLowerCase().includes(q)));
+ grid.innerHTML=L.length?L.map(([s,i])=>card(s,i)).join(''):`<div class="empty">${D.length?'没有符合条件的货件':'暂无货件数据'}</div>`}
+function detail(i){const s=D[i],h=s._h;let g='',last='';
+ h.forEach((e,j)=>{const k=e.d?dayK(e.d):'未知日期';if(k!==last){g+=`<div class="day">${e.d?dayL(e.d):'时间未知'}</div>`;last=k}
+  g+=`<div class="ev ${j===0?'first':''}"><div class="tm">${e.d?hm(e.d):'--:--'}</div><div class="dot"></div><div class="bd"><div class="ds">${val(e.description)}</div>
+  <div class="lc">📍 ${val(e.location)}${has(e.source)?`<span class="src">${esc(e.source)}</span>`:''}</div></div></div>`});
+ dr.innerHTML=`<div class="dh ${esc(s.mode)}" style="--m:var(--${s.mode==='sea'?'sea':'air'})"><button class="x" onclick="closeD()" aria-label="关闭">×</button>
+ <span class="mode">${modeL(s.mode)}</span><div class="no" style="margin-top:10px">${val(s.tracking_no)}</div><div class="carrier">${val(s.carrier)}</div></div>
+ <div class="db" style="--m:var(--${s.mode==='sea'?'sea':'air'})">
+ <div class="hero"><div class="s">${val(s.status)}</div><div class="e">${esc(scrub(h[0]?.description||s.last_event||NA))}</div>
+ <div style="margin-top:14px">${steps(s._st)}</div></div>
+ <div class="kv"><div><small>货物</small><b>${val(s.contents)}</b></div><div><small>厂家</small><b>${val(s.supplier)}</b></div>
+ <div><small>箱数</small><b>${val(s.ctns)}</b></div><div><small>重量</small><b>${val(s.weight)}</b></div>
+ <div><small>唛头</small><b>${val(s.mark)}</b></div><div><small>最近检查</small><b>${val(s.last_checked)}</b></div>
+ <div style="grid-column:1/-1"><small>国内段 / 入仓号</small><b style="white-space:normal">${val(s.china_ref)}</b></div></div>
+ <div class="sec">物流时间轴 · MYT</div><div class="tl">${h.length?g:'<div class="nodata">暂无物流轨迹<br><small>承运商尚未返回事件，系统会定时重新查询</small></div>'}</div></div>`;
+ document.body.classList.add('open');dr.setAttribute('aria-hidden','false');dr.scrollTop=0;history.replaceState(null,'','#'+encodeURIComponent(s.id||s.tracking_no))}
+function closeD(){document.body.classList.remove('open');dr.setAttribute('aria-hidden','true');history.replaceState(null,'',location.pathname+location.search)}
+ov.onclick=closeD;addEventListener('keydown',e=>e.key==='Escape'&&closeD());
+grid.onclick=e=>{const c=e.target.closest('.card');c&&detail(+c.dataset.i)};grid.onkeydown=e=>{if(e.key==='Enter'){const c=e.target.closest('.card');c&&detail(+c.dataset.i)}};
+q.oninput=()=>{F.q=q.value.trim();render()};
+function setup(){const cnt=m=>D.filter(s=>m==='all'||s.mode===m).length;
+ modes.innerHTML=[['all','全部'],['sea','⛴ 海运'],['air','✈︎ 空运']].map(([k,l])=>`<button class="chip ${F.m===k?'on':''}" data-m="${k}">${l} ${cnt(k)}</button>`).join('');
+ modes.onclick=e=>{const b=e.target.closest('.chip');if(!b)return;F.m=b.dataset.m;setup();render()};
+ fStage.innerHTML='<option value="all">全部阶段</option>'+STAGES.map((x,i)=>`<option value="${i}">${x}</option>`).join('')+'<option value="-1">未查到</option>';fStage.value=F.st;
+ const sups=[...new Set(D.map(s=>s.supplier||''))].filter(Boolean).sort();
+ fSup.innerHTML='<option value="all">全部厂家</option>'+sups.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join('');fSup.value=F.sup;
+ const n=D.length,done=D.filter(s=>s._st===5).length,mov=D.filter(s=>s._st>=0&&s._st<5).length;
+ stats.innerHTML=`<div class="stat"><b>${n}</b><span>全部</span></div><div class="stat"><b style="color:var(--acc)">${mov}</b><span>运输中</span></div><div class="stat"><b style="color:var(--ok)">${done}</b><span>已签收</span></div><div class="stat"><b style="color:var(--warn)">${n-mov-done}</b><span>待查/未查到</span></div>`}
+fStage.onchange=()=>{F.st=fStage.value;render()};fSup.onchange=()=>{F.sup=fSup.value;render()};
+const src=new URLSearchParams(location.search).get('data')||'shipments.json';
+fetch(src+'?'+Date.now()).then(r=>r.json()).then(d=>{D=(d.shipments||[]).map(s=>{const h=hist(s);return {...s,_h:h,_st:stageOf(s,h)}});
+ upd.textContent='更新于 '+(d.updated||NA)+' · 共 '+D.length+' 票';setup();render();
+ const hs=decodeURIComponent(location.hash.slice(1));if(hs){const i=D.findIndex(s=>(s.id||s.tracking_no)===hs);i>=0&&detail(i)}})
+.catch(()=>{upd.textContent='数据加载失败';grid.innerHTML='<div class="empty">暂无货件数据</div>'});
+</script>
+</body>
+</html>
