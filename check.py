@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Schema v3: {updated, consolidations[], parcels[], shipments[] (legacy mirror for old UI)}.
+"""Schema v3: {updated, consolidations[], parcels[]}.
 consolidation stage: 国内快递/已入仓/运往马来西亚/已到马/已签收 — from own carrier events, else 已入仓 if any linked parcel inbound.
 parcel stage: 国内运输中/已入仓/未查到 from own facts; once linked & consolidation moved past 已入仓, inherits it.
 Air = DEX API; sea = yd-wl placeholder (manual). Domestic (SF/中通快运/安能) no reliable public API -> manual.
@@ -72,15 +72,7 @@ def main():
         else:
             p["stage"] = "未查到"
         p["last_checked"] = now
-    # legacy mirror for current index.html (reads d.shipments)
-    m = [dict(id=c["id"], forwarder=c.get("forwarder"), mode=c["mode"], carrier=c["carrier"], tracking_no=c["tracking_no"], mark=c["mark"], ctns=c["ctns"],
-              weight=c["weight"], stage=c["stage"], status=c["stage"], contents=c.get("item", "待确认"), supplier="待确认",
-              china_ref="; ".join(f'{p["domestic_carrier"]} {p["domestic_tracking_no"]}' + (f' 入仓号 {p["warehouse_ref"]}' if p.get("warehouse_ref") else "") for p in PK if p.get("consolidation_id") == c["id"]),
-              last_event=c.get("last_event"), last_checked=c["last_checked"], history=c.get("history", [])) for c in C]
-    m += [dict(id=p["id"], forwarder=p.get("forwarder"), mode="domestic-pending", carrier=p["domestic_carrier"], tracking_no=p["domestic_tracking_no"], mark=None, ctns=p.get("ctns"),
-               weight=None, stage=None, status=p["stage"], contents=p["item"], supplier=p["supplier"], china_ref=p.get("hint"),
-               last_event=p.get("last_event"), last_checked=p["last_checked"], history=p.get("history", [])) for p in PK if not p.get("consolidation_id")]
-    d["shipments"] = m
+    d.pop("shipments", None)
     d["updated"] = datetime.datetime.now(MYT).strftime("%Y-%m-%d %H:%M MYT")
     P.write_text(json.dumps(d, ensure_ascii=False, indent=1))
     for c in C: print(c["id"], c["tracking_no"], c["stage"], c["parcel_ids"])
