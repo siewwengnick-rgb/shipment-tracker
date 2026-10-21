@@ -31,7 +31,7 @@ select{background:var(--card);color:var(--tx);border:1px solid var(--line);borde
 .card{background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:var(--r);padding:18px;cursor:pointer;transition:.18s;position:relative;overflow:hidden}
 .card:hover{transform:translateY(-2px);border-color:#34405a;box-shadow:0 12px 30px #0006}
 .card:before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:var(--m)}
-.card.sea{--m:var(--sea)}.card.air{--m:var(--air)}
+.card.sea{--m:var(--sea)}.card.air{--m:var(--air)}.card.dom{--m:#b48cff}
 .top{display:flex;justify-content:space-between;align-items:center;gap:8px}
 .mode{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--m);background:color-mix(in srgb,var(--m) 14%,transparent);padding:4px 10px;border-radius:999px}
 .pill{font-size:12px;padding:4px 10px;border-radius:999px;background:#ffffff0d;color:var(--mut);border:1px solid var(--line)}
@@ -102,7 +102,7 @@ const KW=[[5,/签收|已送达|delivered|signed|妥投/i],[4,/派送|派件|out 
 const NA='暂无',esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 // privacy: mask phone-like numbers in free text
 const scrub=s=>String(s??'').replace(/(\+?6?01\d[-\s]?\d{3,4}[-\s]?\d{4})|(\+?86[-\s]?)?\b1[3-9]\d{9}\b/g,'[已隐藏]');
-const has=v=>v!=null&&String(v).trim()!==''&&!/^(待确认|unknown|n\/a|null)$/i.test(String(v).trim());
+const has=v=>v!=null&&String(v).trim()!==''&&!/^(待确认|unknown|n\/a|null|\?+|-)$/i.test(String(v).trim());
 const val=v=>has(v)?esc(scrub(v)):`<span class="na">${has(v)||v==null||v===''?NA:esc(v)}</span>`;
 const fmt=new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Kuala_Lumpur',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false,weekday:'short'});
 function parseT(t){if(!t)return null;let s=String(t).trim().replace(/\s*MYT$/i,'+08:00');
@@ -117,37 +117,39 @@ function normEv(e){if(typeof e!=='object'||!e)return {description:String(e)};
  source:e.source??e.carrier}}
 function hist(s){return (Array.isArray(s.history)?s.history:[]).map(normEv).map(e=>({...e,d:parseT(e.time)})).sort((a,b)=>(b.d||0)-(a.d||0))}
 function stageOf(s,h){if(s.stage!=null){const n=typeof s.stage==='number'?s.stage:STAGES.findIndex(x=>String(s.stage).includes(x));if(n>=0)return n}
- const txt=[s.status,s.last_event,...h.map(e=>e.description)].filter(Boolean).join(' | ');
+ const txt=[s.status,...h.map(e=>e.description)].filter(Boolean).join(' | ');
  for(const[i,r]of KW)if(r.test(txt))return i;return -1}
 function tone(s,st){const t=String(s.status||'');if(st===5)return'ok';if(/未查到|异常|失败|退回|exception|fail/i.test(t))return'warn';if(/扣|hold|问题/i.test(t))return'bad';return st>=0?'go':''}
-const modeL=m=>m==='air'?'✈︎ 空运':m==='sea'?'⛴ 海运':'📦 '+esc(m||'未知');
+const modeL=m=>m==='air'?'✈︎ 空运':m==='sea'?'⛴ 海运':/domestic/.test(m||'')?'🚚 国内段·待定':'📦 '+esc(m||'未知');
+const mk=m=>m==='air'||m==='sea'?m:'dom';
+const chk=t=>{const d=parseT(t);return d?`${dayL(d)} ${hm(d)} MYT`:t};
 let D=[],F={m:'all',st:'all',sup:'all',q:''};
 function steps(st){return `<div class="steps">${STAGES.map((_,i)=>`<i class="${i<st?'d':i===st?(st===5?'d':'c'):''}"></i>`).join('')}</div>
 <div class="labels">${STAGES.map((x,i)=>`<span class="${i<st?'d':i===st?'c':''}">${x}</span>`).join('')}</div>`}
 function card(s,i){const h=s._h,st=s._st,l=h[0];
- const lastTxt=l?scrub(l.description||NA):scrub(s.last_event||NA),lastT=l&&l.d?`${dayL(l.d)} ${hm(l.d)} MYT${l.location?' · '+esc(scrub(l.location)):''}`:(s.last_checked?'最近检查 '+esc(s.last_checked):'');
- return `<article class="card ${esc(s.mode)}" data-i="${i}" tabindex="0">
+ const lastTxt=l?scrub(l.description||NA):scrub(s.last_event||NA),lastT=l&&l.d?`${dayL(l.d)} ${hm(l.d)} MYT${l.location?' · '+esc(scrub(l.location)):''}`:(s.last_checked?'最近检查 '+esc(chk(s.last_checked)):'');
+ return `<article class="card ${mk(s.mode)}" data-i="${i}" tabindex="0">
  <div class="top"><span class="mode">${modeL(s.mode)}</span><span class="pill ${tone(s,st)}">${val(s.status)}</span></div>
  <div class="no">${val(s.tracking_no)}</div><div class="carrier">${val(s.carrier)}${s.ctns?` · ${esc(s.ctns)} 箱`:''}</div>
  <div class="kv"><div><small>货物</small><b>${val(s.contents)}</b></div><div><small>厂家</small><b>${val(s.supplier)}</b></div></div>
  ${steps(st)}
  <div class="last"><div>${esc(lastTxt)}</div><div class="t">${lastT}</div></div></article>`}
 function render(){const q=F.q.toLowerCase();
- const L=D.map((s,i)=>[s,i]).filter(([s])=>(F.m==='all'||s.mode===F.m)&&(F.st==='all'||String(s._st)===F.st)&&(F.sup==='all'||(s.supplier||'')===F.sup)
+ const L=D.map((s,i)=>[s,i]).filter(([s])=>(F.m==='all'||mk(s.mode)===F.m)&&(F.st==='all'||String(s._st)===F.st)&&(F.sup==='all'||(s.supplier||'')===F.sup)
  &&(!q||[s.tracking_no,s.contents,s.supplier,s.id,s.china_ref,s.carrier].join(' ').toLowerCase().includes(q)));
  grid.innerHTML=L.length?L.map(([s,i])=>card(s,i)).join(''):`<div class="empty">${D.length?'没有符合条件的货件':'暂无货件数据'}</div>`}
 function detail(i){const s=D[i],h=s._h;let g='',last='';
  h.forEach((e,j)=>{const k=e.d?dayK(e.d):'未知日期';if(k!==last){g+=`<div class="day">${e.d?dayL(e.d):'时间未知'}</div>`;last=k}
   g+=`<div class="ev ${j===0?'first':''}"><div class="tm">${e.d?hm(e.d):'--:--'}</div><div class="dot"></div><div class="bd"><div class="ds">${val(e.description)}</div>
   <div class="lc">📍 ${val(e.location)}${has(e.source)?`<span class="src">${esc(e.source)}</span>`:''}</div></div></div>`});
- dr.innerHTML=`<div class="dh ${esc(s.mode)}" style="--m:var(--${s.mode==='sea'?'sea':'air'})"><button class="x" onclick="closeD()" aria-label="关闭">×</button>
+ dr.innerHTML=`<div class="dh ${esc(s.mode)}" style="--m:${mk(s.mode)==='dom'?'#b48cff':'var(--'+mk(s.mode)+')'}"><button class="x" onclick="closeD()" aria-label="关闭">×</button>
  <span class="mode">${modeL(s.mode)}</span><div class="no" style="margin-top:10px">${val(s.tracking_no)}</div><div class="carrier">${val(s.carrier)}</div></div>
- <div class="db" style="--m:var(--${s.mode==='sea'?'sea':'air'})">
+ <div class="db" style="--m:${mk(s.mode)==='dom'?'#b48cff':'var(--'+mk(s.mode)+')'}">
  <div class="hero"><div class="s">${val(s.status)}</div><div class="e">${esc(scrub(h[0]?.description||s.last_event||NA))}</div>
  <div style="margin-top:14px">${steps(s._st)}</div></div>
  <div class="kv"><div><small>货物</small><b>${val(s.contents)}</b></div><div><small>厂家</small><b>${val(s.supplier)}</b></div>
  <div><small>箱数</small><b>${val(s.ctns)}</b></div><div><small>重量</small><b>${val(s.weight)}</b></div>
- <div><small>唛头</small><b>${val(s.mark)}</b></div><div><small>最近检查</small><b>${val(s.last_checked)}</b></div>
+ <div><small>唛头</small><b>${val(s.mark)}</b></div><div><small>最近检查</small><b>${has(s.last_checked)?esc(chk(s.last_checked)):val()}</b></div>
  <div style="grid-column:1/-1"><small>国内段 / 入仓号</small><b style="white-space:normal">${val(s.china_ref)}</b></div></div>
  <div class="sec">物流时间轴 · MYT</div><div class="tl">${h.length?g:'<div class="nodata">暂无物流轨迹<br><small>承运商尚未返回事件，系统会定时重新查询</small></div>'}</div></div>`;
  document.body.classList.add('open');dr.setAttribute('aria-hidden','false');dr.scrollTop=0;history.replaceState(null,'','#'+encodeURIComponent(s.id||s.tracking_no))}
@@ -155,8 +157,8 @@ function closeD(){document.body.classList.remove('open');dr.setAttribute('aria-h
 ov.onclick=closeD;addEventListener('keydown',e=>e.key==='Escape'&&closeD());
 grid.onclick=e=>{const c=e.target.closest('.card');c&&detail(+c.dataset.i)};grid.onkeydown=e=>{if(e.key==='Enter'){const c=e.target.closest('.card');c&&detail(+c.dataset.i)}};
 q.oninput=()=>{F.q=q.value.trim();render()};
-function setup(){const cnt=m=>D.filter(s=>m==='all'||s.mode===m).length;
- modes.innerHTML=[['all','全部'],['sea','⛴ 海运'],['air','✈︎ 空运']].map(([k,l])=>`<button class="chip ${F.m===k?'on':''}" data-m="${k}">${l} ${cnt(k)}</button>`).join('');
+function setup(){const cnt=m=>D.filter(s=>m==='all'||mk(s.mode)===m).length;
+ modes.innerHTML=[['all','全部'],['sea','⛴ 海运'],['air','✈︎ 空运'],...(D.some(s=>mk(s.mode)==='dom')?[['dom','🚚 国内段']]:[])].map(([k,l])=>`<button class="chip ${F.m===k?'on':''}" data-m="${k}">${l} ${cnt(k)}</button>`).join('');
  modes.onclick=e=>{const b=e.target.closest('.chip');if(!b)return;F.m=b.dataset.m;setup();render()};
  fStage.innerHTML='<option value="all">全部阶段</option>'+STAGES.map((x,i)=>`<option value="${i}">${x}</option>`).join('')+'<option value="-1">未查到</option>';fStage.value=F.st;
  const sups=[...new Set(D.map(s=>s.supplier||''))].filter(Boolean).sort();
