@@ -1,0 +1,21 @@
+{
+ "updated": "2026-10-22 00:01 MYT",
+ "shipments": [
+  {
+   "id": "AIR-001",
+   "mode": "air",
+   "carrier": "DEX-i Express",
+   "tracking_no": "1110194686",
+   "china_ref": "安能ANE 300656415658(待核对); 入仓号 M20261017121247",
+   "mark": "ZXZ/NICK888",
+   "ctns": 2,
+   "weight": "0.8kg?(手写待核对)",
+   "contents": "待确认",
+   "supplier": "待确认",
+   "status": "未查到",
+   "last_event": "DEX 系统暂无记录",
+   "last_checked": "2026-10-22 00:01 MYT",
+   "history": []
+  }
+ ]
+}
