@@ -54,6 +54,7 @@ h2{font-size:15px;color:var(--mut);font-weight:600;margin:26px 0 12px;display:fl
 .pill{font-size:12px;padding:3px 9px;border-radius:999px;border:1px solid var(--line);color:var(--mut);white-space:nowrap}
 .pill.go{color:var(--acc);border-color:#7c9cff55}.pill.ok{color:var(--ok);border-color:#3ddc8455}.pill.warn{color:var(--warn);border-color:#f5a52455}
 .facts{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px;font-size:12.5px;color:var(--mut)}.facts b{color:var(--tx);font-weight:600}
+.fw{color:var(--mut)}.fw b{color:var(--tx)}
 .na{color:var(--dim)!important;font-weight:400!important}
 .tl{margin-top:10px;padding-top:4px;border-top:1px dashed var(--line)}
 .day{font-size:12px;color:var(--mut);font-weight:600;margin:12px 0 6px;display:flex;gap:8px;align-items:center}.day:after{content:"";flex:1;height:1px;background:var(--line)}
@@ -79,7 +80,7 @@ h2{font-size:15px;color:var(--mut);font-weight:600;margin:26px 0 12px;display:fl
 <header><div><h1><span class="logo">📦</span>集运追踪</h1><div class="sub" id="upd">加载中…</div></div><div class="stats" id="stats"></div></header>
 <div class="bar">
  <div class="search"><input id="q" placeholder="搜索 单号 / 厂家 / 货物 / 入仓号" autocomplete="off"></div>
- <div class="chips" id="modes"></div><select id="fStage"></select><select id="fSup"></select>
+ <div class="chips" id="modes"></div><select id="fStage"></select><select id="fSup"></select><select id="fFw"></select>
 </div>
 <div id="main"></div>
 <div class="foot">时间均为马来西亚时间 (MYT, UTC+8) · 仅显示物流信息，不含电话/地址/联系人</div>
@@ -106,46 +107,50 @@ function timeline(h){if(!h.length)return '<div class="nodata">暂无物流轨迹
 // 3 big stages
 const S3=['国内快递','集运仓入仓','海/空运到马'];
 const CST={'国内快递':[0,0],'已入仓':[2,-1],'运往马来西亚':[2,2],'已到马':[3,-1],'已签收':[3,-1]};// [done, current]
-const PST={'国内运输中':[0,0],'已入仓':[2,-1],'未查到':[0,-1]};
-const NOW={'国内快递':'国内快递运输中','已入仓':'已入集运仓，等待出运','运往马来西亚':'运往马来西亚途中','已到马':'已到马来西亚','已签收':'已签收 ✓','国内运输中':'国内快递运输中','未查到':'未查到轨迹'};
-function prog(stage,map,mode){const[dn,cu]=map[stage]||[0,-1];const lab=S3.map((x,i)=>i==2&&mode?(mode=='sea'?'海运到马':'空运到马'):x);
+const PST={'国内运输中':[0,0],'已入仓':[2,-1],'未查到':[0,-1],'已完成（中国本地自取）':[3,-1]};
+const NOW={'国内快递':'国内快递运输中','已入仓':'已入集运仓，等待出运','运往马来西亚':'运往马来西亚途中','已到马':'已到马来西亚','已签收':'已签收 ✓','国内运输中':'国内快递运输中','未查到':'未查到轨迹','已完成（中国本地自取）':'已完成（中国本地自取）'};
+function prog(stage,map,mode){const[dn,cu]=map[stage]||[0,-1];const lab=/自取/.test(stage||'')?['国内快递','已送达','中国本地自取']:S3.map((x,i)=>i==2&&mode?(mode=='sea'?'海运到马':'空运到马'):x);
  return `<div class="prog">${lab.map((x,i)=>`<div class="st ${i<dn?'d':i===cu?'c':''}"><i></i><span>${i<dn?'✓ ':''}${x}</span></div>`).join('')}</div>`}
-const tone=s=>/签收|到马/.test(s)?'ok':/未查到/.test(s||'')||!s?'warn':'go';
-let D={cons:[],pk:[],solo:[]},F={m:'all',st:'all',sup:'all',q:''},OPEN=new Set();
+const FW=v=>{const t=String(v??'').trim();const b=t.replace(/\s*[(（]\s*待确认\s*[)）]\s*$/,'').trim();return has(b)?{b,u:b!==t}:{b:TBD,u:true}};
+const fwH=v=>{const f=FW(v);return `<span class="fw">🏭 集运厂家 <b class="${f.b===TBD?'tbd':''}">${T(f.b)}</b>${f.u&&f.b!==TBD?' <span class="tbd">(待确认)</span>':''}</span>`};
+const fwOk=v=>F.fw==='all'||FW(v).b===F.fw;
+const tone=s=>/签收|到马|已完成/.test(s)?'ok':/未查到/.test(s||'')||!s?'warn':'go';
+let D={cons:[],pk:[],solo:[]},F={m:'all',st:'all',sup:'all',fw:'all',q:''},OPEN=new Set();
 function parcel(p,solo){const id='p:'+p.id,o=OPEN.has(id),h=p._h;
  return `<div class="pk ${solo?'solo con':''}" style="${solo?'':''}">
  <div class="h"><div class="big">${tbd(p.supplier)}<span class="x">·</span>${tbd(p.item)}</div><span class="pill ${tone(p.stage)}">${val(p.stage,'未查到')}</span></div>
  ${has(p.hint)?`<div class="hint"><b>未核实</b>${T(p.hint)}</div>`:''}
- <div class="facts"><span>国内单号 <b>${val(p.domestic_carrier,'')} ${val(p.domestic_tracking_no)}</b></span><span>箱数 <b>${val(p.ctns)}</b></span><span>入仓号 <b>${val(p.warehouse_ref)}</b></span></div>
+ <div class="facts">${fwH(p.forwarder)}<span>国内单号 <b>${val(p.domestic_carrier,'')} ${val(p.domestic_tracking_no)}</b></span><span>箱数 <b>${val(p.ctns)}</b></span><span>入仓号 <b>${val(p.warehouse_ref)}</b></span></div>
  ${solo?prog(p.stage,PST):''}
  <div class="why">${val(h[0]?.ds||p.last_event)}${p.last_checked?' · 检查 '+when(p.last_checked):''}</div>
  <button class="tog" data-k="${esc(id)}">${o?'收起轨迹 ▲':'查看轨迹'+(h.length?` (${h.length})`:'')+' ▼'}</button>${o?`<div class="tl">${timeline(h)}</div>`:''}</div>`}
 function cons(c){const id='c:'+c.id,o=OPEN.has(id),h=c._h;
  return `<article class="con ${c.mode=='sea'?'sea':'air'}"><div class="ch">
- <div class="top"><span class="mode">${c.mode=='sea'?'⛴ 海运集运':'✈︎ 空运集运'}</span><span class="meta">${val(c.carrier)} · ${val(c.ctns)} 箱 · ${val(c.weight)}${has(c.mark)?' · 唛头 '+T(c.mark):''}</span></div>
- <div class="no">${val(c.tracking_no)}</div>
+ <div class="top"><span class="mode">${c.mode=='sea'?'⛴ 海运集运':'✈︎ 空运集运'}</span><span class="meta">${[has(c.carrier)&&T(c.carrier),has(c.ctns)&&T(c.ctns)+' 箱',has(c.weight)&&T(c.weight)].filter(Boolean).join(' · ')||'<span class="na">承运/箱数 暂无</span>'}${has(c.mark)?' · 唛头 '+T(c.mark):''}</span></div>
+ <div class="no">${has(c.tracking_no)?T(c.tracking_no):T(has(c.mark)?c.mark:c.id)+' <span class="na" style="font-size:13px">暂无单号</span>'}</div><div class="facts" style="margin-top:4px">${fwH(c.forwarder)}</div>
  ${prog(c.stage,CST,c.mode)}
- <div class="now">当前：<em>${esc(NOW[c.stage]||c.stage||'未查到')}</em></div>
+ <div class="now">当前：<em>${esc(NOW[c.stage]||c.stage||'未查到')}</em>${c.stage_manual?' <span class="pill" style="font-size:11px;vertical-align:2px">✍︎ 人工更新</span>':''}</div>
  <div class="why">${val(h[0]?.ds||c.last_event)}${has(c.stage_source)?' · 依据：'+T(c.stage_source):''}</div>
  <div class="why">最近检查 ${when(c.last_checked)}</div>
  <button class="tog" data-k="${esc(id)}">${o?'收起集运单轨迹 ▲':'集运单轨迹'+(h.length?` (${h.length})`:'')+' ▼'}</button>${o?`<div class="tl">${timeline(h)}</div>`:''}</div>
  <div class="plist"><div class="plab">包含 ${c._p.length} 个包裹</div>${c._p.length?c._p.map(p=>parcel(p)).join(''):'<div class="nodata">暂无已关联包裹</div>'}</div></article>`}
-function match(p){const q=F.q.toLowerCase();return (F.sup==='all'||(has(p.supplier)?p.supplier:TBD)===F.sup)&&(!q||[p.supplier,p.item,p.hint,p.domestic_tracking_no,p.warehouse_ref,p.id].join(' ').toLowerCase().includes(q))}
+function match(p){const q=F.q.toLowerCase();return fwOk(p.forwarder)&&(F.sup==='all'||(has(p.supplier)?p.supplier:TBD)===F.sup)&&(!q||[p.supplier,p.item,p.hint,p.forwarder,p.domestic_tracking_no,p.warehouse_ref,p.id].join(' ').toLowerCase().includes(q))}
 function render(){const q=F.q.toLowerCase();
- const C=D.cons.filter(c=>(F.m==='all'||F.m===c.mode)&&(F.st==='all'||F.st===c.stage)).map(c=>{const self=!q||[c.tracking_no,c.id,c.mark,c.carrier].join(' ').toLowerCase().includes(q);
+ const C=D.cons.filter(c=>(F.m==='all'||F.m===c.mode)&&(F.st==='all'||F.st===c.stage)).map(c=>{const self=fwOk(c.forwarder)&&(!q||[c.tracking_no,c.id,c.mark,c.carrier,c.forwarder].join(' ').toLowerCase().includes(q));
   const ps=c._all.filter(p=>match(p)||(self&&F.sup==='all'));return {...c,_p:ps,_show:(self&&F.sup==='all')||ps.length}}).filter(c=>c._show);
  const S=(F.m==='all'||F.m==='solo')?D.solo.filter(p=>match(p)&&(F.st==='all'||F.st===p.stage)):[];
  let h='';if(F.m!=='solo')h+=`<h2>🚢 集运单 <b>${C.length}</b></h2>`+(C.length?`<div class="grid">${C.map(cons).join('')}</div>`:'<div class="empty">没有符合条件的集运单</div>');
  if(F.m==='all'||F.m==='solo')h+=`<h2>📮 未分配集运单的包裹 <b>${S.length}</b></h2>`+(S.length?`<div class="pgrid">${S.map(p=>parcel(p,1)).join('')}</div>`:'<div class="empty">没有</div>');
  main.innerHTML=h}
 main.onclick=e=>{const b=e.target.closest('.tog');if(!b)return;const k=b.dataset.k;OPEN.has(k)?OPEN.delete(k):OPEN.add(k);render()};
-q.oninput=()=>{F.q=q.value.trim();render()};fStage.onchange=()=>{F.st=fStage.value;render()};fSup.onchange=()=>{F.sup=fSup.value;render()};
+q.oninput=()=>{F.q=q.value.trim();render()};fStage.onchange=()=>{F.st=fStage.value;render()};fSup.onchange=()=>{F.sup=fSup.value;render()};fFw.onchange=()=>{F.fw=fFw.value;render()};
 function setup(){const n={all:D.cons.length+D.solo.length,sea:D.cons.filter(c=>c.mode=='sea').length,air:D.cons.filter(c=>c.mode!='sea').length,solo:D.solo.length};
  modes.innerHTML=[['all','全部'],['sea','⛴ 海运'],['air','✈︎ 空运'],['solo','📮 未分配']].map(([k,l])=>`<button class="chip ${F.m===k?'on':''}" data-m="${k}">${l} ${n[k]}</button>`).join('');
  modes.onclick=e=>{const b=e.target.closest('.chip');if(b){F.m=b.dataset.m;setup();render()}};
  const st=[...new Set([...Object.keys(CST),...D.cons.map(c=>c.stage),...D.pk.map(p=>p.stage)].filter(Boolean))];
  fStage.innerHTML='<option value="all">全部阶段</option>'+st.map(x=>`<option>${esc(x)}</option>`).join('');fStage.value=F.st;
  const sp=[...new Set(D.pk.map(p=>has(p.supplier)?p.supplier:TBD))].sort();fSup.innerHTML='<option value="all">全部厂家</option>'+sp.map(x=>`<option>${esc(x)}</option>`).join('');fSup.value=F.sup;
+ const fw=[...new Set([...(D.fws||[]).map(x=>FW(typeof x=='object'?x.name??x.id:x).b),...[...D.cons,...D.pk].map(x=>FW(x.forwarder).b)])].sort();fFw.innerHTML='<option value="all">全部集运厂家</option>'+fw.map(x=>`<option>${esc(x)}</option>`).join('');fFw.value=F.fw;
  const tr=D.cons.filter(c=>c.stage=='运往马来西亚').length,ar=D.cons.filter(c=>/到马|签收/.test(c.stage||'')).length;
  stats.innerHTML=`<div class="stat"><b>${D.cons.length}</b><span>集运单</span></div><div class="stat"><b style="color:var(--acc)">${tr}</b><span>运往马来西亚</span></div><div class="stat"><b style="color:var(--ok)">${ar}</b><span>已到马</span></div><div class="stat"><b style="color:var(--dom)">${D.pk.length}</b><span>包裹 (${D.solo.length} 未分配)</span></div>`}
 const src=new URLSearchParams(location.search).get('data')||'shipments.json';
@@ -153,7 +158,7 @@ fetch(src+'?'+Date.now()).then(r=>r.json()).then(d=>{
  const pk=(d.parcels||[]).map(p=>({...p,consolidation_id:p.consolidation_id??p.consignment_id??null,_h:hist(p.history)}));
  const cons=(d.consolidations||d.consignments||[]).map(c=>{const ids=c.parcel_ids||c.parcels||[];const all=pk.filter(p=>p.consolidation_id===c.id||ids.includes(p.id));all.forEach(p=>p._in=1);
   return {...c,ctns:c.ctns??c.total_ctns,_h:hist(c.history),_all:all}});
- D={cons,pk,solo:pk.filter(p=>!p._in)};upd.textContent=`更新于 ${d.updated?when(d.updated).replace(' MYT','')+' MYT':NA} · ${cons.length} 个集运单 · ${pk.length} 个包裹`;setup();render()})
+ D={cons,pk,solo:pk.filter(p=>!p._in),fws:Array.isArray(d.forwarders)?d.forwarders:[]};upd.textContent=`更新于 ${d.updated?when(d.updated).replace(' MYT','')+' MYT':NA} · ${cons.length} 个集运单 · ${pk.length} 个包裹`;setup();render()})
 .catch(()=>{upd.textContent='数据加载失败';main.innerHTML='<div class="empty">暂无数据</div>'});
 </script>
 </body>
