@@ -1,15 +1,14 @@
 #!/usr/bin/env python3
-"""Refresh end-to-end orders (schema v2). One shipment = one order with linked legs:
- legs.domestic {carrier,tracking_no,status,history[]}   厂家→集运仓 (SF/安能/中通快运: no reliable public API -> manual)
- legs.warehouse {warehouse_ref,mark,ctns,weight,status,history[]}
- legs.international {mode sea|air,carrier,tracking_no,status,history[]}  air=DEX API auto, sea=yd-wl placeholder
-Unknown legs stay null. Stage from CONFIRMED facts only, furthest wins. Flat legacy fields mirrored for index.html.
-No phones/addresses/contact names stored."""
+"""Schema v3: {updated, consolidations[], parcels[], shipments[] (legacy mirror for old UI)}.
+consolidation stage: 国内快递/已入仓/运往马来西亚/已到马/已签收 — from own carrier events, else 已入仓 if any linked parcel inbound.
+parcel stage: 国内运输中/已入仓/未查到 from own facts; once linked & consolidation moved past 已入仓, inherits it.
+Air = DEX API; sea = yd-wl placeholder (manual). Domestic (SF/中通快运/安能) no reliable public API -> manual.
+Never guess supplier/item ('待确认'; seed hints in 'hint'). No phones/addresses/names."""
 import json, re, urllib.request, datetime, pathlib
 P = pathlib.Path(__file__).with_name("shipments.json")
 MYT = datetime.timezone(datetime.timedelta(hours=8))
 DEX_URL = "https://api.dex-i.com/api/f/logistics-management/tracking/list"
-STAGES = ["国内", "入仓", "出运", "清关", "派送", "签收"]
+CSTAGES = ["国内快递", "已入仓", "运往马来西亚", "已到马", "已签收"]
 PHONE = re.compile(r"\+?\d[\d\- ]{6,}\d")
 def scrub(t): return PHONE.sub("[已隐去]", str(t or ""))
 def iso(t):
@@ -19,15 +18,15 @@ def iso(t):
         try: return datetime.datetime.strptime(str(t)[:19], f).replace(tzinfo=MYT).isoformat()
         except ValueError: pass
     return str(t)
-KW = [("签收", 5), ("派送", 4), ("派件", 4), ("清关", 3), ("海关", 3)]
-def intl_stage(desc):
-    for k, i in KW:
-        if k in (desc or ""): return i
-    return 2  # any international event => at least 出运
+def ev_stage(desc):
+    t = desc or ""
+    if "签收" in t: return 4
+    if any(k in t for k in ("清关", "海关", "到达马", "派送", "派件", "Malaysia", "KUL", "吉隆坡")): return 3
+    return 2  # any forwarder event => 运往马来西亚
 def dex(nos):
     req = urllib.request.Request(DEX_URL, data=json.dumps(nos).encode(), headers={"Content-Type": "application/json"})
     r = json.load(urllib.request.urlopen(req, timeout=40))
-    return r.get("data") or r.get("result") or [] if isinstance(r, dict) else r
+    return (r.get("data") or r.get("result") or []) if isinstance(r, dict) else r
 def dex_events(r):
     ev = r.get("trackingDetails") or r.get("details") or r.get("items") or r.get("traces") or []
     out = [{"time": iso(e.get("time") or e.get("trackTime") or e.get("date")),
@@ -35,47 +34,52 @@ def dex_events(r):
             "description": scrub(e.get("description") or e.get("context") or e.get("content") or e.get("status") or ""),
             "source": "DEX api.dex-i.com"} for e in ev if isinstance(e, dict)] if isinstance(ev, list) else []
     return sorted(out, key=lambda x: x["time"] or "", reverse=True)
-def derive(s):
-    L = s["legs"]; dom, wh, it = L.get("domestic"), L.get("warehouse"), L.get("international")
-    st, src = -1, None
-    if dom and dom.get("history"): st, src = 0, "国内段有轨迹事件"
-    elif dom and dom.get("tracking_no"): st, src = 0, "仅有单号，未查到轨迹"
-    if wh and wh.get("warehouse_ref"): st, src = 1, f'有入仓号 {wh["warehouse_ref"]}（入仓凭证）'
-    if it and it.get("history"):
-        n = max(intl_stage(e["description"]) for e in it["history"][:1])
-        if n > st: st, src = n, f'{it["carrier"]} 返回轨迹事件'
-    elif it and it.get("tracking_no") and st >= 1:
-        src += f'；货代已分配{it["carrier"]}单号 {it["tracking_no"]}，承运商暂无轨迹，未标出运'
-    s["stage"] = STAGES[st] if st >= 0 else "未查到"; s["stage_source"] = src or "无已确认信息"
-    # merged history across legs, tagged
-    h = [dict(e, leg=k) for k in ("domestic", "warehouse", "international") if L.get(k) for e in L[k].get("history", [])]
-    s["history"] = sorted(h, key=lambda x: x["time"] or "", reverse=True)
-    s["last_event"] = scrub(f'{h[0]["time"]} [{h[0]["leg"]}] {h[0]["description"]}' if s["history"] and (h := s["history"]) else s.get("note") or "暂无轨迹事件")
-    # legacy flat mirrors for index.html (prefer furthest known leg)
-    top = it or wh or dom or {}
-    s["mode"] = it["mode"] if it else "domestic-pending"
-    s["status"] = s["stage"]; s["carrier"] = (it or dom or {}).get("carrier"); s["tracking_no"] = (it or dom or {}).get("tracking_no")
-    s["mark"] = wh.get("mark") if wh else None; s["ctns"] = wh.get("ctns") if wh else None; s["weight"] = wh.get("weight") if wh else None
-    s["china_ref"] = "; ".join(x for x in [dom and f'国内 {dom["carrier"]} {dom["tracking_no"]}', wh and f'入仓号 {wh["warehouse_ref"]}'] if x) or None
 def main():
     d = json.loads(P.read_text()); now = datetime.datetime.now(MYT).isoformat(timespec="minutes")
-    air = [s for s in d["shipments"] if (s["legs"].get("international") or {}).get("mode") == "air"]
-    try: res = dex([s["legs"]["international"]["tracking_no"] for s in air]) if air else []
+    C, PK = d["consolidations"], d["parcels"]
+    air = [c for c in C if c["mode"] == "air" and c.get("tracking_no")]
+    try: res = dex([c["tracking_no"] for c in air]) if air else []
     except Exception as e: print("DEX error:", e); res = None
-    for s in air:
-        it = s["legs"]["international"]
-        if res is not None:
-            hit = [r for r in res if it["tracking_no"] in json.dumps(r, ensure_ascii=False)]
-            ev = dex_events(hit[0]) if hit else []
-            if ev: it["history"] = ev
-            it["status"] = ev[0]["description"] if ev else ("DEX 有记录无事件" if hit else "未查到（DEX 暂无记录）")
-        s["last_checked"] = now
-    for s in d["shipments"]:
-        it = s["legs"].get("international")
-        if it and it.get("mode") == "sea":  # yd-wl placeholder: manual / browser only
-            it["status"] = it.get("status") or "需手动查 yd-wl.com"; s["last_checked"] = now
-        derive(s)
+    for c in air:
+        if res is None: continue
+        hit = [r for r in res if c["tracking_no"] in json.dumps(r, ensure_ascii=False)]
+        ev = dex_events(hit[0]) if hit else []
+        if ev: c["history"] = ev
+        c["last_checked"] = now
+    for c in C:
+        if c["mode"] == "sea": c["last_checked"] = now  # yd-wl: manual/browser placeholder
+        mine = [p for p in PK if p.get("consolidation_id") == c["id"]]
+        c["parcel_ids"] = [p["id"] for p in mine]
+        if c.get("history"):
+            c["stage"] = CSTAGES[ev_stage(c["history"][0]["description"])]
+            c["stage_source"] = f'{c["carrier"]} 返回轨迹'; c["last_event"] = f'{c["history"][0]["time"]} {c["history"][0]["description"]}'
+        elif any(p.get("warehouse_ref") for p in mine):
+            c["stage"] = "已入仓"; c["stage_source"] = "所含包裹有入仓号；承运商暂无轨迹"; c["last_event"] = f'{c["carrier"]} {c["tracking_no"]} 暂无轨迹'
+        else:
+            c["stage"] = "国内快递"; c["stage_source"] = "无入仓/轨迹证据"
+    byid = {c["id"]: c for c in C}
+    for p in PK:
+        c = byid.get(p.get("consolidation_id"))
+        if c and CSTAGES.index(c["stage"]) > 1:
+            p["stage"] = c["stage"]; p["stage_source"] = f'继承集运单 {c["id"]}'; p["last_event"] = c["last_event"]
+        elif p.get("warehouse_ref"):
+            p["stage"] = "已入仓"; p["stage_source"] = f'有入仓号 {p["warehouse_ref"]}'
+        elif p.get("history"):
+            p["stage"] = "国内运输中"; p["stage_source"] = "国内段有轨迹"; p["last_event"] = f'{p["history"][0]["time"]} {p["history"][0]["description"]}'
+        else:
+            p["stage"] = "未查到"
+        p["last_checked"] = now
+    # legacy mirror for current index.html (reads d.shipments)
+    m = [dict(id=c["id"], mode=c["mode"], carrier=c["carrier"], tracking_no=c["tracking_no"], mark=c["mark"], ctns=c["ctns"],
+              weight=c["weight"], stage=c["stage"], status=c["stage"], contents="待确认", supplier="待确认",
+              china_ref="; ".join(f'{p["domestic_carrier"]} {p["domestic_tracking_no"]}' + (f' 入仓号 {p["warehouse_ref"]}' if p.get("warehouse_ref") else "") for p in PK if p.get("consolidation_id") == c["id"]),
+              last_event=c.get("last_event"), last_checked=c["last_checked"], history=c.get("history", [])) for c in C]
+    m += [dict(id=p["id"], mode="domestic-pending", carrier=p["domestic_carrier"], tracking_no=p["domestic_tracking_no"], mark=None, ctns=p.get("ctns"),
+               weight=None, stage=None, status=p["stage"], contents=p["item"], supplier=p["supplier"], china_ref=p.get("hint"),
+               last_event=p.get("last_event"), last_checked=p["last_checked"], history=p.get("history", [])) for p in PK if not p.get("consolidation_id")]
+    d["shipments"] = m
     d["updated"] = datetime.datetime.now(MYT).strftime("%Y-%m-%d %H:%M MYT")
     P.write_text(json.dumps(d, ensure_ascii=False, indent=1))
-    for s in d["shipments"]: print(s["id"], s["tracking_no"], s["stage"], "|", s["stage_source"])
+    for c in C: print(c["id"], c["tracking_no"], c["stage"], c["parcel_ids"])
+    for p in PK: print(p["id"], p["domestic_tracking_no"], p["stage"], p.get("consolidation_id"))
 if __name__ == "__main__": main()

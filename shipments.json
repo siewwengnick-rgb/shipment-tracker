@@ -1,235 +1,293 @@
 {
- "updated": "2026-10-22 00:53 MYT",
+ "updated": "2026-10-22 00:57 MYT",
+ "schema_version": 3,
+ "consolidations": [
+  {
+   "id": "CON-001",
+   "mode": "air",
+   "carrier": "DEX-i",
+   "tracking_no": "1110194686",
+   "ctns": 2,
+   "weight": "0.8kg?(手写待核对)",
+   "mark": "ZXZ/NICK888",
+   "stage": "已入仓",
+   "stage_source": "所含包裹有入仓号；承运商暂无轨迹",
+   "last_event": "DEX-i 1110194686 暂无轨迹",
+   "last_checked": "2026-10-22T00:57+08:00",
+   "history": [],
+   "parcel_ids": [
+    "PKG-001"
+   ]
+  }
+ ],
+ "parcels": [
+  {
+   "id": "PKG-001",
+   "domestic_carrier": "安能 ANE",
+   "domestic_tracking_no": "300656415658",
+   "supplier": "待确认",
+   "item": "待确认",
+   "hint": null,
+   "ctns": null,
+   "warehouse_ref": "M20261017121247",
+   "history": [],
+   "confirm": {
+    "supplier": "待确认",
+    "item": "待确认",
+    "consolidation_link": "已确认"
+   },
+   "consolidation_id": "CON-001",
+   "stage": "已入仓",
+   "stage_source": "有入仓号 M20261017121247",
+   "last_event": "已入仓，随 CON-001 待出运",
+   "last_checked": "2026-10-22T00:57+08:00"
+  },
+  {
+   "id": "PKG-002",
+   "domestic_carrier": "顺丰 SF",
+   "domestic_tracking_no": "SF1580887700171",
+   "supplier": "待确认",
+   "item": "待确认",
+   "hint": "拖鞋厂家 / 拖鞋 / →空运仓",
+   "ctns": null,
+   "warehouse_ref": null,
+   "history": [],
+   "confirm": {
+    "supplier": "待确认",
+    "item": "待确认",
+    "consolidation_link": "待确认"
+   },
+   "consolidation_id": null,
+   "stage": "未查到",
+   "stage_source": "仅有单号，官网查询需手机后四位/验证码，未查到轨迹",
+   "last_event": "未查到轨迹",
+   "last_checked": "2026-10-22T00:57+08:00"
+  },
+  {
+   "id": "PKG-003",
+   "domestic_carrier": "顺丰 SF",
+   "domestic_tracking_no": "SF1580889297268",
+   "supplier": "待确认",
+   "item": "待确认",
+   "hint": "DINGDINGDING / DINGDINGDING 货品 / 待寄出",
+   "ctns": null,
+   "warehouse_ref": null,
+   "history": [],
+   "confirm": {
+    "supplier": "待确认",
+    "item": "待确认",
+    "consolidation_link": "待确认"
+   },
+   "consolidation_id": null,
+   "stage": "未查到",
+   "stage_source": "仅有单号，官网查询需手机后四位/验证码，未查到轨迹",
+   "last_event": "未查到轨迹",
+   "last_checked": "2026-10-22T00:57+08:00"
+  },
+  {
+   "id": "PKG-004",
+   "domestic_carrier": "顺丰 SF",
+   "domestic_tracking_no": "SF0207510056030",
+   "supplier": "待确认",
+   "item": "待确认",
+   "hint": "温州厂家 / 足底仪 / 温州→广州",
+   "ctns": null,
+   "warehouse_ref": null,
+   "history": [],
+   "confirm": {
+    "supplier": "待确认",
+    "item": "待确认",
+    "consolidation_link": "待确认"
+   },
+   "consolidation_id": null,
+   "stage": "未查到",
+   "stage_source": "仅有单号，官网查询需手机后四位/验证码，未查到轨迹",
+   "last_event": "未查到轨迹",
+   "last_checked": "2026-10-22T00:57+08:00"
+  },
+  {
+   "id": "PKG-005",
+   "domestic_carrier": "公路快运(承运商待确认)",
+   "domestic_tracking_no": "11261621",
+   "supplier": "待确认",
+   "item": "待确认",
+   "hint": "Foamfresh / 抹布 / 义乌→广州",
+   "ctns": null,
+   "warehouse_ref": null,
+   "history": [],
+   "confirm": {
+    "supplier": "待确认",
+    "item": "待确认",
+    "consolidation_link": "待确认"
+   },
+   "consolidation_id": null,
+   "stage": "未查到",
+   "stage_source": "仅有单号，官网查询需手机后四位/验证码，未查到轨迹",
+   "last_event": "未查到轨迹",
+   "last_checked": "2026-10-22T00:57+08:00"
+  },
+  {
+   "id": "PKG-006",
+   "domestic_carrier": "中通快运",
+   "domestic_tracking_no": "800227256639",
+   "supplier": "待确认",
+   "item": "待确认",
+   "hint": "有机硅油厂家 / 有机硅油 / →敏感仓",
+   "ctns": null,
+   "warehouse_ref": null,
+   "history": [],
+   "confirm": {
+    "supplier": "待确认",
+    "item": "待确认",
+    "consolidation_link": "待确认"
+   },
+   "consolidation_id": null,
+   "stage": "未查到",
+   "stage_source": "仅有单号，官网查询需手机后四位/验证码，未查到轨迹",
+   "last_event": "未查到轨迹",
+   "last_checked": "2026-10-22T00:57+08:00"
+  },
+  {
+   "id": "PKG-007",
+   "domestic_carrier": "顺丰 SF",
+   "domestic_tracking_no": "SF1576224853033",
+   "supplier": "待确认",
+   "item": "待确认",
+   "hint": "凝珠厂家 / 凝珠(早前) / 早前一票",
+   "ctns": null,
+   "warehouse_ref": null,
+   "history": [],
+   "confirm": {
+    "supplier": "待确认",
+    "item": "待确认",
+    "consolidation_link": "待确认"
+   },
+   "consolidation_id": null,
+   "stage": "未查到",
+   "stage_source": "仅有单号，官网查询需手机后四位/验证码，未查到轨迹",
+   "last_event": "未查到轨迹",
+   "last_checked": "2026-10-22T00:57+08:00"
+  }
+ ],
  "shipments": [
   {
-   "id": "ORD-001",
-   "legacy_id": "AIR-001",
-   "supplier": "待确认",
-   "contents": "待确认",
-   "legs": {
-    "domestic": {
-     "carrier": "安能 ANE",
-     "tracking_no": "300656415658",
-     "status": "未查到",
-     "history": []
-    },
-    "warehouse": {
-     "warehouse_ref": "M20261017121247",
-     "mark": "ZXZ/NICK888",
-     "ctns": 2,
-     "weight": "0.8kg?(手写待核对)",
-     "status": "已入仓(有入仓号)",
-     "history": []
-    },
-    "international": {
-     "mode": "air",
-     "carrier": "DEX-i",
-     "tracking_no": "1110194686",
-     "status": "未查到（DEX 暂无记录）",
-     "history": []
-    }
-   },
-   "last_checked": "2026-10-22T00:53+08:00",
-   "note": "已入仓（入仓号 M20261017121247）；DEX 1110194686 暂无轨迹",
-   "stage": "入仓",
-   "stage_source": "有入仓号 M20261017121247（入仓凭证）；货代已分配DEX-i单号 1110194686，承运商暂无轨迹，未标出运",
-   "history": [],
-   "last_event": "已入仓（入仓号 M[已隐去]）；DEX [已隐去] 暂无轨迹",
+   "id": "CON-001",
    "mode": "air",
-   "status": "入仓",
    "carrier": "DEX-i",
    "tracking_no": "1110194686",
    "mark": "ZXZ/NICK888",
    "ctns": 2,
    "weight": "0.8kg?(手写待核对)",
-   "china_ref": "国内 安能 ANE 300656415658; 入仓号 M20261017121247"
+   "stage": "已入仓",
+   "status": "已入仓",
+   "contents": "待确认",
+   "supplier": "待确认",
+   "china_ref": "安能 ANE 300656415658 入仓号 M20261017121247",
+   "last_event": "DEX-i 1110194686 暂无轨迹",
+   "last_checked": "2026-10-22T00:57+08:00",
+   "history": []
   },
   {
-   "id": "ORD-002",
-   "legacy_id": "DOM-001",
-   "supplier": "拖鞋厂家(待核实)",
-   "contents": "拖鞋(待核实)",
-   "legs": {
-    "domestic": {
-     "carrier": "顺丰 SF",
-     "tracking_no": "SF1580887700171",
-     "status": "未查到",
-     "history": [],
-     "route": "→空运仓"
-    },
-    "warehouse": null,
-    "international": null
-   },
-   "last_checked": "2026-10-22T00:12+08:00",
-   "note": "未查到：顺丰官网查询需寄/收件人手机后四位，无法匿名查询",
-   "stage": "国内",
-   "stage_source": "仅有单号，未查到轨迹",
-   "history": [],
-   "last_event": "未查到：顺丰官网查询需寄/收件人手机后四位，无法匿名查询",
+   "id": "PKG-002",
    "mode": "domestic-pending",
-   "status": "国内",
    "carrier": "顺丰 SF",
    "tracking_no": "SF1580887700171",
    "mark": null,
    "ctns": null,
    "weight": null,
-   "china_ref": "国内 顺丰 SF SF1580887700171"
+   "stage": null,
+   "status": "未查到",
+   "contents": "待确认",
+   "supplier": "待确认",
+   "china_ref": "拖鞋厂家 / 拖鞋 / →空运仓",
+   "last_event": "未查到轨迹",
+   "last_checked": "2026-10-22T00:57+08:00",
+   "history": []
   },
   {
-   "id": "ORD-003",
-   "legacy_id": "DOM-002",
-   "supplier": "DINGDINGDING(待核实)",
-   "contents": "DINGDINGDING 货品(待核实)",
-   "legs": {
-    "domestic": {
-     "carrier": "顺丰 SF",
-     "tracking_no": "SF1580889297268",
-     "status": "未查到",
-     "history": [],
-     "route": "待寄出"
-    },
-    "warehouse": null,
-    "international": null
-   },
-   "last_checked": "2026-10-22T00:12+08:00",
-   "note": "未查到：顺丰官网查询需寄/收件人手机后四位，无法匿名查询；据报尚未寄出",
-   "stage": "国内",
-   "stage_source": "仅有单号，未查到轨迹",
-   "history": [],
-   "last_event": "未查到：顺丰官网查询需寄/收件人手机后四位，无法匿名查询；据报尚未寄出",
+   "id": "PKG-003",
    "mode": "domestic-pending",
-   "status": "国内",
    "carrier": "顺丰 SF",
    "tracking_no": "SF1580889297268",
    "mark": null,
    "ctns": null,
    "weight": null,
-   "china_ref": "国内 顺丰 SF SF1580889297268"
+   "stage": null,
+   "status": "未查到",
+   "contents": "待确认",
+   "supplier": "待确认",
+   "china_ref": "DINGDINGDING / DINGDINGDING 货品 / 待寄出",
+   "last_event": "未查到轨迹",
+   "last_checked": "2026-10-22T00:57+08:00",
+   "history": []
   },
   {
-   "id": "ORD-004",
-   "legacy_id": "DOM-003",
-   "supplier": "温州厂家(待核实)",
-   "contents": "足底仪(待核实)",
-   "legs": {
-    "domestic": {
-     "carrier": "顺丰 SF",
-     "tracking_no": "SF0207510056030",
-     "status": "未查到",
-     "history": [],
-     "route": "温州→广州"
-    },
-    "warehouse": null,
-    "international": null
-   },
-   "last_checked": "2026-10-22T00:12+08:00",
-   "note": "未查到：顺丰官网查询需寄/收件人手机后四位，无法匿名查询",
-   "stage": "国内",
-   "stage_source": "仅有单号，未查到轨迹",
-   "history": [],
-   "last_event": "未查到：顺丰官网查询需寄/收件人手机后四位，无法匿名查询",
+   "id": "PKG-004",
    "mode": "domestic-pending",
-   "status": "国内",
    "carrier": "顺丰 SF",
    "tracking_no": "SF0207510056030",
    "mark": null,
    "ctns": null,
    "weight": null,
-   "china_ref": "国内 顺丰 SF SF0207510056030"
+   "stage": null,
+   "status": "未查到",
+   "contents": "待确认",
+   "supplier": "待确认",
+   "china_ref": "温州厂家 / 足底仪 / 温州→广州",
+   "last_event": "未查到轨迹",
+   "last_checked": "2026-10-22T00:57+08:00",
+   "history": []
   },
   {
-   "id": "ORD-005",
-   "legacy_id": "DOM-004",
-   "supplier": "Foamfresh(待核实)",
-   "contents": "抹布(待核实)",
-   "legs": {
-    "domestic": {
-     "carrier": "公路快运(承运商待确认)",
-     "tracking_no": "11261621",
-     "status": "未查到",
-     "history": [],
-     "route": "义乌→广州"
-    },
-    "warehouse": null,
-    "international": null
-   },
-   "last_checked": "2026-10-22T00:12+08:00",
-   "note": "未查到：承运商未确认，无法选对应网站查询；第三方 kuaidi100 免费接口同一单号多次返回互相矛盾的结果，不可信，未采用",
-   "stage": "国内",
-   "stage_source": "仅有单号，未查到轨迹",
-   "history": [],
-   "last_event": "未查到：承运商未确认，无法选对应网站查询；第三方 kuaidi100 免费接口同一单号多次返回互相矛盾的结果，不可信，未采用",
+   "id": "PKG-005",
    "mode": "domestic-pending",
-   "status": "国内",
    "carrier": "公路快运(承运商待确认)",
    "tracking_no": "11261621",
    "mark": null,
    "ctns": null,
    "weight": null,
-   "china_ref": "国内 公路快运(承运商待确认) 11261621"
+   "stage": null,
+   "status": "未查到",
+   "contents": "待确认",
+   "supplier": "待确认",
+   "china_ref": "Foamfresh / 抹布 / 义乌→广州",
+   "last_event": "未查到轨迹",
+   "last_checked": "2026-10-22T00:57+08:00",
+   "history": []
   },
   {
-   "id": "ORD-006",
-   "legacy_id": "DOM-005",
-   "supplier": "有机硅油厂家(待核实)",
-   "contents": "有机硅油(待核实)",
-   "legs": {
-    "domestic": {
-     "carrier": "中通快运",
-     "tracking_no": "800227256639",
-     "status": "未查到",
-     "history": [],
-     "route": "→敏感仓"
-    },
-    "warehouse": null,
-    "international": null
-   },
-   "last_checked": "2026-10-22T00:12+08:00",
-   "note": "未查到：中通快运官网查询需验证码/小程序，脚本无法直查；第三方 kuaidi100 免费接口同一单号多次返回互相矛盾的结果，不可信，未采用",
-   "stage": "国内",
-   "stage_source": "仅有单号，未查到轨迹",
-   "history": [],
-   "last_event": "未查到：中通快运官网查询需验证码/小程序，脚本无法直查；第三方 kuaidi100 免费接口同一单号多次返回互相矛盾的结果，不可信，未采用",
+   "id": "PKG-006",
    "mode": "domestic-pending",
-   "status": "国内",
    "carrier": "中通快运",
    "tracking_no": "800227256639",
    "mark": null,
    "ctns": null,
    "weight": null,
-   "china_ref": "国内 中通快运 800227256639"
+   "stage": null,
+   "status": "未查到",
+   "contents": "待确认",
+   "supplier": "待确认",
+   "china_ref": "有机硅油厂家 / 有机硅油 / →敏感仓",
+   "last_event": "未查到轨迹",
+   "last_checked": "2026-10-22T00:57+08:00",
+   "history": []
   },
   {
-   "id": "ORD-007",
-   "legacy_id": "DOM-006",
-   "supplier": "凝珠厂家(待核实)",
-   "contents": "凝珠(早前)(待核实)",
-   "legs": {
-    "domestic": {
-     "carrier": "顺丰 SF",
-     "tracking_no": "SF1576224853033",
-     "status": "未查到",
-     "history": [],
-     "route": "早前一票"
-    },
-    "warehouse": null,
-    "international": null
-   },
-   "last_checked": "2026-10-22T00:12+08:00",
-   "note": "未查到：顺丰官网查询需寄/收件人手机后四位，无法匿名查询",
-   "stage": "国内",
-   "stage_source": "仅有单号，未查到轨迹",
-   "history": [],
-   "last_event": "未查到：顺丰官网查询需寄/收件人手机后四位，无法匿名查询",
+   "id": "PKG-007",
    "mode": "domestic-pending",
-   "status": "国内",
    "carrier": "顺丰 SF",
    "tracking_no": "SF1576224853033",
    "mark": null,
    "ctns": null,
    "weight": null,
-   "china_ref": "国内 顺丰 SF SF1576224853033"
+   "stage": null,
+   "status": "未查到",
+   "contents": "待确认",
+   "supplier": "待确认",
+   "china_ref": "凝珠厂家 / 凝珠(早前) / 早前一票",
+   "last_event": "未查到轨迹",
+   "last_checked": "2026-10-22T00:57+08:00",
+   "history": []
   }
- ],
- "schema_version": 2
+ ]
 }
