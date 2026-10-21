@@ -9,6 +9,7 @@ P = pathlib.Path(__file__).with_name("shipments.json")
 MYT = datetime.timezone(datetime.timedelta(hours=8))
 DEX_URL = "https://api.dex-i.com/api/f/logistics-management/tracking/list"
 CSTAGES = ["国内快递", "已入仓", "运往马来西亚", "已到马", "已签收"]
+PARCEL_FINAL = "已完成（中国本地自取）"  # parcel stage set manually; never overwritten
 PHONE = re.compile(r"\+?\d[\d\- ]{6,}\d")
 def scrub(t): return PHONE.sub("[已隐去]", str(t or ""))
 def iso(t):
@@ -50,6 +51,7 @@ def main():
         if c["mode"] == "sea": c["last_checked"] = now  # yd-wl: manual/browser placeholder
         mine = [p for p in PK if p.get("consolidation_id") == c["id"]]
         c["parcel_ids"] = [p["id"] for p in mine]
+        if c.get("stage_manual") and not c.get("history"): continue  # manual fact (e.g. Nick told us), keep until carrier events
         if c.get("history"):
             c["stage"] = CSTAGES[ev_stage(c["history"][0]["description"])]
             c["stage_source"] = f'{c["carrier"]} 返回轨迹'; c["last_event"] = f'{c["history"][0]["time"]} {c["history"][0]["description"]}'
@@ -59,8 +61,9 @@ def main():
             c["stage"] = "国内快递"; c["stage_source"] = "无入仓/轨迹证据"
     byid = {c["id"]: c for c in C}
     for p in PK:
+        if p.get("stage") == PARCEL_FINAL: p["last_checked"] = now; continue
         c = byid.get(p.get("consolidation_id"))
-        if c and CSTAGES.index(c["stage"]) > 1:
+        if c and c["stage"] in CSTAGES and CSTAGES.index(c["stage"]) > 1:
             p["stage"] = c["stage"]; p["stage_source"] = f'继承集运单 {c["id"]}'; p["last_event"] = c["last_event"]
         elif p.get("warehouse_ref"):
             p["stage"] = "已入仓"; p["stage_source"] = f'有入仓号 {p["warehouse_ref"]}'
@@ -70,11 +73,11 @@ def main():
             p["stage"] = "未查到"
         p["last_checked"] = now
     # legacy mirror for current index.html (reads d.shipments)
-    m = [dict(id=c["id"], mode=c["mode"], carrier=c["carrier"], tracking_no=c["tracking_no"], mark=c["mark"], ctns=c["ctns"],
-              weight=c["weight"], stage=c["stage"], status=c["stage"], contents="待确认", supplier="待确认",
+    m = [dict(id=c["id"], forwarder=c.get("forwarder"), mode=c["mode"], carrier=c["carrier"], tracking_no=c["tracking_no"], mark=c["mark"], ctns=c["ctns"],
+              weight=c["weight"], stage=c["stage"], status=c["stage"], contents=c.get("item", "待确认"), supplier="待确认",
               china_ref="; ".join(f'{p["domestic_carrier"]} {p["domestic_tracking_no"]}' + (f' 入仓号 {p["warehouse_ref"]}' if p.get("warehouse_ref") else "") for p in PK if p.get("consolidation_id") == c["id"]),
               last_event=c.get("last_event"), last_checked=c["last_checked"], history=c.get("history", [])) for c in C]
-    m += [dict(id=p["id"], mode="domestic-pending", carrier=p["domestic_carrier"], tracking_no=p["domestic_tracking_no"], mark=None, ctns=p.get("ctns"),
+    m += [dict(id=p["id"], forwarder=p.get("forwarder"), mode="domestic-pending", carrier=p["domestic_carrier"], tracking_no=p["domestic_tracking_no"], mark=None, ctns=p.get("ctns"),
                weight=None, stage=None, status=p["stage"], contents=p["item"], supplier=p["supplier"], china_ref=p.get("hint"),
                last_event=p.get("last_event"), last_checked=p["last_checked"], history=p.get("history", [])) for p in PK if not p.get("consolidation_id")]
     d["shipments"] = m

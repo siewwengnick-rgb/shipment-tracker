@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-22 00:57 MYT",
+ "updated": "2026-10-22 01:00 MYT",
  "schema_version": 3,
  "consolidations": [
   {
@@ -13,11 +13,30 @@
    "stage": "已入仓",
    "stage_source": "所含包裹有入仓号；承运商暂无轨迹",
    "last_event": "DEX-i 1110194686 暂无轨迹",
-   "last_checked": "2026-10-22T00:57+08:00",
+   "last_checked": "2026-10-22T01:00+08:00",
    "history": [],
    "parcel_ids": [
     "PKG-001"
-   ]
+   ],
+   "forwarder": "云第 yd-wl"
+  },
+  {
+   "id": "CON-002",
+   "forwarder": "零零九国际物流",
+   "mode": "sea",
+   "carrier": "待查",
+   "tracking_no": null,
+   "ctns": null,
+   "weight": null,
+   "mark": null,
+   "item": "白色大桶 (打木箱中)",
+   "stage": "已入仓",
+   "stage_manual": true,
+   "stage_source": "Nick 2026-10-22 告知已在仓打木箱",
+   "last_event": "正在打木箱，预计约 2026-10-23 出运（Nick 10-22 告知）",
+   "last_checked": "2026-10-22T01:00+08:00",
+   "history": [],
+   "parcel_ids": []
   }
  ],
  "parcels": [
@@ -40,7 +59,8 @@
    "stage": "已入仓",
    "stage_source": "有入仓号 M20261017121247",
    "last_event": "已入仓，随 CON-001 待出运",
-   "last_checked": "2026-10-22T00:57+08:00"
+   "last_checked": "2026-10-22T01:00+08:00",
+   "forwarder": "云第 yd-wl"
   },
   {
    "id": "PKG-002",
@@ -61,7 +81,8 @@
    "stage": "未查到",
    "stage_source": "仅有单号，官网查询需手机后四位/验证码，未查到轨迹",
    "last_event": "未查到轨迹",
-   "last_checked": "2026-10-22T00:57+08:00"
+   "last_checked": "2026-10-22T01:00+08:00",
+   "forwarder": "云第 yd-wl(待确认)"
   },
   {
    "id": "PKG-003",
@@ -82,7 +103,8 @@
    "stage": "未查到",
    "stage_source": "仅有单号，官网查询需手机后四位/验证码，未查到轨迹",
    "last_event": "未查到轨迹",
-   "last_checked": "2026-10-22T00:57+08:00"
+   "last_checked": "2026-10-22T01:00+08:00",
+   "forwarder": "待确认"
   },
   {
    "id": "PKG-004",
@@ -103,7 +125,8 @@
    "stage": "未查到",
    "stage_source": "仅有单号，官网查询需手机后四位/验证码，未查到轨迹",
    "last_event": "未查到轨迹",
-   "last_checked": "2026-10-22T00:57+08:00"
+   "last_checked": "2026-10-22T01:00+08:00",
+   "forwarder": "待确认"
   },
   {
    "id": "PKG-005",
@@ -124,7 +147,8 @@
    "stage": "未查到",
    "stage_source": "仅有单号，官网查询需手机后四位/验证码，未查到轨迹",
    "last_event": "未查到轨迹",
-   "last_checked": "2026-10-22T00:57+08:00"
+   "last_checked": "2026-10-22T01:00+08:00",
+   "forwarder": "待确认"
   },
   {
    "id": "PKG-006",
@@ -145,7 +169,8 @@
    "stage": "未查到",
    "stage_source": "仅有单号，官网查询需手机后四位/验证码，未查到轨迹",
    "last_event": "未查到轨迹",
-   "last_checked": "2026-10-22T00:57+08:00"
+   "last_checked": "2026-10-22T01:00+08:00",
+   "forwarder": "零零九国际物流(待确认)"
   },
   {
    "id": "PKG-007",
@@ -166,12 +191,14 @@
    "stage": "未查到",
    "stage_source": "仅有单号，官网查询需手机后四位/验证码，未查到轨迹",
    "last_event": "未查到轨迹",
-   "last_checked": "2026-10-22T00:57+08:00"
+   "last_checked": "2026-10-22T01:00+08:00",
+   "forwarder": "待确认"
   }
  ],
  "shipments": [
   {
    "id": "CON-001",
+   "forwarder": "云第 yd-wl",
    "mode": "air",
    "carrier": "DEX-i",
    "tracking_no": "1110194686",
@@ -184,11 +211,30 @@
    "supplier": "待确认",
    "china_ref": "安能 ANE 300656415658 入仓号 M20261017121247",
    "last_event": "DEX-i 1110194686 暂无轨迹",
-   "last_checked": "2026-10-22T00:57+08:00",
+   "last_checked": "2026-10-22T01:00+08:00",
+   "history": []
+  },
+  {
+   "id": "CON-002",
+   "forwarder": "零零九国际物流",
+   "mode": "sea",
+   "carrier": "待查",
+   "tracking_no": null,
+   "mark": null,
+   "ctns": null,
+   "weight": null,
+   "stage": "已入仓",
+   "status": "已入仓",
+   "contents": "白色大桶 (打木箱中)",
+   "supplier": "待确认",
+   "china_ref": "",
+   "last_event": "正在打木箱，预计约 2026-10-23 出运（Nick 10-22 告知）",
+   "last_checked": "2026-10-22T01:00+08:00",
    "history": []
   },
   {
    "id": "PKG-002",
+   "forwarder": "云第 yd-wl(待确认)",
    "mode": "domestic-pending",
    "carrier": "顺丰 SF",
    "tracking_no": "SF1580887700171",
@@ -201,11 +247,12 @@
    "supplier": "待确认",
    "china_ref": "拖鞋厂家 / 拖鞋 / →空运仓",
    "last_event": "未查到轨迹",
-   "last_checked": "2026-10-22T00:57+08:00",
+   "last_checked": "2026-10-22T01:00+08:00",
    "history": []
   },
   {
    "id": "PKG-003",
+   "forwarder": "待确认",
    "mode": "domestic-pending",
    "carrier": "顺丰 SF",
    "tracking_no": "SF1580889297268",
@@ -218,11 +265,12 @@
    "supplier": "待确认",
    "china_ref": "DINGDINGDING / DINGDINGDING 货品 / 待寄出",
    "last_event": "未查到轨迹",
-   "last_checked": "2026-10-22T00:57+08:00",
+   "last_checked": "2026-10-22T01:00+08:00",
    "history": []
   },
   {
    "id": "PKG-004",
+   "forwarder": "待确认",
    "mode": "domestic-pending",
    "carrier": "顺丰 SF",
    "tracking_no": "SF0207510056030",
@@ -235,11 +283,12 @@
    "supplier": "待确认",
    "china_ref": "温州厂家 / 足底仪 / 温州→广州",
    "last_event": "未查到轨迹",
-   "last_checked": "2026-10-22T00:57+08:00",
+   "last_checked": "2026-10-22T01:00+08:00",
    "history": []
   },
   {
    "id": "PKG-005",
+   "forwarder": "待确认",
    "mode": "domestic-pending",
    "carrier": "公路快运(承运商待确认)",
    "tracking_no": "11261621",
@@ -252,11 +301,12 @@
    "supplier": "待确认",
    "china_ref": "Foamfresh / 抹布 / 义乌→广州",
    "last_event": "未查到轨迹",
-   "last_checked": "2026-10-22T00:57+08:00",
+   "last_checked": "2026-10-22T01:00+08:00",
    "history": []
   },
   {
    "id": "PKG-006",
+   "forwarder": "零零九国际物流(待确认)",
    "mode": "domestic-pending",
    "carrier": "中通快运",
    "tracking_no": "800227256639",
@@ -269,11 +319,12 @@
    "supplier": "待确认",
    "china_ref": "有机硅油厂家 / 有机硅油 / →敏感仓",
    "last_event": "未查到轨迹",
-   "last_checked": "2026-10-22T00:57+08:00",
+   "last_checked": "2026-10-22T01:00+08:00",
    "history": []
   },
   {
    "id": "PKG-007",
+   "forwarder": "待确认",
    "mode": "domestic-pending",
    "carrier": "顺丰 SF",
    "tracking_no": "SF1576224853033",
@@ -286,8 +337,30 @@
    "supplier": "待确认",
    "china_ref": "凝珠厂家 / 凝珠(早前) / 早前一票",
    "last_event": "未查到轨迹",
-   "last_checked": "2026-10-22T00:57+08:00",
+   "last_checked": "2026-10-22T01:00+08:00",
    "history": []
+  }
+ ],
+ "forwarders": [
+  {
+   "name": "云第 yd-wl",
+   "group": "CC SDN BHD 运输",
+   "tracking": "海运 yd-wl.com / 空运 DEX api.dex-i.com"
+  },
+  {
+   "name": "零零九国际物流",
+   "group": "敏感货海运（马来西亚）",
+   "tracking": "待查",
+   "note": "敏感货"
+  },
+  {
+   "name": "中国本地自取",
+   "group": null,
+   "tracking": "不转运",
+   "note": "寄往中国酒店自取"
+  },
+  {
+   "name": "待确认"
   }
  ]
 }
