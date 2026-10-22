@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-22 01:05 MYT",
+ "updated": "2026-10-22 10:02 MYT",
  "schema_version": 3,
  "consolidations": [
   {
@@ -13,7 +13,7 @@
    "stage": "已入仓",
    "stage_source": "所含包裹有入仓号；承运商暂无轨迹",
    "last_event": "DEX-i 1110194686 暂无轨迹",
-   "last_checked": "2026-10-22T01:04+08:00",
+   "last_checked": "2026-10-22T10:02+08:00",
    "history": [],
    "parcel_ids": [
     "PKG-001"
@@ -34,7 +34,7 @@
    "stage_manual": true,
    "stage_source": "Nick 2026-10-22 告知已在仓打木箱",
    "last_event": "正在打木箱，预计约 2026-10-23 出运（Nick 10-22 告知）",
-   "last_checked": "2026-10-22T01:04+08:00",
+   "last_checked": "2026-10-22T10:02+08:00",
    "history": [],
    "parcel_ids": []
   }
@@ -59,7 +59,7 @@
    "stage": "已入仓",
    "stage_source": "有入仓号 M20261017121247",
    "last_event": "已入仓，随 CON-001 待出运",
-   "last_checked": "2026-10-22T01:04+08:00",
+   "last_checked": "2026-10-22T10:02+08:00",
    "forwarder": "云第 yd-wl"
   },
   {
@@ -81,7 +81,7 @@
    "stage": "未查到",
    "stage_source": "仅有单号，官网查询需手机后四位/验证码，未查到轨迹",
    "last_event": "未查到轨迹",
-   "last_checked": "2026-10-22T01:04+08:00",
+   "last_checked": "2026-10-22T10:02+08:00",
    "forwarder": "云第 yd-wl(待确认)"
   },
   {
@@ -103,7 +103,7 @@
    "stage": "未查到",
    "stage_source": "仅有单号，官网查询需手机后四位/验证码，未查到轨迹",
    "last_event": "未查到轨迹",
-   "last_checked": "2026-10-22T01:04+08:00",
+   "last_checked": "2026-10-22T10:02+08:00",
    "forwarder": "待确认"
   },
   {
@@ -125,7 +125,7 @@
    "stage": "未查到",
    "stage_source": "仅有单号，官网查询需手机后四位/验证码，未查到轨迹",
    "last_event": "未查到轨迹",
-   "last_checked": "2026-10-22T01:04+08:00",
+   "last_checked": "2026-10-22T10:02+08:00",
    "forwarder": "待确认"
   },
   {
@@ -147,7 +147,7 @@
    "stage": "未查到",
    "stage_source": "仅有单号，官网查询需手机后四位/验证码，未查到轨迹",
    "last_event": "未查到轨迹",
-   "last_checked": "2026-10-22T01:04+08:00",
+   "last_checked": "2026-10-22T10:02+08:00",
    "forwarder": "待确认"
   },
   {
@@ -169,7 +169,7 @@
    "stage": "未查到",
    "stage_source": "仅有单号，官网查询需手机后四位/验证码，未查到轨迹",
    "last_event": "未查到轨迹",
-   "last_checked": "2026-10-22T01:04+08:00",
+   "last_checked": "2026-10-22T10:02+08:00",
    "forwarder": "零零九国际物流(待确认)"
   },
   {
@@ -191,7 +191,7 @@
    "stage": "未查到",
    "stage_source": "仅有单号，官网查询需手机后四位/验证码，未查到轨迹",
    "last_event": "未查到轨迹",
-   "last_checked": "2026-10-22T01:04+08:00",
+   "last_checked": "2026-10-22T10:02+08:00",
    "forwarder": "待确认"
   }
  ],
