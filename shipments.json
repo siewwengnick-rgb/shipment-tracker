@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-23 13:27 MYT",
+ "updated": "2026-10-23 13:32 MYT",
  "schema_version": 3,
  "consolidations": [
   {
@@ -13,7 +13,7 @@
    "stage": "已入仓",
    "stage_source": "所含包裹有入仓号；承运商暂无轨迹",
    "last_event": "DEX-i 1110194686 暂无轨迹",
-   "last_checked": "2026-10-23T13:27+08:00",
+   "last_checked": "2026-10-23T13:32+08:00",
    "history": [],
    "parcel_ids": [
     "PKG-001"
@@ -34,9 +34,10 @@
    "stage_manual": true,
    "stage_source": "Nick 2026-10-22 告知已在仓打木箱",
    "last_event": "正在打木箱，预计约 2026-10-23 出运（Nick 10-22 告知）",
-   "last_checked": "2026-10-23T13:27+08:00",
+   "last_checked": "2026-10-23T13:32+08:00",
    "history": [],
-   "parcel_ids": []
+   "parcel_ids": [],
+   "note": "零零九 10/21 发照片说打好木箱后天出（约 10/23），照片无单号"
   }
  ],
  "parcels": [
@@ -59,7 +60,7 @@
    "stage": "已入仓",
    "stage_source": "有入仓号 M20261017121247",
    "last_event": "已入仓，随 CON-001 待出运",
-   "last_checked": "2026-10-23T13:27+08:00",
+   "last_checked": "2026-10-23T13:32+08:00",
    "forwarder": "云第 yd-wl",
    "evidence": "无"
   },
@@ -82,7 +83,7 @@
    "stage": "未查到",
    "stage_source": "仅有单号，官网查询需手机后四位/验证码，未查到轨迹",
    "last_event": "未查到轨迹",
-   "last_checked": "2026-10-23T13:27+08:00",
+   "last_checked": "2026-10-23T13:32+08:00",
    "forwarder": "云第 yd-wl(待确认)",
    "weight": "1KG",
    "note": "CC群后附一张 DEX 单，看似 11101941686（可能即 1110194686，待核实）",
@@ -107,7 +108,7 @@
    "stage": "未查到",
    "stage_source": "仅有单号，官网查询需手机后四位/验证码，未查到轨迹",
    "last_event": "未查到轨迹",
-   "last_checked": "2026-10-23T13:27+08:00",
+   "last_checked": "2026-10-23T13:32+08:00",
    "forwarder": "云第 yd-wl(待确认)",
    "evidence": "旧笔记（未重核）"
   },
@@ -130,7 +131,7 @@
    "stage": "已入仓",
    "stage_source": "CC群 10-21 到仓运单照，箱唛 WM00668",
    "last_event": "已到云第仓（CC群 10-21 22:08）",
-   "last_checked": "2026-10-23T13:27+08:00",
+   "last_checked": "2026-10-23T13:32+08:00",
    "forwarder": "云第 yd-wl",
    "weight": "3.3KG",
    "note": "Nick 说走空运，集运单待确认",
@@ -156,7 +157,7 @@
    "stage": "未查到",
    "stage_source": "仅有单号，官网查询需手机后四位/验证码，未查到轨迹",
    "last_event": "未查到轨迹",
-   "last_checked": "2026-10-23T13:27+08:00",
+   "last_checked": "2026-10-23T13:32+08:00",
    "forwarder": "零零九国际物流(待确认)",
    "evidence": "旧笔记（未重核）"
   },
@@ -164,7 +165,7 @@
    "id": "PKG-006",
    "domestic_carrier": "中通快运",
    "domestic_tracking_no": "800227256639",
-   "supplier": "待确认",
+   "supplier": "扬州厂家(待确认)",
    "item": "待确认",
    "hint": "有机硅油厂家 / 有机硅油 / →敏感仓",
    "ctns": null,
@@ -176,12 +177,14 @@
     "consolidation_link": "待确认"
    },
    "consolidation_id": null,
-   "stage": "未查到",
-   "stage_source": "仅有单号，官网查询需手机后四位/验证码，未查到轨迹",
-   "last_event": "未查到轨迹",
-   "last_checked": "2026-10-23T13:27+08:00",
-   "forwarder": "待确认",
-   "evidence": "无"
+   "stage": "国内运输中",
+   "stage_source": "敏感货群 10/19 截图",
+   "last_event": "10/19 扬州揽收，寄往广州零零九；厂家说与另一票一起海运",
+   "last_checked": "2026-10-23T13:32+08:00",
+   "forwarder": "零零九国际物流",
+   "evidence": "微信截图",
+   "stage_manual": true,
+   "note": "是否即 CON-002 白色大桶待确认"
   },
   {
    "id": "PKG-007",
@@ -202,7 +205,7 @@
    "stage": "已完成（中国本地自取）",
    "stage_source": "微信跟进 10-23 核对",
    "last_event": "Nick 已在中国酒店自取（微信跟进 10-23 核对）",
-   "last_checked": "2026-10-23T13:27+08:00",
+   "last_checked": "2026-10-23T13:32+08:00",
    "forwarder": "中国本地自取",
    "evidence": "微信截图"
   },
@@ -228,7 +231,30 @@
    "forwarder": "待确认",
    "note": "旧入仓号 M202609282018586 待确认指哪一票",
    "evidence": "无",
-   "last_checked": "2026-10-23T13:27+08:00"
+   "last_checked": "2026-10-23T13:32+08:00"
+  },
+  {
+   "id": "PKG-009",
+   "domestic_carrier": "圆通 YTO",
+   "domestic_tracking_no": "YT7647523186976",
+   "supplier": "待确认",
+   "item": "待确认",
+   "hint": null,
+   "ctns": null,
+   "warehouse_ref": null,
+   "history": [],
+   "confirm": {
+    "supplier": "待确认",
+    "item": "待确认",
+    "consolidation_link": "待确认"
+   },
+   "consolidation_id": null,
+   "stage": "未查到",
+   "stage_source": "CC群 10/17 出现，未查轨迹",
+   "last_event": "未查到轨迹",
+   "forwarder": "云第 yd-wl(待确认)",
+   "evidence": "微信截图",
+   "last_checked": "2026-10-23T13:32+08:00"
   }
  ],
  "forwarders": [
