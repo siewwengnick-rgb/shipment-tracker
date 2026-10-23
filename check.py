@@ -21,18 +21,21 @@ def iso(t):
     return str(t)
 def ev_stage(desc):
     t = desc or ""
-    if "签收" in t: return 4
+    if "签收" in t or "派送完成" in t: return 4
     if any(k in t for k in ("清关", "海关", "到达马", "派送", "派件", "Malaysia", "KUL", "吉隆坡")): return 3
     return 2  # any forwarder event => 运往马来西亚
 def dex(nos):
     req = urllib.request.Request(DEX_URL, data=json.dumps(nos).encode(), headers={"Content-Type": "application/json"})
     r = json.load(urllib.request.urlopen(req, timeout=40))
     return (r.get("data") or r.get("result") or []) if isinstance(r, dict) else r
+def dex_time(t):
+    try: return datetime.datetime.fromisoformat(str(t).replace("Z", "+00:00")).astimezone(MYT).isoformat()
+    except Exception: return iso(t)
 def dex_events(r):
-    ev = r.get("trackingDetails") or r.get("details") or r.get("items") or r.get("traces") or []
-    out = [{"time": iso(e.get("time") or e.get("trackTime") or e.get("date")),
-            "location": scrub(e.get("location") or e.get("city") or ""),
-            "description": scrub(e.get("description") or e.get("context") or e.get("content") or e.get("status") or ""),
+    ev = r.get("trackingItemList") or r.get("trackingDetails") or r.get("details") or r.get("items") or []
+    out = [{"time": dex_time(e.get("actionTime") or e.get("time")),
+            "location": scrub(e.get("location") or ""),
+            "description": scrub(" ".join(x for x in [e.get("displayStatus") or e.get("description") or "", e.get("remark") or ""] if x).strip()),
             "source": "DEX api.dex-i.com"} for e in ev if isinstance(e, dict)] if isinstance(ev, list) else []
     return sorted(out, key=lambda x: x["time"] or "", reverse=True)
 def main():
