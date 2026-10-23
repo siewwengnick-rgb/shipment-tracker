@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-23 14:13 MYT",
+ "updated": "2026-10-23 16:09 MYT",
  "schema_version": 3,
  "consolidations": [
   {
@@ -13,7 +13,7 @@
    "stage": "运往马来西亚",
    "stage_source": "DEX-i 返回轨迹",
    "last_event": "2026-10-23T14:20:00+08:00 预计航班到达时间",
-   "last_checked": "2026-10-23T14:13+08:00",
+   "last_checked": "2026-10-23T16:09+08:00",
    "history": [
     {
      "time": "2026-10-23T14:20:00+08:00",
@@ -61,7 +61,7 @@
    "stage_manual": true,
    "stage_source": "Nick 2026-10-22 告知已在仓打木箱",
    "last_event": "正在打木箱，预计约 2026-10-23 出运（Nick 10-22 告知）",
-   "last_checked": "2026-10-23T14:13+08:00",
+   "last_checked": "2026-10-23T16:09+08:00",
    "history": [],
    "parcel_ids": [],
    "note": "零零九 10/21 发照片说打好木箱后天出（约 10/23），照片无单号"
@@ -79,7 +79,7 @@
    "item": "墨粉盒（据群聊语境）",
    "stage": "已签收",
    "last_event": "2026-10-19T10:24:00+08:00 派送完成 已签收，感谢您选择，期待再次为您服务！",
-   "last_checked": "2026-10-23T14:13+08:00",
+   "last_checked": "2026-10-23T16:09+08:00",
    "history": [
     {
      "time": "2026-10-19T10:24:00+08:00",
@@ -173,7 +173,7 @@
    "stage_manual": true,
    "stage_source": "云第 yd-wl 海运 返回轨迹",
    "last_event": "2026-10-13T16:42:48+08:00 已开船预计10-17到港",
-   "last_checked": "2026-10-23T14:13+08:00",
+   "last_checked": "2026-10-23T16:09+08:00",
    "evidence": "微信照片",
    "parcel_ids": [
     "PKG-009"
@@ -246,7 +246,7 @@
    "stage": "已入仓",
    "stage_source": "安能签收联+入仓标签照片 cc-9/cc-10",
    "last_event": "2026-10-06 13:12 安能签收（到云第仓），入仓号 M202610171212247",
-   "last_checked": "2026-10-23T14:13+08:00",
+   "last_checked": "2026-10-23T16:09+08:00",
    "forwarder": "云第 yd-wl",
    "evidence": "微信照片",
    "corrected_from": {
@@ -278,7 +278,7 @@
    "stage": "已入仓",
    "stage_source": "CC群 10/20",
    "last_event": "10/20 已到云第空运仓（CC群）",
-   "last_checked": "2026-10-23T14:13+08:00",
+   "last_checked": "2026-10-23T16:09+08:00",
    "forwarder": "云第 yd-wl",
    "weight": "1KG",
    "note": "CC群后附一张 DEX 单，看似 11101941686（可能即 1110194686，待核实）",
@@ -304,7 +304,7 @@
    "stage": "已入仓",
    "stage_source": "Nick 确认（10-23）",
    "last_event": "已到云第；Nick 定走海运寄 Puchong（10-23）",
-   "last_checked": "2026-10-23T14:13+08:00",
+   "last_checked": "2026-10-23T16:09+08:00",
    "forwarder": "云第 yd-wl",
    "evidence": "Nick 确认",
    "weight": "8.3KG",
@@ -330,7 +330,7 @@
    "stage": "已入仓",
    "stage_source": "CC群 10-21 到仓运单照，箱唛 WM00668",
    "last_event": "已到云第仓（CC群 10-21 22:08）",
-   "last_checked": "2026-10-23T14:13+08:00",
+   "last_checked": "2026-10-23T16:09+08:00",
    "forwarder": "云第 yd-wl",
    "weight": "3.3KG",
    "note": "Nick 说走空运，集运单待确认",
@@ -356,7 +356,7 @@
    "stage": "未查到",
    "stage_source": "仅有单号，官网查询需手机后四位/验证码，未查到轨迹",
    "last_event": "未查到轨迹",
-   "last_checked": "2026-10-23T14:13+08:00",
+   "last_checked": "2026-10-23T16:09+08:00",
    "forwarder": "零零九国际物流(待确认)",
    "evidence": "旧笔记（未重核）"
   },
@@ -379,7 +379,7 @@
    "stage": "国内运输中",
    "stage_source": "敏感货群 10/19 截图",
    "last_event": "10/19 扬州揽收，寄往广州零零九；厂家说与另一票一起海运",
-   "last_checked": "2026-10-23T14:13+08:00",
+   "last_checked": "2026-10-23T16:09+08:00",
    "forwarder": "零零九国际物流",
    "evidence": "微信截图",
    "stage_manual": true,
@@ -404,7 +404,7 @@
    "stage": "已完成（中国本地自取）",
    "stage_source": "微信跟进 10-23 核对",
    "last_event": "Nick 已在中国酒店自取（微信跟进 10-23 核对）",
-   "last_checked": "2026-10-23T14:13+08:00",
+   "last_checked": "2026-10-23T16:09+08:00",
    "forwarder": "中国本地自取",
    "evidence": "微信截图"
   },
@@ -430,7 +430,7 @@
    "forwarder": "待确认",
    "note": "旧入仓号 M202609282018586（9/28 照片，CTNS 2-0）；是否 WM00668 待确认",
    "evidence": "微信照片",
-   "last_checked": "2026-10-23T14:13+08:00",
+   "last_checked": "2026-10-23T16:09+08:00",
    "mark": "ZXZ/NICK88"
   },
   {
@@ -454,7 +454,7 @@
    "last_event": "2026-10-13T16:42:48+08:00 已开船预计10-17到港",
    "forwarder": "云第 yd-wl",
    "evidence": "微信照片",
-   "last_checked": "2026-10-23T14:13+08:00",
+   "last_checked": "2026-10-23T16:09+08:00",
    "mark": "ZXZ/NICK885"
   },
   {
@@ -479,7 +479,7 @@
    "forwarder": "待确认",
    "evidence": "微信截图",
    "note": "10/16 群聊提及",
-   "last_checked": "2026-10-23T14:13+08:00"
+   "last_checked": "2026-10-23T16:09+08:00"
   },
   {
    "id": "PKG-011",
@@ -512,7 +512,7 @@
    "forwarder": "云第 yd-wl",
    "evidence": "微信照片",
    "note": "仓库说没代号；Nick 定空运寄马来（10-23）",
-   "last_checked": "2026-10-23T14:13+08:00"
+   "last_checked": "2026-10-23T16:09+08:00"
   }
  ],
  "forwarders": [
