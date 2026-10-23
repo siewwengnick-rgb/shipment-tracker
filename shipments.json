@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-23 10:06 MYT",
+ "updated": "2026-10-23 13:27 MYT",
  "schema_version": 3,
  "consolidations": [
   {
@@ -13,7 +13,7 @@
    "stage": "已入仓",
    "stage_source": "所含包裹有入仓号；承运商暂无轨迹",
    "last_event": "DEX-i 1110194686 暂无轨迹",
-   "last_checked": "2026-10-23T10:06+08:00",
+   "last_checked": "2026-10-23T13:27+08:00",
    "history": [],
    "parcel_ids": [
     "PKG-001"
@@ -34,7 +34,7 @@
    "stage_manual": true,
    "stage_source": "Nick 2026-10-22 告知已在仓打木箱",
    "last_event": "正在打木箱，预计约 2026-10-23 出运（Nick 10-22 告知）",
-   "last_checked": "2026-10-23T10:06+08:00",
+   "last_checked": "2026-10-23T13:27+08:00",
    "history": [],
    "parcel_ids": []
   }
@@ -59,36 +59,40 @@
    "stage": "已入仓",
    "stage_source": "有入仓号 M20261017121247",
    "last_event": "已入仓，随 CON-001 待出运",
-   "last_checked": "2026-10-23T10:06+08:00",
-   "forwarder": "云第 yd-wl"
+   "last_checked": "2026-10-23T13:27+08:00",
+   "forwarder": "云第 yd-wl",
+   "evidence": "无"
   },
   {
    "id": "PKG-002",
    "domestic_carrier": "顺丰 SF",
    "domestic_tracking_no": "SF1580887700171",
-   "supplier": "待确认",
-   "item": "待确认",
+   "supplier": "拖鞋会",
+   "item": "样品拖鞋 每色一双 34-35",
    "hint": "拖鞋厂家 / 拖鞋 / →空运仓",
    "ctns": null,
    "warehouse_ref": null,
    "history": [],
    "confirm": {
-    "supplier": "待确认",
-    "item": "待确认",
+    "supplier": "已确认",
+    "item": "已确认",
     "consolidation_link": "待确认"
    },
    "consolidation_id": null,
    "stage": "未查到",
    "stage_source": "仅有单号，官网查询需手机后四位/验证码，未查到轨迹",
    "last_event": "未查到轨迹",
-   "last_checked": "2026-10-23T10:06+08:00",
-   "forwarder": "云第 yd-wl(待确认)"
+   "last_checked": "2026-10-23T13:27+08:00",
+   "forwarder": "云第 yd-wl(待确认)",
+   "weight": "1KG",
+   "note": "CC群后附一张 DEX 单，看似 11101941686（可能即 1110194686，待核实）",
+   "evidence": "微信截图"
   },
   {
    "id": "PKG-003",
    "domestic_carrier": "顺丰 SF",
    "domestic_tracking_no": "SF1580889297268",
-   "supplier": "待确认",
+   "supplier": "DINGDINGDING(待确认)",
    "item": "待确认",
    "hint": "DINGDINGDING / DINGDINGDING 货品 / 待寄出",
    "ctns": null,
@@ -103,37 +107,42 @@
    "stage": "未查到",
    "stage_source": "仅有单号，官网查询需手机后四位/验证码，未查到轨迹",
    "last_event": "未查到轨迹",
-   "last_checked": "2026-10-23T10:06+08:00",
-   "forwarder": "待确认"
+   "last_checked": "2026-10-23T13:27+08:00",
+   "forwarder": "云第 yd-wl(待确认)",
+   "evidence": "旧笔记（未重核）"
   },
   {
    "id": "PKG-004",
    "domestic_carrier": "顺丰 SF",
    "domestic_tracking_no": "SF0207510056030",
-   "supplier": "待确认",
-   "item": "待确认",
+   "supplier": "温州鞋垫厂(OT)",
+   "item": "脚压分析仪(维修)",
    "hint": "温州厂家 / 足底仪 / 温州→广州",
    "ctns": null,
-   "warehouse_ref": null,
+   "warehouse_ref": "WM00668 (箱唛)",
    "history": [],
    "confirm": {
-    "supplier": "待确认",
-    "item": "待确认",
+    "supplier": "已确认",
+    "item": "已确认",
     "consolidation_link": "待确认"
    },
    "consolidation_id": null,
-   "stage": "未查到",
-   "stage_source": "仅有单号，官网查询需手机后四位/验证码，未查到轨迹",
-   "last_event": "未查到轨迹",
-   "last_checked": "2026-10-23T10:06+08:00",
-   "forwarder": "待确认"
+   "stage": "已入仓",
+   "stage_source": "CC群 10-21 到仓运单照，箱唛 WM00668",
+   "last_event": "已到云第仓（CC群 10-21 22:08）",
+   "last_checked": "2026-10-23T13:27+08:00",
+   "forwarder": "云第 yd-wl",
+   "weight": "3.3KG",
+   "note": "Nick 说走空运，集运单待确认",
+   "evidence": "微信截图",
+   "stage_manual": true
   },
   {
    "id": "PKG-005",
    "domestic_carrier": "公路快运(承运商待确认)",
    "domestic_tracking_no": "11261621",
-   "supplier": "待确认",
-   "item": "待确认",
+   "supplier": "Foamfresh 抹布厂(待确认)",
+   "item": "抹布 10件",
    "hint": "Foamfresh / 抹布 / 义乌→广州",
    "ctns": null,
    "warehouse_ref": null,
@@ -147,8 +156,9 @@
    "stage": "未查到",
    "stage_source": "仅有单号，官网查询需手机后四位/验证码，未查到轨迹",
    "last_event": "未查到轨迹",
-   "last_checked": "2026-10-23T10:06+08:00",
-   "forwarder": "待确认"
+   "last_checked": "2026-10-23T13:27+08:00",
+   "forwarder": "零零九国际物流(待确认)",
+   "evidence": "旧笔记（未重核）"
   },
   {
    "id": "PKG-006",
@@ -169,18 +179,42 @@
    "stage": "未查到",
    "stage_source": "仅有单号，官网查询需手机后四位/验证码，未查到轨迹",
    "last_event": "未查到轨迹",
-   "last_checked": "2026-10-23T10:06+08:00",
-   "forwarder": "零零九国际物流(待确认)"
+   "last_checked": "2026-10-23T13:27+08:00",
+   "forwarder": "待确认",
+   "evidence": "无"
   },
   {
    "id": "PKG-007",
    "domestic_carrier": "顺丰 SF",
    "domestic_tracking_no": "SF1576224853033",
-   "supplier": "待确认",
-   "item": "待确认",
-   "hint": "凝珠厂家 / 凝珠(早前) / 早前一票",
+   "supplier": "凝珠时代",
+   "item": "洗衣凝珠(样品，待确认)",
+   "hint": null,
    "ctns": null,
    "warehouse_ref": null,
+   "history": [],
+   "confirm": {
+    "supplier": "已确认",
+    "item": "待确认",
+    "consolidation_link": "不转运"
+   },
+   "consolidation_id": null,
+   "stage": "已完成（中国本地自取）",
+   "stage_source": "微信跟进 10-23 核对",
+   "last_event": "Nick 已在中国酒店自取（微信跟进 10-23 核对）",
+   "last_checked": "2026-10-23T13:27+08:00",
+   "forwarder": "中国本地自取",
+   "evidence": "微信截图"
+  },
+  {
+   "id": "PKG-008",
+   "domestic_carrier": "待确认",
+   "domestic_tracking_no": null,
+   "supplier": "待确认",
+   "item": "待确认",
+   "hint": null,
+   "ctns": null,
+   "warehouse_ref": "M202609282018586",
    "history": [],
    "confirm": {
     "supplier": "待确认",
@@ -188,11 +222,13 @@
     "consolidation_link": "待确认"
    },
    "consolidation_id": null,
-   "stage": "未查到",
-   "stage_source": "仅有单号，官网查询需手机后四位/验证码，未查到轨迹",
-   "last_event": "未查到轨迹",
-   "last_checked": "2026-10-23T10:06+08:00",
-   "forwarder": "待确认"
+   "stage": "已入仓",
+   "stage_source": "有入仓号 M202609282018586",
+   "last_event": "旧入仓号 M202609282018586 待确认指哪一票",
+   "forwarder": "待确认",
+   "note": "旧入仓号 M202609282018586 待确认指哪一票",
+   "evidence": "无",
+   "last_checked": "2026-10-23T13:27+08:00"
   }
  ],
  "forwarders": [

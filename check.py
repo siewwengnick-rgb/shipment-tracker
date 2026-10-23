@@ -61,7 +61,7 @@ def main():
             c["stage"] = "国内快递"; c["stage_source"] = "无入仓/轨迹证据"
     byid = {c["id"]: c for c in C}
     for p in PK:
-        if p.get("stage") == PARCEL_FINAL: p["last_checked"] = now; continue
+        if p.get("stage") == PARCEL_FINAL or p.get("stage_manual"): p["last_checked"] = now; continue  # manual fields never overwritten
         c = byid.get(p.get("consolidation_id"))
         if c and c["stage"] in CSTAGES and CSTAGES.index(c["stage"]) > 1:
             p["stage"] = c["stage"]; p["stage_source"] = f'继承集运单 {c["id"]}'; p["last_event"] = c["last_event"]
