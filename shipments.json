@@ -550,10 +550,10 @@
       "factory": "Doing X OP / Oliver",
       "carrier": "圆通",
       "tracking": "YT2554709548341",
-      "item": "生活用品 1.0KG（应是宽头试穿样，待确认）",
+      "item": "宽头鞋试穿样，面单 1.0KG（Oliver 说 4.2kg，待确认）",
       "stage": "国内运输中",
       "evidence": "微信截图",
-      "note": "泉州→广州云邮仓 ZXZNICK88，10/23 15:47 取件；昨天说 4.2kg，是否同票待确认",
+      "note": "泉州→广州云邮仓 ZXZNICK88，10/23 15:47 取件；昨天说 4.2kg，是否同票待确认；10/24 15:42 kx 在 CC 群确认是 Oliver 的宽头鞋试穿样",
       "history": [
         {
           "time": "2026-10-23T15:47:00+08:00",
@@ -562,6 +562,18 @@
           "source": "微信截图"
         }
       ]
+    },
+    {
+      "id": "PKG-013",
+      "forwarder": "待确认",
+      "factory": "汇兴皮革（OT 皮革 2.0）",
+      "carrier": "叫车（待确认）",
+      "tracking": "",
+      "item": "OT 皮革 2.0 货",
+      "stage": "国内运输中",
+      "evidence": "微信截图",
+      "note": "10/24 货做好，叫车费 ¥65 已由 kx 付；单号未给，目的仓待确认",
+      "history": []
     }
   ],
   "forwarders": [
