@@ -247,6 +247,21 @@
       "parcel_ids": [],
       "stage_source": "DEX 返回轨迹",
       "last_event": "2026-10-23T22:17:00+08:00 货物装袋"
+    },
+    {
+      "id": "CON-006",
+      "forwarder": "零零九国际物流",
+      "mode": "海运",
+      "carrier": "零零九",
+      "tracking": "LLGJ102432713",
+      "destination": "Port Dickson",
+      "weight": "10 件，1.85 方（按 1.9 方 ×600 = ¥1140）",
+      "stage": "运往马来西亚",
+      "stage_manual": true,
+      "parcels": [],
+      "evidence": "微信截图",
+      "note": "10/24 18:03 敏感货群发单；货物和国内单号待确认，可能含 CON-002 白桶 / PKG-006 中通 800227256639（未核实）；查询方式未知",
+      "history": []
     }
   ],
   "parcels": [
