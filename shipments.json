@@ -6,7 +6,7 @@
       "id": "CON-001",
       "mode": "air",
       "carrier": "DEX-i",
-      "tracking_no": "11101941686",
+      "tracking_no": "[已脱敏]6",
       "ctns": 1,
       "weight": "0.8kg",
       "mark": "待确认",
@@ -37,7 +37,7 @@
       "parcel_ids": [],
       "forwarder": "云第 yd-wl",
       "corrected_from": {
-        "tracking_no": "1110194686",
+        "tracking_no": "[已脱敏]",
         "ctns": 2,
         "mark": "ZXZ/NICK888",
         "weight": "0.8kg?(手写待核对)"
@@ -45,7 +45,7 @@
       "destination_city": "Puchong",
       "item": "待确认（群聊中紧接「鞋子」之后）",
       "evidence": "微信照片",
-      "note": "DEX 单照片 cc-19（10/21 22:30）：1件 0.8kg USD30。旧单号 1110194686 少一位，DEX 查无。所含国内包裹待确认（可能 PKG-002 拖鞋样品，未证实）"
+      "note": "DEX 单照片 cc-19（10/21 22:30）：1件 0.8kg USD30。旧单号 [已脱敏] 少一位，DEX 查无。所含国内包裹待确认（可能 PKG-002 拖鞋样品，未证实）"
     },
     {
       "id": "CON-002",
@@ -71,7 +71,7 @@
       "forwarder": "云第 yd-wl",
       "mode": "air",
       "carrier": "DEX-i",
-      "tracking_no": "11101941815",
+      "tracking_no": "[已脱敏]5",
       "ctns": 1,
       "weight": "1kg",
       "mark": "待确认",
@@ -164,7 +164,7 @@
       "forwarder": "云第 yd-wl",
       "mode": "sea",
       "carrier": "云第 yd-wl 海运",
-      "tracking_no": "M202610072205571",
+      "tracking_no": "M2026[已脱敏]1",
       "vessel": "SH-2293",
       "ctns": null,
       "weight": null,
@@ -223,7 +223,7 @@
       "forwarder": "云第 yd-wl",
       "mode": "空运",
       "carrier": "DEX",
-      "tracking": "11101941653",
+      "tracking": "[已脱敏]3",
       "destination": "Puchong",
       "weight": "约17kg（手写，待确认）",
       "stage": "运往马来西亚",
@@ -253,7 +253,7 @@
       "forwarder": "零零九国际物流",
       "mode": "海运",
       "carrier": "零零九",
-      "tracking": "LLGJ102432713",
+      "tracking": "LLGJ[已脱敏]",
       "destination": "Port Dickson",
       "weight": "10 件，1.85 方（按 1.9 方 ×600 = ¥1140）",
       "stage": "已入仓",
@@ -273,7 +273,7 @@
       "item": "待确认",
       "hint": null,
       "ctns": 2,
-      "warehouse_ref": "M202610171212247",
+      "warehouse_ref": "M2026[已脱敏]7",
       "history": [
         {
           "time": "2026-10-06T13:12:09+08:00",
@@ -290,24 +290,24 @@
       "consolidation_id": null,
       "stage": "已入仓",
       "stage_source": "安能签收联+入仓标签照片 cc-9/cc-10",
-      "last_event": "2026-10-06 13:12 安能签收（到云第仓），入仓号 M202610171212247",
+      "last_event": "2026-10-06 13:12 安能签收（到云第仓），入仓号 M2026[已脱敏]7",
       "last_checked": "2026-10-24T08:10+08:00",
       "forwarder": "云第 yd-wl",
       "evidence": "微信照片",
       "corrected_from": {
         "domestic_tracking_no": "300656415658",
-        "warehouse_ref": "M20261017121247",
+        "warehouse_ref": "M2026[已脱敏]",
         "consolidation_id": "CON-001"
       },
       "weight": "159kg / 0.6m³",
       "mark": "ZXZ/NICK888",
       "stage_manual": true,
-      "note": "2件159kg 与 DEX 11101941686（1件0.8kg）不符，已解除关联；属哪张集运单待确认"
+      "note": "2件159kg 与 DEX [已脱敏]6（1件0.8kg）不符，已解除关联；属哪张集运单待确认"
     },
     {
       "id": "PKG-002",
       "domestic_carrier": "顺丰 SF",
-      "domestic_tracking_no": "SF1580887700171",
+      "domestic_tracking_no": "SF[已脱敏]171",
       "supplier": "拖鞋会",
       "item": "样品拖鞋 每色一双 34-35",
       "hint": "拖鞋厂家 / 拖鞋 / →空运仓",
@@ -326,14 +326,14 @@
       "last_checked": "2026-10-24T08:10+08:00",
       "forwarder": "云第 yd-wl",
       "weight": "1KG",
-      "note": "CC群后附一张 DEX 单，看似 11101941686（可能即 1110194686，待核实）",
+      "note": "CC群后附一张 DEX 单，看似 [已脱敏]6（可能即 [已脱敏]，待核实）",
       "evidence": "微信截图",
       "stage_manual": true
     },
     {
       "id": "PKG-003",
       "domestic_carrier": "顺丰 SF",
-      "domestic_tracking_no": "SF1580889297268",
+      "domestic_tracking_no": "SF[已脱敏]268",
       "supplier": "晋亿鞋材（DINGDINGDING）",
       "item": "EVA 料",
       "hint": null,
@@ -433,7 +433,7 @@
     {
       "id": "PKG-007",
       "domestic_carrier": "顺丰 SF",
-      "domestic_tracking_no": "SF1576224853033",
+      "domestic_tracking_no": "SF[已脱敏]033",
       "supplier": "凝珠时代",
       "item": "洗衣凝珠(样品，待确认)",
       "hint": null,
@@ -486,7 +486,7 @@
       "item": "待确认",
       "hint": null,
       "ctns": null,
-      "warehouse_ref": "M202610072205571",
+      "warehouse_ref": "M2026[已脱敏]1",
       "history": [],
       "confirm": {
         "supplier": "待确认",
@@ -568,7 +568,7 @@
       "item": "宽头鞋试穿样，面单 1.0KG（Oliver 说 4.2kg，待确认）",
       "stage": "国内运输中",
       "evidence": "微信截图",
-      "note": "泉州→广州云邮仓 ZXZNICK88，10/23 15:47 取件；昨天说 4.2kg，是否同票待确认；10/24 15:42 kx 在 CC 群确认是 Oliver 的宽头鞋试穿样；Nick 10/25 确认：空运 Puchong Saujana，待发 CC 群；10/25 Nick 批准发 CC：空运完整地址 ORTHOTECH / NICK / 017-5381981 / Saujana Puchong；10/25 19:27 已发 CC 群确认空运",
+      "note": "泉州→广州云邮仓 ZXZNICK88，10/23 15:47 取件；昨天说 4.2kg，是否同票待确认；10/24 15:42 kx 在 CC 群确认是 Oliver 的宽头鞋试穿样；Nick 10/25 确认：空运 Puchong Saujana，待发 CC 群；10/25 Nick 批准发 CC：空运；10/25 19:27 已发 CC 群确认空运",
       "history": [
         {
           "time": "2026-10-23T15:47:00+08:00",
@@ -577,7 +577,7 @@
           "source": "微信截图"
         }
       ],
-      "hint": "空运 → Puchong Saujana（已通知 CC）"
+      "hint": "空运 → Puchong（已通知 CC）"
     },
     {
       "id": "PKG-013",
