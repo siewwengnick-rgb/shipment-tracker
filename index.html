@@ -88,7 +88,8 @@ h2{font-size:15px;color:var(--mut);font-weight:600;margin:26px 0 12px;display:fl
 <script>
 const NA='暂无',TBD='待确认';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const scrub=s=>String(s??'').replace(/(\+?6?01\d[-\s]?\d{3,4}[-\s]?\d{4})|(\+?86[-\s]?)?\b1[3-9]\d{9}\b/g,'[已隐藏]');
+const scrub=s=>String(s??'').replace(/(地址|联系人|收件人|电话|手机)[^；;\n]*/g,'$1 [已隐藏]').replace(/(\+?6?01\d[-\s]?\d{3,4}[-\s]?\d{4})|(\+?86[-\s]?)?\b1[3-9]\d{9}\b/g,'[已隐藏]');
+const evH=v=>{if(v==null||v==='')return '';const a=(Array.isArray(v)?v:[v]).map(x=>typeof x=='object'&&x?(x.text??x.desc??x.description??x.type??x.url??''):x).filter(x=>x!==''&&x!=null).map(x=>{x=String(x);const m=x.match(/^https?:\/\/([^\/?#]+)/i);return m?'链接 '+m[1]:x.length>60?x.slice(0,60)+'…':x});return a.length?`<span>证据 <b>${T(a.join('；'))}</b></span>`:''};
 const has=v=>v!=null&&String(v).trim()!==''&&!/^(待确认|unknown|n\/a|null|\?+|-)$/i.test(String(v).trim());
 const T=v=>esc(scrub(v));
 const val=(v,e=NA)=>has(v)?T(v):`<span class="na">${e}</span>`;
@@ -118,9 +119,10 @@ const tone=s=>/签收|到马|已完成/.test(s)?'ok':/未查到/.test(s||'')||!s
 let D={cons:[],pk:[],solo:[]},F={m:'all',st:'all',sup:'all',fw:'all',q:''},OPEN=new Set();
 function parcel(p,solo){const id='p:'+p.id,o=OPEN.has(id),h=p._h;
  return `<div class="pk ${solo?'solo con':''}" style="${solo?'':''}">
- <div class="h"><div class="big">${tbd(p.supplier)}<span class="x">·</span>${tbd(p.item)}</div><span class="pill ${tone(p.stage)}">${val(p.stage,'未查到')}</span></div>
+ <div class="h"><div class="big">${tbd(p.supplier)}<span class="x">·</span>${tbd(p.item)}</div><span>${p.stage_manual?'<span class="pill" style="font-size:11px;margin-right:4px">✍︎ 人工更新</span>':''}<span class="pill ${tone(p.stage)}">${val(p.stage,'未查到')}</span></span></div>
  ${has(p.hint)?`<div class="hint"><b>未核实</b>${T(p.hint)}</div>`:''}
- <div class="facts">${fwH(p.forwarder)}<span>国内单号 <b>${val(p.domestic_carrier,'')} ${val(p.domestic_tracking_no)}</b></span><span>箱数 <b>${val(p.ctns)}</b></span><span>入仓号 <b>${val(p.warehouse_ref)}</b></span></div>
+ <div class="facts">${fwH(p.forwarder)}<span>国内单号 <b>${val(p.domestic_carrier,'')} ${val(p.domestic_tracking_no,'暂无国内单号')}</b></span><span>箱数 <b>${val(p.ctns)}</b></span>${has(p.weight)?`<span>重量 <b>${T(p.weight)}</b></span>`:''}${evH(p.evidence)}<span>入仓号 <b>${val(p.warehouse_ref)}</b></span></div>
+ ${has(p.note)?`<div class="why" style="color:#c9d2e3">📝 备注：${T(p.note)}</div>`:''}
  ${solo?prog(p.stage,PST):''}
  <div class="why">${val(h[0]?.ds||p.last_event)}${p.last_checked?' · 检查 '+when(p.last_checked):''}</div>
  <button class="tog" data-k="${esc(id)}">${o?'收起轨迹 ▲':'查看轨迹'+(h.length?` (${h.length})`:'')+' ▼'}</button>${o?`<div class="tl">${timeline(h)}</div>`:''}</div>`}
