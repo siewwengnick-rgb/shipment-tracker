@@ -41,12 +41,18 @@ def dex_events(r):
 def main():
     d = json.loads(P.read_text()); now = datetime.datetime.now(MYT).isoformat(timespec="minutes")
     C, PK = d["consolidations"], d["parcels"]
+    for c in C:  # normalize older/alt field names
+        if "tracking_no" not in c: c["tracking_no"] = c.pop("tracking", None)
+        c["mode"] = {"空运": "air", "海运": "sea"}.get(c.get("mode"), c.get("mode"))
+        if c.get("history"): c["history"].sort(key=lambda x: x.get("time") or "", reverse=True)
     air = [c for c in C if c["mode"] == "air" and c.get("tracking_no")]
-    try: res = dex([c["tracking_no"] for c in air]) if air else []
+    priv = json.loads(P.with_name("private_numbers.json").read_text()) if P.with_name("private_numbers.json").exists() else {}  # real nos, gitignored
+    real = lambda c: priv.get(c["id"], c["tracking_no"])
+    try: res = dex([real(c) for c in air]) if air else []
     except Exception as e: print("DEX error:", e); res = None
     for c in air:
         if res is None: continue
-        hit = [r for r in res if c["tracking_no"] in json.dumps(r, ensure_ascii=False)]
+        hit = [r for r in res if real(c) == str(r.get("trackingNumber", "")) or real(c) in json.dumps(r, ensure_ascii=False)]
         ev = dex_events(hit[0]) if hit else []
         if ev: c["history"] = ev
         c["last_checked"] = now
@@ -79,5 +85,5 @@ def main():
     d["updated"] = datetime.datetime.now(MYT).strftime("%Y-%m-%d %H:%M MYT")
     P.write_text(json.dumps(d, ensure_ascii=False, indent=1))
     for c in C: print(c["id"], c["tracking_no"], c["stage"], c["parcel_ids"])
-    for p in PK: print(p["id"], p["domestic_tracking_no"], p["stage"], p.get("consolidation_id"))
+    for p in PK: print(p["id"], p.get("domestic_tracking_no"), p["stage"], p.get("consolidation_id"))
 if __name__ == "__main__": main()
