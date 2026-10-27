@@ -364,6 +364,51 @@
       "parcel_ids": [
         "PKG-006"
       ]
+    },
+    {
+      "id": "CON-007",
+      "forwarder": "云第 yd-wl",
+      "mode": "air",
+      "carrier": "DEX-i",
+      "tracking_no": "[已脱敏]6",
+      "destination_city": "Puchong",
+      "weight": "约14.3kg（运单手写）",
+      "item": "鞋子（运单手写；疑 Oliver 宽头鞋试穿样 PKG-012，重量不符待确认）",
+      "mark": "NICK88",
+      "stage": "运往马来西亚",
+      "stage_manual": false,
+      "stage_source": "DEX api.dex-i.com",
+      "last_event": "2026-10-28T14:20:00+08:00 预计航班到达时间",
+      "last_checked": "2026-10-27T12:16+08:00",
+      "parcel_ids": [],
+      "history": [
+        {
+          "time": "2026-10-28T14:20:00+08:00",
+          "location": "MALAYSIA",
+          "description": "预计航班到达时间",
+          "source": "DEX api.dex-i.com"
+        },
+        {
+          "time": "2026-10-27T06:10:00+08:00",
+          "location": "GUANGZHOU, CHINA",
+          "description": "正在中转至目的地",
+          "source": "DEX api.dex-i.com"
+        },
+        {
+          "time": "2026-10-26T23:46:00+08:00",
+          "location": "CHINA, GUANGZHOU",
+          "description": "货物装袋",
+          "source": "DEX api.dex-i.com"
+        },
+        {
+          "time": "2026-10-26T21:24:00+08:00",
+          "location": "GUANGZHOU, CHINA",
+          "description": "货物到仓",
+          "source": "DEX api.dex-i.com"
+        }
+      ],
+      "evidence": "微信照片 inbox/20261027-1205-cc-zhong-waybill-1128-enlarge.png（待脱敏进 evidence/）",
+      "note": "钟 11:28 CC群发箱子 DEX 运单（紧接 YT2554709548341 宽头鞋空运说明之后）。条码号 11101941616（与 41686/41653 不同）。手写货「鞋子」、重量约14.3、账号 NICK88、收 Orthotech Puchong。与 PKG-012 关联待确认（PKG-012 厂家称4.2kg/面单1.0kg，与14.3不符）。"
     }
   ],
   "parcels": [
@@ -697,7 +742,7 @@
           "at": "2026-10-24"
         }
       ],
-      "note": "泉州→广州云邮仓 ZXZNICK88，10/23 15:47 取件；昨天说 4.2kg，是否同票待确认；10/24 15:42 kx 在 CC 群确认是 Oliver 的宽头鞋试穿样；Nick 10/25 确认：空运，待发 CC 群；10/25 Nick 批准发 CC：空运；10/25 19:27 已发 CC 群确认空运；10/24 16:45 到仓，19:26 验收；Oliver 10/26 提醒",
+      "note": "泉州→广州云邮仓 ZXZNICK88，10/23 15:47 取件；昨天说 4.2kg，是否同票待确认；10/24 15:42 kx 在 CC 群确认是 Oliver 的宽头鞋试穿样；Nick 10/25 确认：空运，待发 CC 群；10/25 Nick 批准发 CC：空运；10/25 19:27 已发 CC 群确认空运；10/24 16:45 到仓，19:26 验收；Oliver 10/26 提醒；钟 11:28 另发 DEX 运单 11101941616（货「鞋子」约14.3kg），疑本票空运段但重量不符，consolidation 待确认（见 CON-007）",
       "history": [
         {
           "time": "2026-10-23T15:47:00+08:00",
@@ -721,9 +766,11 @@
       "hint": "空运 → Puchong（已通知 CC）",
       "stage_source": "国内段有轨迹",
       "last_event": "2026-10-24 19:26 云第验收成功",
-      "last_checked": "2026-10-27T10:06+08:00",
+      "last_checked": "2026-10-27T12:16+08:00",
       "stage_manual": true,
-      "evidence_note": "微信截图"
+      "evidence_note": "微信截图",
+      "domestic_tracking_no": "YT2554709548341",
+      "domestic_carrier": "圆通 YTO"
     },
     {
       "id": "PKG-013",
