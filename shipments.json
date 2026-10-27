@@ -92,15 +92,17 @@
       "ctns": null,
       "weight": null,
       "mark": null,
-      "item": "白色大桶 (打木箱中)",
+      "item": "有机硅油（白桶）",
       "stage": "已入仓",
       "stage_manual": true,
       "stage_source": "Nick 2026-10-22 告知已在仓打木箱",
       "last_event": "正在打木箱，预计约 2026-10-23 出运（Nick 10-22 告知）",
-      "last_checked": "2026-10-27T10:06+08:00",
+      "last_checked": "2026-10-27T12:05+08:00",
       "history": [],
-      "parcel_ids": [],
-      "note": "零零九 10/21 发照片说打好木箱后天出（约 10/23），照片无单号"
+      "parcel_ids": [
+        "PKG-006"
+      ],
+      "note": "零零九 10/21 发照片说打好木箱后天出（约 10/23），照片无单号；Nick 2026-10-27 确认货=有机硅油白桶=PKG-006"
     },
     {
       "id": "CON-003",
@@ -336,13 +338,17 @@
       "weight": "10 件，1.85 方（按 1.9 方 ×600 = ¥1140）",
       "stage": "已入仓",
       "stage_manual": true,
-      "parcels": [],
+      "parcels": [
+        "PKG-006"
+      ],
       "evidence": "微信截图",
-      "note": "10/24 18:03 敏感货群发单；货物和国内单号待确认，可能含 CON-002 白桶 / PKG-006 中通 800227256639（未核实）；查询方式未知；已出海运单，开船日期待确认",
+      "note": "10/24 18:03 敏感货群发单；货物和国内单号待确认，含 PKG-006 有机硅油白桶（Nick 2026-10-27 确认），与 CON-002 关联；查询方式未知；已出海运单，开船日期待确认",
       "history": [],
       "tracking_no": "LLGJ[已脱敏]",
-      "last_checked": "2026-10-27T10:06+08:00",
-      "parcel_ids": []
+      "last_checked": "2026-10-27T12:05+08:00",
+      "parcel_ids": [
+        "PKG-006"
+      ]
     }
   ],
   "parcels": [
@@ -490,26 +496,26 @@
       "id": "PKG-006",
       "domestic_carrier": "中通快运",
       "domestic_tracking_no": "800227256639",
-      "supplier": "扬州厂家(待确认)",
-      "item": "待确认",
-      "hint": "有机硅油厂家 / 有机硅油 / →敏感仓",
+      "supplier": "扬州厂家（敏感货/宏渝语境）",
+      "item": "有机硅油（白桶）",
+      "hint": "有机硅油厂家 / 有机硅油白桶 / →零零九敏感仓",
       "ctns": null,
       "warehouse_ref": null,
       "history": [],
       "confirm": {
-        "supplier": "待确认",
-        "item": "待确认",
-        "consolidation_link": "待确认"
+        "supplier": "已确认",
+        "item": "已确认",
+        "consolidation_link": "已确认"
       },
-      "consolidation_id": null,
-      "stage": "国内运输中",
-      "stage_source": "敏感货群 10/19 截图",
-      "last_event": "10/19 扬州揽收，寄往广州零零九；厂家说与另一票一起海运",
-      "last_checked": "2026-10-27T10:06+08:00",
+      "consolidation_id": "CON-002",
+      "stage": "已入仓",
+      "stage_source": "Nick 经私人助理确认 2026-10-27（白桶有机硅油，并进 CON-002/CON-006）",
+      "last_event": "已确认：有机硅油白桶；关联 CON-002 / CON-006",
+      "last_checked": "2026-10-27T12:05+08:00",
       "forwarder": "零零九国际物流",
       "evidence": "微信截图",
       "stage_manual": true,
-      "note": "是否即 CON-002 白色大桶待确认"
+      "note": "是否即 CON-002 白色大桶待确认；Nick 2026-10-27 确认：白桶有机硅油，并进 CON-002，并与 CON-006 关联"
     },
     {
       "id": "PKG-007",
@@ -686,18 +692,25 @@
     },
     {
       "id": "PKG-013",
-      "forwarder": "待确认",
+      "forwarder": "云第 yd-wl",
       "factory": "汇兴皮革（OT 皮革 2.0）",
       "carrier": "叫车（待确认）",
       "tracking": "",
-      "item": "OT 皮革 2.0 货",
+      "item": "OT 皮革 2.0",
       "stage": "国内运输中",
       "evidence": "微信截图",
-      "note": "10/24 货做好，叫车费 ¥65 已由 kx 付；单号未给，目的仓待确认",
+      "note": "10/24 货做好，叫车费 ¥65 已由 kx 付；单号未给；Nick 2026-10-27 确认目的仓云第白云湖",
       "history": [],
-      "last_checked": "2026-10-27T10:06+08:00",
+      "last_checked": "2026-10-27T12:05+08:00",
       "stage_manual": true,
-      "stage_source": "微信：10/24 货做好已叫车（手动）"
+      "stage_source": "微信 10/24 叫车 + Nick 经私人助理确认目的仓 2026-10-27",
+      "destination_warehouse": "云第白云湖",
+      "confirm": {
+        "item": "已确认",
+        "supplier": "已确认",
+        "destination": "已确认",
+        "consolidation_link": "待确认"
+      }
     },
     {
       "id": "PKG-014",
