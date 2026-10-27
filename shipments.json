@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-27 10:06 MYT",
+  "updated": "2026-10-27 14:15 MYT",
   "schema_version": 3,
   "consolidations": [
     {
@@ -70,7 +70,9 @@
           "source": "DEX api.dex-i.com"
         }
       ],
-      "parcel_ids": [],
+      "parcel_ids": [
+        "PKG-002"
+      ],
       "forwarder": "云第 yd-wl",
       "corrected_from": {
         "tracking_no": "[已脱敏]",
@@ -79,9 +81,9 @@
         "weight": "0.8kg?(手写待核对)"
       },
       "destination_city": "Puchong",
-      "item": "待确认（群聊中紧接「鞋子」之后）",
-      "evidence": "微信照片",
-      "note": "DEX 单照片 cc-19（10/21 22:30）：1件 0.8kg USD30。旧单号 [已脱敏] 少一位，DEX 查无。所含国内包裹待确认（可能 PKG-002 拖鞋样品，未证实）"
+      "item": "鞋子（样品拖鞋）",
+      "evidence": [],
+      "note": "钟 12:41 CC群对追问回「对」并重发旧截图（含「鞋子」+ Puchong）。据此确认 DEX 11101941686（0.8kg）= 顺丰 SF1580887700171 = PKG-002 样品拖鞋；钟未再明文复述国内单号/重量。截图 inbox/20261027-1410-cc-zhong-reply.png（含地址电话，未脱敏勿上 Pages）。原 DEX 单照片 cc-19（10/21）：1件 0.8kg USD30。 旧 evidence 字段：「微信照片」。"
     },
     {
       "id": "CON-002",
@@ -284,7 +286,7 @@
         "PKG-004"
       ],
       "evidence": "微信照片 + DEX 官方查询",
-      "note": "钟 12:15 CC群回「两件打包一起」并重发韵达 435389349462873 + 顺丰 SF0207510056030 清晰面单，确认即 DEX 11101941653。韵达无重量；顺丰计费约3.3kg、面单「冬季胶」。第1点 DEX11101941686≈0.8kg 仍未答。",
+      "note": "钟 12:15 CC群回「两件打包一起」并重发韵达 435389349462873 + 顺丰 SF0207510056030 清晰面单，确认即 DEX 11101941653。韵达无重量；顺丰计费约3.3kg、面单「冬季胶」。第1点 DEX11101941686≈0.8kg 已于 12:41 由钟回「对」确认=SF1580887700171（见 CON-001/PKG-002）。",
       "history": [
         {
           "time": "2026-10-27T09:18:00+08:00",
@@ -348,7 +350,7 @@
       "stage_source": "DEX 返回轨迹",
       "last_event": "2026-10-27T09:18:00+08:00 出外派送",
       "tracking_no": "[已脱敏]3",
-      "last_checked": "2026-10-27T12:22+08:00",
+      "last_checked": "2026-10-27T14:15+08:00",
       "item": "韵达435389（日用品/夏季胶，厂家待确认）+ 顺丰脚压仪 SF020751（3.3kg）；钟确认两件打包"
     },
     {
@@ -478,17 +480,17 @@
       "confirm": {
         "supplier": "已确认",
         "item": "已确认",
-        "consolidation_link": "待确认"
+        "consolidation_link": "已确认"
       },
-      "consolidation_id": null,
-      "stage": "已入仓",
-      "stage_source": "CC群 10/20",
-      "last_event": "10/20 已到云第空运仓（CC群）",
-      "last_checked": "2026-10-27T10:06+08:00",
+      "consolidation_id": "CON-001",
+      "stage": "已到马",
+      "stage_source": "继承 CON-001（钟 12:41「对」确认 SF1580887700171）",
+      "last_event": "已并入 CON-001 空运；马来段出外派送（继承集运）",
+      "last_checked": "2026-10-27T14:15+08:00",
       "forwarder": "云第 yd-wl",
       "weight": "1KG",
-      "note": "CC群后附一张 DEX 单，看似 [已脱敏]6（可能即 [已脱敏]，待核实）",
-      "evidence": "微信截图",
+      "note": "钟 12:41 确认并入 CON-001（DEX 0.8kg）。国内标重 1KG 与 DEX 0.8kg 略差。 旧 evidence：「微信截图」。",
+      "evidence": [],
       "stage_manual": true
     },
     {
