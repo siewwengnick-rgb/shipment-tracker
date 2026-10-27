@@ -55,6 +55,12 @@ h2{font-size:15px;color:var(--mut);font-weight:600;margin:26px 0 12px;display:fl
 .pill.go{color:var(--acc);border-color:#7c9cff55}.pill.ok{color:var(--ok);border-color:#3ddc8455}.pill.warn{color:var(--warn);border-color:#f5a52455}
 .facts{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px;font-size:12.5px;color:var(--mut)}.facts b{color:var(--tx);font-weight:600}
 .fw{color:var(--mut)}.fw b{color:var(--tx)}
+.sec2{font-size:12px;color:var(--mut);margin:10px 0 6px}.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px;margin-bottom:6px}
+.gal figure{margin:0;cursor:zoom-in;background:#0c1019;border:1px solid var(--line);border-radius:10px;overflow:hidden}.gal img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
+.gal figure.bad img{display:none}.gal figure.bad:before{content:'图片暂缺';display:grid;place-items:center;aspect-ratio:1;color:var(--dim);font-size:12px}
+.gal figcaption{font-size:11px;padding:5px 7px;color:var(--mut);line-height:1.35}.gal figcaption b{color:var(--tx)}.gal figcaption i{display:block;font-style:normal;color:var(--dim)}
+#lbx{position:fixed;inset:0;background:#000e;z-index:50;display:none;flex-direction:column;align-items:center;justify-content:center;padding:20px}#lbx.on{display:flex}
+#lbx img{max-width:100%;max-height:82vh;border-radius:10px}.lbt{color:#dfe6f2;margin-top:12px;font-size:14px;text-align:center}.lbc{position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:12px;border:1px solid #444;background:#111;color:#fff;font-size:22px;cursor:pointer}
 .na{color:var(--dim)!important;font-weight:400!important}
 .tl{margin-top:10px;padding-top:4px;border-top:1px dashed var(--line)}
 .day{font-size:12px;color:var(--mut);font-weight:600;margin:12px 0 6px;display:flex;gap:8px;align-items:center}.day:after{content:"";flex:1;height:1px;background:var(--line)}
@@ -85,11 +91,18 @@ h2{font-size:15px;color:var(--mut);font-weight:600;margin:26px 0 12px;display:fl
 <div id="main"></div>
 <div class="foot">时间均为马来西亚时间 (MYT, UTC+8) · 仅显示物流信息，不含电话/地址/联系人</div>
 </div>
+<div id="lbx"></div>
 <script>
 const NA='暂无',TBD='待确认';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const scrub=s=>String(s??'').replace(/(地址|联系人|收件人|电话|手机)[^；;\n]*/g,'$1 [已隐藏]').replace(/(\+?6?01\d[-\s]?\d{3,4}[-\s]?\d{4})|(\+?86[-\s]?)?\b1[3-9]\d{9}\b/g,'[已隐藏]');
-const evH=v=>{if(v==null||v==='')return '';const a=(Array.isArray(v)?v:[v]).map(x=>typeof x=='object'&&x?(x.text??x.desc??x.description??x.type??x.url??''):x).filter(x=>x!==''&&x!=null).map(x=>{x=String(x);const m=x.match(/^https?:\/\/([^\/?#]+)/i);return m?'链接 '+m[1]:x.length>60?x.slice(0,60)+'…':x});return a.length?`<span>证据 <b>${T(a.join('；'))}</b></span>`:''};
+const evH=v=>typeof v==='string'&&v.trim()?`<span>证据 <b>${T(v.length>60?v.slice(0,60)+'…':v)}</b></span>`:'';
+const EVT={received_photo:'入仓收货',tracking_shot:'在途运单'};
+const evList=v=>Array.isArray(v)?v.filter(x=>x&&typeof x=='object'&&typeof x.src=='string'&&/^evidence\/[^?#]+$/.test(x.src)&&!/\.\./.test(x.src)):[];
+let LB=[];
+function gal(v){const a=evList(v);if(!a.length)return '';const base=LB.length;LB.push(...a);
+ return `<div class="sec2">📷 证据 ${a.length}</div><div class="gal">${a.map((e,i)=>`<figure data-lb="${base+i}"><img loading="lazy" src="${esc(e.src)}" alt="${esc(EVT[e.type]||'证据')}" onerror="this.parentNode.classList.add('bad')"><figcaption><b>${esc(EVT[e.type]||'证据')}</b>${has(e.caption)?' · '+T(e.caption):''}${has(e.at)?`<i>${when(e.at).replace(/ 00:00 MYT$/,'')}</i>`:''}</figcaption></figure>`).join('')}</div>`}
+function lb(i){const e=LB[i];if(!e)return;lbx.innerHTML=`<button class="lbc" aria-label="关闭">×</button><img src="${esc(e.src)}" alt=""><div class="lbt"><b>${esc(EVT[e.type]||'证据')}</b>${has(e.caption)?' · '+T(e.caption):''}${has(e.at)?' · '+when(e.at).replace(/ 00:00 MYT$/,''):''}</div>`;lbx.classList.add('on')}
 const has=v=>v!=null&&String(v).trim()!==''&&!/^(待确认|unknown|n\/a|null|\?+|-)$/i.test(String(v).trim());
 const T=v=>esc(scrub(v));
 const val=(v,e=NA)=>has(v)?T(v):`<span class="na">${e}</span>`;
@@ -125,7 +138,7 @@ function parcel(p,solo){const id='p:'+p.id,o=OPEN.has(id),h=p._h;
  ${has(p.note)?`<div class="why" style="color:#c9d2e3">📝 备注：${T(p.note)}</div>`:''}
  ${solo?prog(p.stage,PST):''}
  <div class="why">${val(h[0]?.ds||p.last_event)}${p.last_checked?' · 检查 '+when(p.last_checked):''}</div>
- <button class="tog" data-k="${esc(id)}">${o?'收起轨迹 ▲':'查看轨迹'+(h.length?` (${h.length})`:'')+' ▼'}</button>${o?`<div class="tl">${timeline(h)}</div>`:''}</div>`}
+ <button class="tog" data-k="${esc(id)}">${o?'收起轨迹 ▲':'查看轨迹'+(h.length?` (${h.length})`:'')+nEv(p)+' ▼'}</button>${o?`<div class="tl">${gal(p.evidence)}${timeline(h)}</div>`:''}</div>`}
 function cons(c){const id='c:'+c.id,o=OPEN.has(id),h=c._h;
  return `<article class="con ${c.mode=='sea'?'sea':'air'}"><div class="ch">
  <div class="top"><span class="mode">${c.mode=='sea'?'⛴ 海运集运':'✈︎ 空运集运'}</span><span class="meta">${[has(c.carrier)&&T(c.carrier),has(c.ctns)&&T(c.ctns)+' 箱',has(c.weight)&&T(c.weight)].filter(Boolean).join(' · ')||'<span class="na">承运/箱数 暂无</span>'}${has(c.mark)?' · 唛头 '+T(c.mark):''}</span></div>
@@ -134,17 +147,19 @@ function cons(c){const id='c:'+c.id,o=OPEN.has(id),h=c._h;
  <div class="now">当前：<em>${esc(NOW[c.stage]||c.stage||'未查到')}</em>${c.stage_manual?' <span class="pill" style="font-size:11px;vertical-align:2px">✍︎ 人工更新</span>':''}</div>
  <div class="why">${val(h[0]?.ds||c.last_event)}${has(c.stage_source)?' · 依据：'+T(c.stage_source):''}</div>
  <div class="why">最近检查 ${when(c.last_checked)}</div>
- <button class="tog" data-k="${esc(id)}">${o?'收起集运单轨迹 ▲':'集运单轨迹'+(h.length?` (${h.length})`:'')+' ▼'}</button>${o?`<div class="tl">${timeline(h)}</div>`:''}</div>
+ <button class="tog" data-k="${esc(id)}">${o?'收起集运单轨迹 ▲':'集运单轨迹'+(h.length?` (${h.length})`:'')+nEv(c)+' ▼'}</button>${o?`<div class="tl">${gal(c.evidence)}${timeline(h)}</div>`:''}</div>
  <div class="plist"><div class="plab">包含 ${c._p.length} 个包裹</div>${c._p.length?c._p.map(p=>parcel(p)).join(''):'<div class="nodata">暂无已关联包裹</div>'}</div></article>`}
 function match(p){const q=F.q.toLowerCase();return fwOk(p.forwarder)&&(F.sup==='all'||(has(p.supplier)?p.supplier:TBD)===F.sup)&&(!q||[p.supplier,p.item,p.hint,p.forwarder,p.domestic_tracking_no,p.warehouse_ref,p.id].join(' ').toLowerCase().includes(q))}
-function render(){const q=F.q.toLowerCase();
+function render(){LB=[];const q=F.q.toLowerCase();
  const C=D.cons.filter(c=>(F.m==='all'||F.m===c.mode)&&(F.st==='all'||F.st===c.stage)).map(c=>{const self=fwOk(c.forwarder)&&(!q||[c.tracking_no,c.id,c.mark,c.carrier,c.forwarder].join(' ').toLowerCase().includes(q));
   const ps=c._all.filter(p=>match(p)||(self&&F.sup==='all'));return {...c,_p:ps,_show:(self&&F.sup==='all')||ps.length}}).filter(c=>c._show);
  const S=(F.m==='all'||F.m==='solo')?D.solo.filter(p=>match(p)&&(F.st==='all'||F.st===p.stage)):[];
  let h='';if(F.m!=='solo')h+=`<h2>🚢 集运单 <b>${C.length}</b></h2>`+(C.length?`<div class="grid">${C.map(cons).join('')}</div>`:'<div class="empty">没有符合条件的集运单</div>');
  if(F.m==='all'||F.m==='solo')h+=`<h2>📮 未分配集运单的包裹 <b>${S.length}</b></h2>`+(S.length?`<div class="pgrid">${S.map(p=>parcel(p,1)).join('')}</div>`:'<div class="empty">没有</div>');
  main.innerHTML=h}
-main.onclick=e=>{const b=e.target.closest('.tog');if(!b)return;const k=b.dataset.k;OPEN.has(k)?OPEN.delete(k):OPEN.add(k);render()};
+const nEv=x=>evList(x.evidence).length?` · 📷${evList(x.evidence).length}`:'';
+main.onclick=e=>{const f=e.target.closest('figure[data-lb]');if(f){lb(+f.dataset.lb);return}const b=e.target.closest('.tog');if(!b)return;const k=b.dataset.k;OPEN.has(k)?OPEN.delete(k):OPEN.add(k);render()};
+lbx.onclick=e=>{if(e.target.tagName!=='IMG')lbx.classList.remove('on')};addEventListener('keydown',e=>e.key==='Escape'&&lbx.classList.remove('on'));
 q.oninput=()=>{F.q=q.value.trim();render()};fStage.onchange=()=>{F.st=fStage.value;render()};fSup.onchange=()=>{F.sup=fSup.value;render()};fFw.onchange=()=>{F.fw=fFw.value;render()};
 function setup(){const n={all:D.cons.length+D.solo.length,sea:D.cons.filter(c=>c.mode=='sea').length,air:D.cons.filter(c=>c.mode!='sea').length,solo:D.solo.length};
  modes.innerHTML=[['all','全部'],['sea','⛴ 海运'],['air','✈︎ 空运'],['solo','📮 未分配']].map(([k,l])=>`<button class="chip ${F.m===k?'on':''}" data-m="${k}">${l} ${n[k]}</button>`).join('');
