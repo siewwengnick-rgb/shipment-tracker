@@ -97,12 +97,20 @@
       "stage_manual": true,
       "stage_source": "Nick 2026-10-22 告知已在仓打木箱",
       "last_event": "正在打木箱，预计约 2026-10-23 出运（Nick 10-22 告知）",
-      "last_checked": "2026-10-27T12:05+08:00",
+      "last_checked": "2026-10-27T12:20+08:00",
       "history": [],
       "parcel_ids": [
         "PKG-006"
       ],
-      "note": "零零九 10/21 发照片说打好木箱后天出（约 10/23），照片无单号；Nick 2026-10-27 确认货=有机硅油白桶=PKG-006"
+      "note": "零零九 10/21 发照片说打好木箱后天出（约 10/23），照片无单号；Nick 2026-10-27 确认货=有机硅油白桶=PKG-006",
+      "evidence": [
+        {
+          "type": "received_photo",
+          "src": "evidence/PKG-006-received-20261021.png",
+          "caption": "零零九仓内白桶（有机硅油）收货照，已脱敏",
+          "at": "2026-10-21"
+        }
+      ]
     },
     {
       "id": "CON-003",
@@ -525,11 +533,24 @@
       "stage": "已入仓",
       "stage_source": "Nick 经私人助理确认 2026-10-27（白桶有机硅油，并进 CON-002/CON-006）",
       "last_event": "已确认：有机硅油白桶；关联 CON-002 / CON-006",
-      "last_checked": "2026-10-27T12:05+08:00",
+      "last_checked": "2026-10-27T12:20+08:00",
       "forwarder": "零零九国际物流",
-      "evidence": "微信截图",
+      "evidence": [
+        {
+          "type": "received_photo",
+          "src": "evidence/PKG-006-received-20261021.png",
+          "caption": "零零九仓内白桶（有机硅油）收货照，已脱敏",
+          "at": "2026-10-21"
+        },
+        {
+          "type": "tracking_shot",
+          "src": "evidence/PKG-006-tracking-20261019.png",
+          "caption": "中通快运 800227256639 扬州→广州（城市级，地址已脱敏）",
+          "at": "2026-10-19"
+        }
+      ],
       "stage_manual": true,
-      "note": "是否即 CON-002 白色大桶待确认；Nick 2026-10-27 确认：白桶有机硅油，并进 CON-002，并与 CON-006 关联"
+      "note": "是否即 CON-002 白色大桶待确认；Nick 2026-10-27 确认：白桶有机硅油，并进 CON-002，并与 CON-006 关联；旧 evidence 字符串备注：微信截图"
     },
     {
       "id": "PKG-007",
