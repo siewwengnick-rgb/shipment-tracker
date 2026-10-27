@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """Schema v3: {updated, consolidations[], parcels[]}.
+evidence: a legacy text note, or a list of {type: received_photo|tracking_shot, src, caption, at}.
+src is a path under evidence/ (GitHub Pages). Copy scrubbed shots from inbox/ into evidence/; do not commit inbox/ or private_numbers.json.
 consolidation stage: 国内快递/已入仓/运往马来西亚/已到马/已签收 — from own carrier events, else 已入仓 if any linked parcel inbound.
 parcel stage: 国内运输中/已入仓/未查到 from own facts; once linked & consolidation moved past 已入仓, inherits it.
 Air = DEX API; sea = yd-wl placeholder (manual). Domestic (SF/中通快运/安能) no reliable public API -> manual.

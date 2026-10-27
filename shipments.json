@@ -212,7 +212,14 @@
       "stage_source": "云第 yd-wl 海运 返回轨迹",
       "last_event": "2026-10-13T16:42:48+08:00 已开船预计10-17到港",
       "last_checked": "2026-10-27T10:06+08:00",
-      "evidence": "微信照片",
+      "evidence": [
+        {
+          "type": "tracking_shot",
+          "src": "evidence/demo/tracking-waybill.png",
+          "caption": "演示：海运在途运单截图（非正式查询页，目的地只到城市）",
+          "at": "2026-10-13"
+        }
+      ],
       "parcel_ids": [
         "PKG-009"
       ],
@@ -380,7 +387,14 @@
       "last_event": "2026-10-06 13:12 安能签收（到云第仓），入仓号 M2026[已脱敏]7",
       "last_checked": "2026-10-27T10:06+08:00",
       "forwarder": "云第 yd-wl",
-      "evidence": "微信照片",
+      "evidence": [
+        {
+          "type": "received_photo",
+          "src": "evidence/demo/received-warehouse.png",
+          "caption": "演示：广州仓收货照（非正式单据）",
+          "at": "2026-10-06"
+        }
+      ],
       "corrected_from": {
         "domestic_tracking_no": "300656415658",
         "warehouse_ref": "M2026[已脱敏]",
