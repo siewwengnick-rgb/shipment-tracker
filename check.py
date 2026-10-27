@@ -3,7 +3,8 @@
 evidence: a legacy text note, or a list of {type: received_photo|tracking_shot, src, caption, at}.
 src is a path under evidence/ (GitHub Pages). Copy scrubbed shots from inbox/ into evidence/; do not commit inbox/ or private_numbers.json.
 consolidation stage: 国内快递/已入仓/运往马来西亚/已到马/已签收 — from own carrier events, else 已入仓 if any linked parcel inbound.
-parcel stage: 国内运输中/已入仓/未查到 from own facts; once linked & consolidation moved past 已入仓, inherits it.
+parcel stage: 无单号/国内运输中/已入仓/未查到 from own facts; once linked & consolidation moved past 已入仓, inherits it.
+无单号 = domestic tracking not yet obtained (chase factory); 未查到 = have a number but no public/API trail.
 Air = DEX API; sea = yd-wl placeholder (manual). Domestic (SF/中通快运/安能) no reliable public API -> manual.
 Never guess supplier/item ('待确认'; seed hints in 'hint'). No phones/addresses/names."""
 import json, re, urllib.request, datetime, pathlib
@@ -81,7 +82,11 @@ def main():
         elif p.get("history"):
             p["stage"] = "国内运输中"; p["stage_source"] = "国内段有轨迹"; p["last_event"] = f'{p["history"][0]["time"]} {p["history"][0]["description"]}'
         else:
-            p["stage"] = "未查到"
+            tn = str(p.get("domestic_tracking_no") or p.get("tracking") or "").strip()
+            if not tn or tn in ("待确认", "None", "none"):
+                p["stage"] = "无单号"; p["stage_source"] = "尚未拿到国内快递单号"
+            else:
+                p["stage"] = "未查到"; p["stage_source"] = "有国内单号但暂无轨迹"
         p["last_checked"] = now
     d.pop("shipments", None)
     d["updated"] = datetime.datetime.now(MYT).strftime("%Y-%m-%d %H:%M MYT")

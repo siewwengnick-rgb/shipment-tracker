@@ -156,14 +156,14 @@ function timeline(h){if(!h.length)return '<div class="nodata">暂无物流轨迹
 // 3 big stages
 const S3=['国内快递','集运仓入仓','海/空运到马'];
 const CST={'国内快递':[0,0],'已入仓':[2,-1],'运往马来西亚':[2,2],'已到马':[3,-1],'已签收':[3,-1]};// [done, current]
-const PST={'国内运输中':[0,0],'已入仓':[2,-1],'未查到':[0,-1],'已完成（中国本地自取）':[3,-1]};
-const NOW={'国内快递':'国内快递运输中','已入仓':'已入集运仓，等待出运','运往马来西亚':'运往马来西亚途中','已到马':'已到马来西亚','已签收':'已签收 ✓','国内运输中':'国内快递运输中','未查到':'未查到轨迹','已完成（中国本地自取）':'已完成（中国本地自取）'};
+const PST={'无单号':[0,-1],'国内运输中':[0,0],'已入仓':[2,-1],'未查到':[0,-1],'已完成（中国本地自取）':[3,-1]};
+const NOW={'国内快递':'国内快递运输中','已入仓':'已入集运仓，等待出运','运往马来西亚':'运往马来西亚途中','已到马':'已到马来西亚','已签收':'已签收 ✓','无单号':'还没拿到国内快递单号','国内运输中':'国内快递运输中','未查到':'有单号但未查到轨迹','已完成（中国本地自取）':'已完成（中国本地自取）'};
 function prog(stage,map,mode){const[dn,cu]=map[stage]||[0,-1];const lab=/自取/.test(stage||'')?['国内快递','已送达','中国本地自取']:S3.map((x,i)=>i==2&&mode?(mode=='sea'?'海运到马':'空运到马'):x);
  return `<div class="prog">${lab.map((x,i)=>`<div class="st ${i<dn?'d':i===cu?'c':''}"><i></i><span>${i<dn?'✓ ':''}${x}</span></div>`).join('')}</div>`}
 const FW=v=>{const t=String(v??'').trim();const b=t.replace(/\s*[(（]\s*待确认\s*[)）]\s*$/,'').trim();return has(b)?{b,u:b!==t}:{b:TBD,u:true}};
 const fwH=v=>{const f=FW(v);return `<span class="fw">🏭 集运厂家 <b class="${f.b===TBD?'tbd':''}">${T(f.b)}</b>${f.u&&f.b!==TBD?' <span class="tbd">(待确认)</span>':''}</span>`};
 const fwOk=v=>F.fw==='all'||FW(v).b===F.fw;
-const tone=s=>/签收|到马|已完成/.test(s)?'ok':/未查到/.test(s||'')||!s?'warn':'go';
+const tone=s=>/签收|到马|已完成/.test(s)?'ok':/未查到|无单号/.test(s||'')||!s?'warn':'go';
 let D={cons:[],pk:[],solo:[]},F={m:'all',st:'all',sup:'all',fw:'all',q:''},OPEN=new Set();
 function parcel(p,solo){const id='p:'+p.id,o=OPEN.has(id),h=p._h;
  return `<div class="pk ${solo?'solo con':''}" style="${solo?'':''}">

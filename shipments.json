@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-27 18:10 MYT",
+  "updated": "2026-10-27 18:25 MYT",
   "schema_version": 3,
   "consolidations": [
     {
@@ -798,20 +798,21 @@
       "carrier": "叫车（待确认）",
       "tracking": "",
       "item": "OT 皮革 2.0",
-      "stage": "国内运输中",
+      "stage": "无单号",
       "evidence": "微信截图",
       "note": "10/24 货做好，叫车费 ¥65 已由 kx 付；单号未给；Nick 2026-10-27 确认目的仓云第白云湖",
       "history": [],
-      "last_checked": "2026-10-27T16:09+08:00",
+      "last_checked": "2026-10-27T18:25+08:00",
       "stage_manual": true,
-      "stage_source": "微信 10/24 叫车 + Nick 经私人助理确认目的仓 2026-10-27",
+      "stage_source": "厂家未给国内单号（Nick 要求单独分类）",
       "destination_warehouse": "云第白云湖",
       "confirm": {
         "item": "已确认",
         "supplier": "已确认",
         "destination": "已确认",
         "consolidation_link": "待确认"
-      }
+      },
+      "last_event": "货已做好叫车，单号未给；待厂家补国内单号"
     },
     {
       "id": "PKG-014",
