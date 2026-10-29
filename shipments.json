@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-29 18:36 MYT",
+ "updated": "2026-10-29 20:07 MYT",
  "schema_version": 3,
  "consolidations": [
   {
@@ -517,25 +517,26 @@
    "domestic_tracking_no": "SF[已脱敏]268",
    "supplier": "晋亿鞋材（DINGDINGDING）",
    "item": "EVA 料",
-   "hint": "海运 → Puchong（Puchong Orthotics TECHNOLOGY 收）；与 PKG-014 红包同批",
+   "hint": "海运 → Puchong（钟已确认与 PKG-014 同出；大单号待确认）",
    "ctns": null,
    "warehouse_ref": null,
    "history": [],
    "confirm": {
     "supplier": "已确认",
     "item": "已确认",
-    "consolidation_link": "待确认"
+    "consolidation_link": "待确认",
+    "sea_plan": "已确认"
    },
    "consolidation_id": null,
    "stage": "已入仓",
    "stage_source": "Nick 确认（10-23）",
-   "last_event": "2026-10-29 约18:35 已发CC确认与红包同海运（钟暂未回）",
-   "last_checked": "2026-10-29T18:36+08:00",
+   "last_event": "2026-10-29 18:38 钟确认与红包同海运（大单号待发）",
+   "last_checked": "2026-10-29T20:07+08:00",
    "forwarder": "云第 yd-wl",
    "evidence": "Nick 确认",
    "weight": "8.3KG",
    "stage_manual": true,
-   "note": "仓库说打小包差不多200（单位未说，待确认）；2026-10-27 17:56 钟引用海运催问回「不是说放着么」+揉眼；与先前 Nick「不急可等其他海运」一致。继续放仓还是现在海运发，等 Nick 定（微信跟进已问）。 2026-10-29 微信补扫：群里已发「这件走海运，寄 Puchong」；钟确认与 PKG-014 红包同批海运。海运集运单号未出，consolidation_link 待确认。（来源 inbox/20261029-wechat-catchup.md + wechat-send/catchup-20261029/cc-zhong-01/02/03.webp）；2026-10-29 约18:35 MYT Nick批后已在「CC SDN BHD 运输」发出确认：顺丰跟红包一起海运寄 Puchong（截图 wechat-send/cc-sf-hongbao-confirm-sent.png）；钟暂未回；海运集运单号仍待确认。"
+   "note": "仓库说打小包差不多200（单位未说，待确认）；2026-10-27 17:56 钟引用海运催问回「不是说放着么」+揉眼；与先前 Nick「不急可等其他海运」一致。继续放仓还是现在海运发，等 Nick 定（微信跟进已问）。 2026-10-29 微信补扫：群里已发「这件走海运，寄 Puchong」；钟确认与 PKG-014 红包同批海运。海运集运单号未出，consolidation_link 待确认。（来源 inbox/20261029-wechat-catchup.md + wechat-send/catchup-20261029/cc-zhong-01/02/03.webp）；2026-10-29 约18:35 MYT Nick批后已在「CC SDN BHD 运输」发出确认：顺丰跟红包一起海运寄 Puchong（截图 wechat-send/cc-sf-hongbao-confirm-sent.png）；钟暂未回；海运集运单号仍待确认。；2026-10-29 18:38 钟回「嗯」，确认跟红包一起海运寄 Puchong；海运大单号仍待钟另发。"
   },
   {
    "id": "PKG-004",
@@ -859,8 +860,8 @@
    "stage": "国内运输中",
    "stage_manual": true,
    "evidence": "微信截图",
-   "hint": "海运 → Puchong（已更正安能并通知 CC）",
-   "note": "10/26 鸿运来 19 箱红包→云第；运费¥250 已付；厂家后称中通号错误，正确为安能母单 760253231999 + 19 子单；16:39 已用错误中通号发过 CC，待 Nick 批准更正；10/26 18:30 已发 CC 更正（安能母单+子单，Orthotics）；2026-10-29 微信补扫：已通知 CC 作废中通、改安能（唛头 ZXZ/NICK88）；钟确认与 SF EVA（PKG-003）同海运；入仓待确认。（来源 inbox/20261029-wechat-catchup.md + wechat-send/catchup-20261029/cc-zhong-01/02/03.webp）；2026-10-29 约18:35 Nick批后CC群已发确认与 EVA(SF1580889297268/PKG-003)同海运；钟暂未回。",
+   "hint": "海运 → Puchong（钟已确认与 PKG-003 同出；大单号待确认）",
+   "note": "10/26 鸿运来 19 箱红包→云第；运费¥250 已付；厂家后称中通号错误，正确为安能母单 760253231999 + 19 子单；16:39 已用错误中通号发过 CC，待 Nick 批准更正；10/26 18:30 已发 CC 更正（安能母单+子单，Orthotics）；2026-10-29 微信补扫：已通知 CC 作废中通、改安能（唛头 ZXZ/NICK88）；钟确认与 SF EVA（PKG-003）同海运；入仓待确认。（来源 inbox/20261029-wechat-catchup.md + wechat-send/catchup-20261029/cc-zhong-01/02/03.webp）；2026-10-29 约18:35 Nick批后CC群已发确认与 EVA(SF1580889297268/PKG-003)同海运；钟暂未回。；2026-10-29 18:38 钟回「嗯」确认与 EVA(SF1580889297268/PKG-003)同海运寄 Puchong；海运大单号仍待钟另发。",
    "confirm": [
     "尾款是否已付"
    ],
@@ -876,8 +877,8 @@
    "warehouse_ref": "760253231999",
    "mark": "ZXZ/NICK88",
    "weight": null,
-   "last_event": null,
-   "last_checked": "2026-10-29T18:36+08:00",
+   "last_event": "2026-10-29 18:38 钟确认与 EVA 同海运（大单号待发）",
+   "last_checked": "2026-10-29T20:07+08:00",
    "stage_source": "manual",
    "corrected_from": {
     "domestic_carrier": "中通",
