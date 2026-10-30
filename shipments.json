@@ -553,7 +553,7 @@
    "domestic_tracking_no": "SF[已脱敏]268",
    "supplier": "晋亿鞋材（DINGDINGDING）",
    "item": "EVA 料",
-   "hint": "海运 → Puchong（钟已确认与 PKG-014 同出；大单号待确认）",
+   "hint": "海运 → Puchong（钟已确认；Nick 10/30 说等环保袋到齐一起出；大单号待确认）",
    "ctns": null,
    "warehouse_ref": null,
    "history": [],
@@ -566,13 +566,13 @@
    "consolidation_id": null,
    "stage": "已入仓",
    "stage_source": "Nick 确认（10-23）",
-   "last_event": "2026-10-29 18:38 钟确认与红包同海运（大单号待发）",
+   "last_event": "2026-10-30 Nick/钟：等环保袋到齐再与红包等同海运（大单号待发）",
    "last_checked": "2026-10-30T16:06+08:00",
    "forwarder": "云第 yd-wl",
    "evidence": "Nick 确认",
    "weight": "8.3KG",
    "stage_manual": true,
-   "note": "仓库说打小包差不多200（单位未说，待确认）；2026-10-27 17:56 钟引用海运催问回「不是说放着么」+揉眼；与先前 Nick「不急可等其他海运」一致。继续放仓还是现在海运发，等 Nick 定（微信跟进已问）。 2026-10-29 微信补扫：群里已发「这件走海运，寄 Puchong」；钟确认与 PKG-014 红包同批海运。海运集运单号未出，consolidation_link 待确认。（来源 inbox/20261029-wechat-catchup.md + wechat-send/catchup-20261029/cc-zhong-01/02/03.webp）；2026-10-29 约18:35 MYT Nick批后已在「CC SDN BHD 运输」发出确认：顺丰跟红包一起海运寄 Puchong（截图 wechat-send/cc-sf-hongbao-confirm-sent.png）；钟暂未回；海运集运单号仍待确认。；2026-10-29 18:38 钟回「嗯」，确认跟红包一起海运寄 Puchong；海运大单号仍待钟另发。"
+   "note": "仓库说打小包差不多200（单位未说，待确认）；2026-10-27 17:56 钟引用海运催问回「不是说放着么」+揉眼；与先前 Nick「不急可等其他海运」一致。继续放仓还是现在海运发，等 Nick 定（微信跟进已问）。 2026-10-29 微信补扫：群里已发「这件走海运，寄 Puchong」；钟确认与 PKG-014 红包同批海运。海运集运单号未出，consolidation_link 待确认。（来源 inbox/20261029-wechat-catchup.md + wechat-send/catchup-20261029/cc-zhong-01/02/03.webp）；2026-10-29 约18:35 MYT Nick批后已在「CC SDN BHD 运输」发出确认：顺丰跟红包一起海运寄 Puchong（截图 wechat-send/cc-sf-hongbao-confirm-sent.png）；钟暂未回；海运集运单号仍待确认。；2026-10-29 18:38 钟回「嗯」，确认跟红包一起海运寄 Puchong；海运大单号仍待钟另发。；2026-10-30 CC群 Nick 说等环保袋（PKG-016）等到齐再一起出，钟回「好」；海运批次拟含 EVA+红包+一滴香(PKG-015)+环保袋，大单号仍待确认。"
   },
   {
    "id": "PKG-004",
@@ -896,8 +896,8 @@
    "stage": "国内运输中",
    "stage_manual": true,
    "evidence": "微信截图",
-   "hint": "海运 → Puchong（钟已确认与 PKG-003 同出；大单号待确认）",
-   "note": "10/26 鸿运来 19 箱红包→云第；运费¥250 已付；厂家后称中通号错误，正确为安能母单 760253231999 + 19 子单；16:39 已用错误中通号发过 CC，待 Nick 批准更正；10/26 18:30 已发 CC 更正（安能母单+子单，Orthotics）；2026-10-29 微信补扫：已通知 CC 作废中通、改安能（唛头 ZXZ/NICK88）；钟确认与 SF EVA（PKG-003）同海运；入仓待确认。（来源 inbox/20261029-wechat-catchup.md + wechat-send/catchup-20261029/cc-zhong-01/02/03.webp）；2026-10-29 约18:35 Nick批后CC群已发确认与 EVA(SF1580889297268/PKG-003)同海运；钟暂未回。；2026-10-29 18:38 钟回「嗯」确认与 EVA(SF1580889297268/PKG-003)同海运寄 Puchong；海运大单号仍待钟另发。",
+   "hint": "海运 → Puchong（钟已确认；Nick 10/30 说等环保袋到齐一起出；大单号待确认）",
+   "note": "10/26 鸿运来 19 箱红包→云第；运费¥250 已付；厂家后称中通号错误，正确为安能母单 760253231999 + 19 子单；16:39 已用错误中通号发过 CC，待 Nick 批准更正；10/26 18:30 已发 CC 更正（安能母单+子单，Orthotics）；2026-10-29 微信补扫：已通知 CC 作废中通、改安能（唛头 ZXZ/NICK88）；钟确认与 SF EVA（PKG-003）同海运；入仓待确认。（来源 inbox/20261029-wechat-catchup.md + wechat-send/catchup-20261029/cc-zhong-01/02/03.webp）；2026-10-29 约18:35 Nick批后CC群已发确认与 EVA(SF1580889297268/PKG-003)同海运；钟暂未回。；2026-10-29 18:38 钟回「嗯」确认与 EVA(SF1580889297268/PKG-003)同海运寄 Puchong；海运大单号仍待钟另发。；2026-10-30 CC群 Nick 说等环保袋（PKG-016）等到齐再一起出，钟回「好」；海运批次拟含 EVA+红包+一滴香(PKG-015)+环保袋，大单号仍待确认。",
    "confirm": [
     "尾款是否已付"
    ],
@@ -913,7 +913,7 @@
    "warehouse_ref": "760253231999",
    "mark": "ZXZ/NICK88",
    "weight": null,
-   "last_event": "2026-10-29 18:38 钟确认与 EVA 同海运（大单号待发）",
+   "last_event": "2026-10-30 Nick/钟：等环保袋到齐再同海运（大单号待发；本票是否已入仓仍待确认）",
    "last_checked": "2026-10-30T16:06+08:00",
    "stage_source": "manual",
    "corrected_from": {
@@ -941,6 +941,71 @@
     ],
     "reason": "厂家称中通号错误"
    }
+  },
+  {
+   "id": "PKG-015",
+   "forwarder": "云第 yd-wl",
+   "supplier": "香语生物",
+   "factory": "香语生物（四季）",
+   "domestic_carrier": "货拉拉（无快递号）",
+   "domestic_tracking_no": null,
+   "warehouse_doc_no": "5079419",
+   "item": "一滴香/香薰（300ml自动喷沉香、花艺香薰白茶玫瑰、补充装260ml白茶沉香；约6件，件数待确认）",
+   "ctns": null,
+   "stage": "已入仓",
+   "stage_manual": true,
+   "stage_source": "香语群 2026-10-30 14:48 四季发货单+云第盖章收货单（inbox/20261030-1603-wechat.md）",
+   "last_event": "2026-10-30 约14:48 货拉拉送到云第；送货单 No.5079419；云第盖章收货",
+   "last_checked": "2026-10-30T16:06+08:00",
+   "destination_warehouse": "云第白云湖",
+   "hint": "海运 → Puchong（待确认；Nick 说等环保袋到齐一起出）",
+   "confirm": {
+    "supplier": "已确认",
+    "item": "已确认",
+    "destination": "已确认",
+    "consolidation_link": "待确认",
+    "ctns": "待确认"
+   },
+   "consolidation_id": null,
+   "evidence": [],
+   "evidence_note": "截图未存；来源 inbox/20261030-1603-wechat.md",
+   "history": [
+    {
+     "time": "2026-10-30T14:48:00+08:00",
+     "location": "云第",
+     "description": "送到云第（送货单 No.5079419 + 盖章收货单）",
+     "source": "微信跟进 / 香语群"
+    }
+   ],
+   "note": "2026-10-30 香语四季货拉拉送云第，无快递单号；送货单 No.5079419，收件郑兴泽；品项含沉香喷雾/白茶玫瑰香薰/白茶沉香补充装；手写约6件（数量待确认）。CC群 Nick 发收货单照片，钟回「有」；Nick「等这里的到了一起出」，钟「好」（指等环保袋等到齐再海运）。"
+  },
+  {
+   "id": "PKG-016",
+   "forwarder": "云第 yd-wl",
+   "supplier": "木子（Ot环保袋）",
+   "factory": "木子",
+   "domestic_carrier": "待确认",
+   "domestic_tracking_no": null,
+   "tracking": "",
+   "item": "Ot环保袋",
+   "stage": "无单号",
+   "stage_manual": true,
+   "stage_source": "厂家未给国内单号（木子称今日送达）",
+   "last_event": "2026-10-30 15:43 木子称今日约17:00前送到云第一号仓；尚无快递/货拉拉单号",
+   "last_checked": "2026-10-30T16:06+08:00",
+   "destination_warehouse": "云第白云湖（一号仓）",
+   "hint": "海运 → Puchong（Nick：到齐后与 EVA/红包/一滴香一起出；待确认）",
+   "confirm": {
+    "supplier": "已确认",
+    "item": "已确认",
+    "destination": "已确认",
+    "consolidation_link": "待确认"
+   },
+   "consolidation_id": null,
+   "evidence": [],
+   "evidence_note": "截图未存；来源 inbox/20261030-1603-wechat.md",
+   "history": [],
+   "note": "2026-10-30 15:43 木子：今天5点前送到云第一号仓；无单号。CC群 Nick 对钟说等这批到齐一起出，钟回「好」。到仓后需补国内单号/入仓号，并并入海运批次（含 PKG-003 EVA、PKG-014 红包、PKG-015 一滴香，待确认）。"
   }
  ],
  "forwarders": [
