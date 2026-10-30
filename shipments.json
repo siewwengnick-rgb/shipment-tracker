@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-29 20:07 MYT",
+ "updated": "2026-10-30 10:08 MYT",
  "schema_version": 3,
  "consolidations": [
   {
@@ -13,7 +13,7 @@
    "stage": "已签收",
    "stage_source": "DEX-i 返回轨迹",
    "last_event": "2026-10-27T13:01:00+08:00 派送完成 已签收，感谢您选择，期待再次为您服务！",
-   "last_checked": "2026-10-29T18:34+08:00",
+   "last_checked": "2026-10-30T10:08+08:00",
    "history": [
     {
      "time": "2026-10-27T13:01:00+08:00",
@@ -105,7 +105,7 @@
    "stage_manual": true,
    "stage_source": "Nick 2026-10-22 告知已在仓打木箱",
    "last_event": "正在打木箱，预计约 2026-10-23 出运（Nick 10-22 告知）",
-   "last_checked": "2026-10-29T18:34+08:00",
+   "last_checked": "2026-10-30T10:08+08:00",
    "history": [],
    "parcel_ids": [
     "PKG-006"
@@ -133,7 +133,7 @@
    "item": "墨粉盒（据群聊语境）",
    "stage": "已签收",
    "last_event": "2026-10-19T10:24:00+08:00 派送完成 已签收，感谢您选择，期待再次为您服务！",
-   "last_checked": "2026-10-29T18:34+08:00",
+   "last_checked": "2026-10-30T10:08+08:00",
    "history": [
     {
      "time": "2026-10-19T10:24:00+08:00",
@@ -223,11 +223,11 @@
    "ctns": null,
    "weight": null,
    "mark": "ZXZ/NICK885",
-   "stage": "运往马来西亚",
+   "stage": "已到马",
    "stage_manual": true,
    "stage_source": "云第 yd-wl 海运 返回轨迹",
    "last_event": "2026-10-13T16:42:48+08:00 已开船预计10-17到港",
-   "last_checked": "2026-10-29T18:34+08:00",
+   "last_checked": "2026-10-30T10:08+08:00",
    "evidence": [
     {
      "type": "tracking_shot",
@@ -362,7 +362,7 @@
    "stage_source": "DEX 返回轨迹",
    "last_event": "2026-10-27T13:01:00+08:00 派送完成 已签收，感谢您选择，期待再次为您服务！",
    "tracking_no": "[已脱敏]3",
-   "last_checked": "2026-10-29T18:34+08:00",
+   "last_checked": "2026-10-30T10:08+08:00",
    "item": "韵达435389（日用品/夏季胶，厂家待确认）+ 顺丰脚压仪 SF020751（3.3kg）；钟确认两件打包"
   },
   {
@@ -381,7 +381,7 @@
    "note": "10/24 18:03 敏感货群发单；货物和国内单号待确认，含 PKG-006 有机硅油白桶（Nick 2026-10-27 确认），与 CON-002 关联；查询方式未知；已出海运单，开船日期待确认",
    "history": [],
    "tracking_no": "LLGJ[已脱敏]",
-   "last_checked": "2026-10-29T18:34+08:00",
+   "last_checked": "2026-10-30T10:08+08:00",
    "parcel_ids": []
   },
   {
@@ -397,12 +397,36 @@
    "stage": "已到马",
    "stage_manual": false,
    "stage_source": "DEX-i 返回轨迹",
-   "last_event": "2026-10-29T09:18:00+08:00 正在清关中",
-   "last_checked": "2026-10-29T18:34+08:00",
+   "last_event": "2026-10-30T07:54:00+08:00 分拣到目的地",
+   "last_checked": "2026-10-30T10:08+08:00",
    "parcel_ids": [
     "PKG-012"
    ],
    "history": [
+    {
+     "time": "2026-10-30T07:54:00+08:00",
+     "location": "MALAYSIA",
+     "description": "分拣到目的地",
+     "source": "DEX api.dex-i.com"
+    },
+    {
+     "time": "2026-10-30T05:23:00+08:00",
+     "location": "MALAYSIA",
+     "description": "正在中转至目的地",
+     "source": "DEX api.dex-i.com"
+    },
+    {
+     "time": "2026-10-29T20:38:00+08:00",
+     "location": "MALAYSIA",
+     "description": "分拣到目的地",
+     "source": "DEX api.dex-i.com"
+    },
+    {
+     "time": "2026-10-29T20:37:00+08:00",
+     "location": "MALAYSIA",
+     "description": "到达分拣中心",
+     "source": "DEX api.dex-i.com"
+    },
     {
      "time": "2026-10-29T09:18:00+08:00",
      "location": "MALAYSIA",
@@ -465,7 +489,7 @@
    "stage": "已入仓",
    "stage_source": "安能签收联+入仓标签照片 cc-9/cc-10",
    "last_event": "2026-10-06 13:12 安能签收（到云第仓），入仓号 M2026[已脱敏]7",
-   "last_checked": "2026-10-29T18:34+08:00",
+   "last_checked": "2026-10-30T10:08+08:00",
    "forwarder": "云第 yd-wl",
    "evidence": [
     {
@@ -504,7 +528,7 @@
    "stage": "已到马",
    "stage_source": "继承 CON-001（钟 12:41「对」确认 SF1580887700171）",
    "last_event": "已并入 CON-001 空运；马来段出外派送（继承集运）",
-   "last_checked": "2026-10-29T18:34+08:00",
+   "last_checked": "2026-10-30T10:08+08:00",
    "forwarder": "云第 yd-wl",
    "weight": "1KG",
    "note": "钟 12:41 确认并入 CON-001（DEX 0.8kg）。国内标重 1KG 与 DEX 0.8kg 略差。 旧 evidence：「微信截图」。",
@@ -531,7 +555,7 @@
    "stage": "已入仓",
    "stage_source": "Nick 确认（10-23）",
    "last_event": "2026-10-29 18:38 钟确认与红包同海运（大单号待发）",
-   "last_checked": "2026-10-29T20:07+08:00",
+   "last_checked": "2026-10-30T10:08+08:00",
    "forwarder": "云第 yd-wl",
    "evidence": "Nick 确认",
    "weight": "8.3KG",
@@ -557,7 +581,7 @@
    "stage": "已到马",
    "stage_source": "继承 CON-005（钟 12:15 面单确认打包）",
    "last_event": "已并入 CON-005 空运；马来段出外派送（继承集运）",
-   "last_checked": "2026-10-29T18:34+08:00",
+   "last_checked": "2026-10-30T10:08+08:00",
    "forwarder": "云第 yd-wl",
    "weight": "3.3KG",
    "note": "Nick 说走空运，集运单待确认；钟 12:15 CC群用顺丰面单照确认并入 DEX 11101941653「两件打包」（CON-005）；面单另见「JC-JSWB-2609-冬季胶」、X4502",
@@ -583,7 +607,7 @@
    "stage": "未查到",
    "stage_source": "有国内单号但暂无轨迹",
    "last_event": "未查到轨迹",
-   "last_checked": "2026-10-29T18:34+08:00",
+   "last_checked": "2026-10-30T10:08+08:00",
    "forwarder": "零零九国际物流(待确认入仓)",
    "evidence": "旧笔记（未重核）",
    "note": "时间线：10/20先按错址「发出去了」；后称未到广州要改址；周三ERP+运费285确认改址。托运单10/20义乌→广州，货号20-220-10，10件纤袋，现付285，收货唐[电话已删]。误催后18:11回运单图。已入仓：无（待确认）。 2026-10-29 微信补扫无新回复。"
@@ -607,7 +631,7 @@
    "stage": "已入仓",
    "stage_source": "Nick 经私人助理确认 2026-10-27（白桶有机硅油，并进 CON-002/CON-006）",
    "last_event": "已确认：有机硅油白桶；关联 CON-002 / CON-006",
-   "last_checked": "2026-10-29T18:34+08:00",
+   "last_checked": "2026-10-30T10:08+08:00",
    "forwarder": "零零九国际物流",
    "evidence": [
     {
@@ -645,7 +669,7 @@
    "stage": "已完成（中国本地自取）",
    "stage_source": "微信跟进 10-23 核对",
    "last_event": "Nick 已在中国酒店自取（微信跟进 10-23 核对）",
-   "last_checked": "2026-10-29T18:34+08:00",
+   "last_checked": "2026-10-30T10:08+08:00",
    "forwarder": "中国本地自取",
    "evidence": "微信截图"
   },
@@ -671,7 +695,7 @@
    "forwarder": "待确认",
    "note": "旧入仓号 M202609282018586（9/28，CTNS 2）；已排除与 PKG-004/WM00668 同一票（对方为 10/21 脚压仪 3.3kg）；货品/厂家仍待确认",
    "evidence": "微信照片",
-   "last_checked": "2026-10-29T18:34+08:00",
+   "last_checked": "2026-10-30T10:08+08:00",
    "mark": "ZXZ/NICK88"
   },
   {
@@ -690,12 +714,12 @@
     "consolidation_link": "已确认"
    },
    "consolidation_id": "CON-004",
-   "stage": "运往马来西亚",
+   "stage": "已到马",
    "stage_source": "继承集运单 CON-004",
    "last_event": "2026-10-13T16:42:48+08:00 已开船预计10-17到港",
    "forwarder": "云第 yd-wl",
    "evidence": "微信照片",
-   "last_checked": "2026-10-29T18:34+08:00",
+   "last_checked": "2026-10-30T10:08+08:00",
    "mark": "ZXZ/NICK885"
   },
   {
@@ -720,7 +744,7 @@
    "forwarder": "零零九国际物流",
    "evidence": "微信截图",
    "note": "敏感货群：10/16宏渝贴条码800226512199并写「水溶性硅油100kg」「这个先别出，还有一批货」；10/19宏渝「和这个一起海运」，零零九「到了就可以一起出」。10/21白桶木箱照未绑此单号（那是PKG-006线）。群内无「已入仓/收货」描述本单。inbox文件名20261023不准，条码帖实为10/16。威纳中通图=800227256639≠本单。勿催威纳。 2026-10-29 微信补扫无新回复。",
-   "last_checked": "2026-10-29T18:34+08:00"
+   "last_checked": "2026-10-30T10:08+08:00"
   },
   {
    "id": "PKG-011",
@@ -753,7 +777,7 @@
    "forwarder": "云第 yd-wl",
    "evidence": "微信照片",
    "note": "仓库说没代号；Nick 定空运寄马来（10-23）；10/23 20:00 钟重发运单图：常州→云仓，日用品/夏季胶；钟 12:15 CC群用韵达面单照确认并入 DEX 11101941653「两件打包」（CON-005）；面单无重量；厂家仍待确认",
-   "last_checked": "2026-10-29T18:34+08:00"
+   "last_checked": "2026-10-30T10:08+08:00"
   },
   {
    "id": "PKG-012",
@@ -795,7 +819,7 @@
    "hint": "空运 → Puchong（已通知 CC）",
    "stage_source": "钟确认「对」=DEX 11101941616 + DEX-i 轨迹（继承 CON-007）",
    "last_event": "2026-10-29T09:18:00+08:00 DEX 正在清关中（CON-007）",
-   "last_checked": "2026-10-29T18:34+08:00",
+   "last_checked": "2026-10-30T10:08+08:00",
    "stage_manual": true,
    "evidence_note": "微信截图",
    "domestic_tracking_no": "YT2554709548341",
@@ -816,7 +840,7 @@
    "evidence": "微信截图",
    "note": "10/24 货做好，叫车费 ¥65 已由 kx 付；单号未给；Nick 2026-10-27 确认目的仓云第白云湖",
    "history": [],
-   "last_checked": "2026-10-29T18:34+08:00",
+   "last_checked": "2026-10-30T10:08+08:00",
    "stage_manual": true,
    "stage_source": "厂家未给国内单号（Nick 要求单独分类）",
    "destination_warehouse": "云第白云湖",
@@ -878,7 +902,7 @@
    "mark": "ZXZ/NICK88",
    "weight": null,
    "last_event": "2026-10-29 18:38 钟确认与 EVA 同海运（大单号待发）",
-   "last_checked": "2026-10-29T20:07+08:00",
+   "last_checked": "2026-10-30T10:08+08:00",
    "stage_source": "manual",
    "corrected_from": {
     "domestic_carrier": "中通",

@@ -65,7 +65,7 @@ def main():
         c["parcel_ids"] = [p["id"] for p in mine]
         if c.get("stage_manual") and not c.get("history"): continue  # manual fact (e.g. Nick told us), keep until carrier events
         if c.get("history"):
-            c["stage"] = CSTAGES[ev_stage(c["history"][0]["description"])]
+            c["stage"] = CSTAGES[max(ev_stage(h.get("description")) for h in c["history"])]
             c["stage_source"] = f'{c["carrier"]} 返回轨迹'; c["last_event"] = f'{c["history"][0]["time"]} {c["history"][0]["description"]}'
         elif any(p.get("warehouse_ref") for p in mine):
             c["stage"] = "已入仓"; c["stage_source"] = "所含包裹有入仓号；承运商暂无轨迹"; c["last_event"] = f'{c["carrier"]} {c["tracking_no"]} 暂无轨迹'
