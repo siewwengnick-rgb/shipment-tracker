@@ -22,8 +22,9 @@ def iso(t):
         try: return datetime.datetime.strptime(str(t)[:19], f).replace(tzinfo=MYT).isoformat()
         except ValueError: pass
     return str(t)
-def ev_stage(desc):
+def ev_stage(desc, loc=""):
     t = desc or ""
+    if any(k in (loc or "") for k in ("中国", "云第", "广州", "CHINA", "China")): return 2  # China-side customs/装柜 != arrived
     if "签收" in t or "派送完成" in t: return 4
     if any(k in t for k in ("清关", "海关", "到达马", "派送", "派件", "Malaysia", "KUL", "吉隆坡")): return 3
     return 2  # any forwarder event => 运往马来西亚
@@ -63,9 +64,10 @@ def main():
         if c["mode"] == "sea": c["last_checked"] = now  # yd-wl: manual/browser placeholder
         mine = [p for p in PK if p.get("consolidation_id") == c["id"]]
         c["parcel_ids"] = [p["id"] for p in mine]
-        if c.get("stage_manual") and not c.get("history"): continue  # manual fact (e.g. Nick told us), keep until carrier events
+        api_hist = [h for h in (c.get("history") or []) if str(h.get("source", "")).startswith("DEX api")]
+        if c.get("stage_manual") and not api_hist: continue  # manual fact / WeChat-sourced history: keep until real carrier API events
         if c.get("history"):
-            c["stage"] = CSTAGES[max(ev_stage(h.get("description")) for h in c["history"])]
+            c["stage"] = CSTAGES[max(ev_stage(h.get("description"), h.get("location")) for h in c["history"])]
             c["stage_source"] = f'{c["carrier"]} 返回轨迹'; c["last_event"] = f'{c["history"][0]["time"]} {c["history"][0]["description"]}'
         elif any(p.get("warehouse_ref") for p in mine):
             c["stage"] = "已入仓"; c["stage_source"] = "所含包裹有入仓号；承运商暂无轨迹"; c["last_event"] = f'{c["carrier"]} {c["tracking_no"]} 暂无轨迹'
