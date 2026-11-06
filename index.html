@@ -435,6 +435,9 @@ h1{margin:0;font-size:18px;line-height:1.2;font-weight:700;letter-spacing:-0.03e
     const d = parseT(m[1]);
     return d ? { date: d, raw } : null;
   }
+  function etaNoteOf(o, parent) {
+    return text(o && o.eta_note) || text(parent && parent.eta_note) || '';
+  }
   function historyEta(list) {
     for (const e of list || []) {
       const ds = text(e.ds);
@@ -474,7 +477,8 @@ h1{margin:0;font-size:18px;line-height:1.2;font-weight:700;letter-spacing:-0.03e
         const stamp = mdCompact(ev.d);
         return { kind: 'signed', date: ev.d, ymd: ymd(ev.d), text: '签收 ' + stamp, why: '', whyFull: `签收日 ${stamp}，取自轨迹「${text(ev.ds)}」。`, vessel };
       }
-      return { kind: 'signed', date: null, ymd: '', text: '签收日待确认', why: '轨迹无签收时间', whyFull: '阶段已是签收或完成，轨迹里没有签收时间，不能补一个日期。', vessel };
+      const en = etaNoteOf(o, parent);
+      return { kind: 'signed', date: null, ymd: '', text: '签收日待确认', why: en ? '见备注' : '轨迹无签收时间', whyFull: en || '阶段已是签收或完成，轨迹里没有签收时间，不能补一个日期。', vessel };
     }
     if (warehouse) {
       return { kind: 'warehouse', date: null, ymd: '', text: '未出仓·待装柜', why: '', whyFull: '阶段仍是已入仓，还没有开船或航班日期。', vessel };
@@ -495,14 +499,17 @@ h1{margin:0;font-size:18px;line-height:1.2;font-weight:700;letter-spacing:-0.03e
     }
     const quoted = forecastNotes(trail);
     if (arrived) {
-      const why = quoted.length ? '仅预计 ' + quoted.join('、') : '无到港记录';
-      const full = quoted.length
+      const en = etaNoteOf(o, parent);
+      const why = en ? '见备注' : (quoted.length ? '仅预计 ' + quoted.join('、') : '无到港记录');
+      const full = en || (quoted.length
         ? `阶段已到马。轨迹只写了预计到港 ${quoted.join('、')}，没有到港或签收时间。`
-        : '阶段已到马，轨迹里没有到港或签收时间。';
+        : '阶段已到马，轨迹里没有到港或签收时间。');
       return { kind: 'arrived', date: null, ymd: '', text: 'ETA 未知', why, whyFull: full, vessel };
     }
+    const en = etaNoteOf(o, parent);
     let why = '没有到港日期', full = '运单和轨迹都没有到港日期。';
-    if (stage === '无单号') { why = '无单号'; full = '没有单号，无法跟踪，也不能推出到港日。'; }
+    if (en) { why = '见备注'; full = en; }
+    else if (stage === '无单号') { why = '无单号'; full = '没有单号，无法跟踪，也不能推出到港日。'; }
     else if (stage === '未查到' || pstage === '未查到') { why = '有单号，无轨迹'; full = '有单号，但没有轨迹，到港日未知。'; }
     else if (stage === '国内运输中') { why = '国内在途，未入仓'; full = '还在国内运输，尚未入仓，没有到港日期。'; }
     else if (quoted.length) { why = '仅预计 ' + quoted.join('、'); full = `轨迹只写了预计 ${quoted.join('、')}，阶段对不上，不当作到港日。`; }
