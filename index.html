@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#1b3c30">
+<meta name="theme-color" content="#244b3e">
 <title>集运追踪</title>
 <style>
 :root{
-  --floor:#d5e0da;
-  --card:#f4f7f5;
-  --ink:#14211c;
-  --ink-2:#3d4a44;
-  --line:#c5d1cb;
-  --green:#1b3c30;
+  --floor:#f7f5f0;
+  --card:#fffefa;
+  --ink:#252c28;
+  --ink-2:#5b625d;
+  --line:#dedfd7;
+  --green:#244b3e;
   --green-ink:#f3f6f1;
   --green-dim:#d5e4da;
   --amber:#e2a11a;
@@ -24,8 +24,8 @@
 *{box-sizing:border-box}
 html{scrollbar-color:var(--green) var(--floor)}
 html{background:var(--floor);color:var(--ink)}
-body{margin:0;background:var(--floor);color:var(--ink);font-family:"PingFang SC", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif;font-size:13px;line-height:1.35;-webkit-font-smoothing:antialiased;overflow-x:clip}
-::selection{background:var(--amber);color:var(--amber-ink)}
+body{margin:0;background:var(--floor);color:var(--ink);font-family:"PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", "Microsoft YaHei", "WenQuanYi Micro Hei", system-ui, sans-serif;font-size:13px;line-height:1.35;-webkit-font-smoothing:antialiased;overflow-wrap:anywhere}
+::selection{background:var(--green-dim);color:var(--ink)}
 :focus-visible{outline:2px solid var(--green);outline-offset:2px}
 button,input,select{font:inherit;color:inherit}
 .vh{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
@@ -155,13 +155,91 @@ h1{margin:0;font-size:18px;line-height:1.2;font-weight:700;letter-spacing:-0.03e
 @media (max-width:390px){
   .frame{padding-left:12px;padding-right:12px}
 }
+
+/* Warm paper ledger; both views use the same shipment controls and details. */
+body{font-size:14px;line-height:1.55}
+.topbar{background:var(--floor);color:var(--ink);border-bottom:1px solid var(--line)}
+.topbar :focus-visible{outline-color:var(--green)}
+.frame{max-width:1360px;padding-inline:28px}
+.barline{align-items:center;flex-wrap:wrap;padding-block:28px 22px;gap:16px}
+h1{font-size:26px;letter-spacing:0;font-weight:650}
+#upd{color:var(--ink-2);text-align:left;font-size:12px;margin-top:5px}
+.view-switch{display:flex;gap:4px;border:1px solid var(--line);padding:3px;border-radius:10px;background:var(--card)}
+.view-switch button{border:0;background:transparent;border-radius:6px;min-height:44px;min-width:68px;padding:8px 14px;cursor:pointer}
+.view-switch button[aria-pressed="true"]{background:var(--green);color:var(--green-ink)}
+.bar{position:static;padding-block:18px;border-bottom:0}
+.bar .frame{gap:12px;flex-wrap:wrap}
+.search input,select{min-height:44px;font-size:14px;border-radius:7px;padding:10px 12px;caret-color:var(--green)}
+.chip{min-height:44px;border-radius:6px;font-weight:500;cursor:pointer}
+.chips{gap:4px}
+.sels select{min-width:0;max-width:none}
+.reset{min-height:44px;padding:8px 12px;border:1px solid var(--line);background:var(--card);border-radius:7px;cursor:pointer}
+.week{display:block;padding:18px 0 22px;border-bottom:1px solid var(--line);margin-bottom:26px}
+.week h2{font-size:14px;color:var(--green);margin-bottom:6px}
+.week p{font-size:14px;font-weight:400;line-height:1.7}
+.wk{white-space:normal}
+.grp{margin-bottom:30px}
+.grp h2{font-size:16px;margin:0 0 14px;font-weight:600}
+.grp h2 b{font-size:13px;font-weight:400;color:var(--ink-2);margin-left:8px}
+.cols,.sum{grid-template-columns:minmax(0,2.1fr) minmax(0,.85fr) minmax(0,1.15fr) minmax(0,.8fr) minmax(0,.8fr) minmax(0,.6fr) minmax(0,1.4fr);column-gap:16px}
+.cols{padding:0 12px 10px;font-weight:400;font-size:12px}
+.sum{padding:17px 12px;min-height:76px;border-radius:6px;scroll-margin-top:16px}
+.c{white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:anywhere}
+.name{font-size:18px;line-height:1.45;font-weight:650;letter-spacing:0;align-items:baseline;gap:10px}
+.name .nm{overflow:visible;white-space:normal;display:block}
+.sup,.no,.car{font-size:13px;font-weight:400;line-height:1.5}
+.num{font-weight:500;color:var(--ink-2)}
+.chev{width:12px;height:12px}
+.stage{font-size:12px;font-weight:500;padding:4px 7px;line-height:1.45;white-space:normal;max-width:100%;overflow:visible;border-radius:5px}
+.destv{background:transparent;color:var(--ink-2);font-weight:400;padding:0;font-size:13px;overflow:visible}
+.eta{font-size:13px;font-weight:500;line-height:1.5}
+.eta-label{display:none}
+.eta-note{display:block;color:var(--ink-2);font-size:12px;font-weight:400;margin-top:3px;line-height:1.5}
+.why,.miss{font-weight:500}
+.panel{padding:18px 22px;margin-bottom:12px;border-radius:6px}
+.done-toggle{min-height:52px;font-size:14px;padding:12px;color:var(--ink-2)}
+.empty button,.lb-x{min-height:44px}
+.proof-open{min-height:44px}
+.colophon{font-size:12px;margin-block:32px;line-height:1.7}
+.card-grid{display:block}
+[data-view="cards"] .card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:start}
+[data-view="cards"] .cols{display:none}
+[data-view="cards"] .line{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+[data-view="cards"] .sum{display:flex;flex-direction:column;align-items:stretch;gap:7px;padding:20px}
+[data-view="cards"] .name{margin-bottom:5px;order:-3}
+[data-view="cards"] .st{order:-1;align-self:flex-start}
+[data-view="cards"] .c.eta{order:-2}
+[data-view="cards"] .eta-label{display:inline;font-weight:400;color:var(--ink-2);margin-right:6px}
+[data-view="cards"] .panel{margin:0;padding:18px 20px;border-top:1px solid var(--line)}
+.meta-label{display:none;color:var(--ink-2);font-size:12px;margin-right:6px}
+[data-view="cards"] .meta-label{display:inline}
+@media(min-width:960px){
+ .search{flex:1 1 220px}.sels{flex:1 1 400px}.sels select{flex:1;width:0}
+}
+@media(max-width:1100px) and (min-width:700px){[data-view="cards"] .card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:959px){
+ .frame{padding-inline:20px}.barline{padding-block:22px 16px}
+ .bar .frame{display:grid;grid-template-columns:minmax(0,1fr)}
+ .sels{gap:8px}.search input,select{font-size:16px}
+ .cols{display:none}.sum{grid-template-columns:minmax(0,1fr) auto;gap:6px 12px;padding:16px 0;min-height:44px}
+ .c.name{grid-column:1/-1;grid-row:1;font-size:18px}.name .nm{display:block;-webkit-line-clamp:unset;overflow:visible}
+ .c.st{grid-column:2;grid-row:2;align-self:center}.c.eta{grid-column:1;grid-row:2}
+ .c.sup{grid-column:1/-1;grid-row:3}.c.no{grid-column:1/-1;grid-row:4}
+ .c.car{grid-column:1;grid-row:5}.c.dest{grid-column:2;grid-row:5}
+ .meta-label,.eta-label{display:inline;font-size:12px;color:var(--ink-2);font-weight:400;margin-right:6px}
+ .panel{padding:16px}.week{margin-bottom:22px;padding-top:8px}
+ [data-view="cards"] .card-grid{grid-template-columns:1fr}
+ [data-view="cards"] .c.st{align-self:flex-start}
+}
+@media(max-width:420px){.frame{padding-inline:16px}h1{font-size:23px}.view-switch button{min-width:58px;padding-inline:10px}.barline{gap:12px}.sels{grid-template-columns:repeat(2,minmax(0,1fr))}.sels select{width:100%}.bar .frame{gap:10px}}
+
 </style>
 </head>
 <body>
 <header class="topbar">
   <div class="frame barline">
-    <h1>集运追踪</h1>
-    <p id="upd">正在读取运单</p>
+    <div><h1>集运追踪</h1><p id="upd" role="status">正在读取运单</p></div>
+    <div class="view-switch" role="group" aria-label="显示方式"><button type="button" data-view-btn="list" aria-pressed="true">列表</button><button type="button" data-view-btn="cards" aria-pressed="false">卡片</button></div>
   </div>
 </header>
 <div class="bar">
@@ -173,12 +251,13 @@ h1{margin:0;font-size:18px;line-height:1.2;font-weight:700;letter-spacing:-0.03e
       <select id="fStage" aria-label="阶段"></select>
       <select id="fSup" aria-label="厂家"></select>
       <select id="fFw" aria-label="货代"></select>
+      <button type="button" class="reset" id="reset">清除筛选</button>
     </div>
   </div>
 </div>
-<div class="frame" id="main"></div>
+<main class="frame" id="main" data-view="list"></main>
 <p class="frame colophon">时间是马来西亚时间 (MYT)。页面不含电话、地址、联系人。预计到马只取运单上的日期和轨迹，没有的标待确认。</p>
-<div id="lightbox" class="lb" hidden>
+<div id="lightbox" class="lb" role="dialog" aria-modal="true" aria-label="证据图片" hidden>
   <button type="button" class="lb-x" id="lbX">关闭</button>
   <div id="lbCap"></div>
 </div>
@@ -199,6 +278,18 @@ h1{margin:0;font-size:18px;line-height:1.2;font-weight:700;letter-spacing:-0.03e
   const TBD = '待确认';
   const OPEN = new Set();
   let doneOpen = false;
+  let view = 'list';
+  try { if (localStorage.getItem('shipment-tracker-view') === 'cards') view = 'cards'; } catch (e) {}
+  function applyView() {
+    ui.main.dataset.view = view;
+    document.querySelectorAll('[data-view-btn]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.viewBtn === view)));
+  }
+  applyView();
+  document.querySelectorAll('[data-view-btn]').forEach(b => b.addEventListener('click', () => {
+    view = b.dataset.viewBtn;
+    try { localStorage.setItem('shipment-tracker-view', view); } catch (e) {}
+    applyView();
+  }));
   let D = { cons: [], pk: [], solo: [], fws: [], updated: '' };
   const F = { m: 'all', st: 'all', sup: 'all', fw: 'all', q: '' };
   let fmt = null;
@@ -654,7 +745,7 @@ h1{margin:0;font-size:18px;line-height:1.2;font-weight:700;letter-spacing:-0.03e
     try {
       const o = r.raw || {};
       const parent = r.parent;
-      return [r.item, r.supplier, r.no, r.noTitle, r.carrier, r.place, r.stage, r.id, r.eta.text, r.eta.why, r.vessel, o.hint, o.forwarder, o.mark, o.warehouse_ref, parent && parent.id, parent && parent.tracking_no].join(' ').toLowerCase();
+      return [r.item, r.supplier, r.no, r.noTitle, r.carrier, r.place, r.stage, r.id, r.eta.text, r.eta.why, etaNoteOf(r.raw, r.parent), r.vessel, o.hint, o.forwarder, o.mark, o.warehouse_ref, parent && parent.id, parent && parent.tracking_no].join(' ').toLowerCase();
     } catch (e) { return ''; }
   }
   function visible(r) {
@@ -705,23 +796,23 @@ h1{margin:0;font-size:18px;line-height:1.2;font-weight:700;letter-spacing:-0.03e
     const car = r.carrier ? T(r.carrier) : '<span class="miss">缺承运商</span>';
     const dest = r.place ? T(r.place) : '缺目的地';
     const why = r.eta.why ? ` <span class="why">${T(r.eta.why)}</span>` : '';
-    return `<article class="line${r.bad ? ' bad' : ''}" data-id="${esc(r.id)}" data-group="${r.decide.length ? 'decide' : r.delivered ? 'done' : 'go'}">
+    return `<article class="line${r.bad ? ' bad' : ''}" data-id="${esc(r.id)}" data-group="${r.delivered ? 'done' : r.decide.length ? 'decide' : 'go'}">
       <button type="button" class="sum" data-k="${esc(r.key)}" aria-expanded="${open ? 'true' : 'false'}">
         <span class="c name" title="${esc(r.item || '缺品名')}">${chev}<span class="nm">${name}</span></span>
-        <span class="c sup" title="${esc(r.supplier || '缺厂家')}">${sup}</span>
-        <span class="c no" title="${esc(r.noTitle || r.no || '暂无单号')}">${no}</span>
-        <span class="c car" title="${esc(r.carrier || '缺承运商')}">${car}</span>
+        <span class="c sup" title="${esc(r.supplier || '缺厂家')}"><span class="meta-label">厂家</span>${sup}</span>
+        <span class="c no" title="${esc(r.noTitle || r.no || '暂无单号')}"><span class="meta-label">单号</span>${no}</span>
+        <span class="c car" title="${esc(r.carrier || '缺承运商')}"><span class="meta-label">承运</span>${car}</span>
         <span class="c st">${stageChip(r.stage)}</span>
-        <span class="c dest"><span class="destv">${dest}</span></span>
-        <span class="c eta" title="${esc(r.eta.whyFull || r.eta.text)}"><span class="eta">${T(r.eta.text)}</span>${why}</span>
+        <span class="c dest"><span class="meta-label">寄往</span><span class="destv">${dest}</span></span>
+        <span class="c eta" title="${esc(r.eta.whyFull || r.eta.text)}"><span class="eta-label">预计到马</span><span class="eta">${T(r.eta.text)}</span>${why}${etaNoteOf(r.raw, r.parent) ? `<span class="eta-note">${T(etaNoteOf(r.raw, r.parent))}</span>` : ''}</span>
       </button>
       ${open ? panel(r) : ''}
     </article>`;
   }
-  const HEAD = `<div class="cols" role="row"><span role="columnheader">品名</span><span role="columnheader">厂家</span><span role="columnheader">单号</span><span role="columnheader">承运</span><span role="columnheader">阶段</span><span role="columnheader">寄往</span><span role="columnheader">预计到马</span></div>`;
+  const HEAD = `<div class="cols" aria-hidden="true"><span>品名</span><span>厂家</span><span>单号</span><span>承运</span><span>阶段</span><span>寄往</span><span>预计到马</span></div>`;
   function groupBlock(title, rows) {
     if (!rows.length) return '';
-    return `<section class="grp"><h2>${esc(title)} <b>${rows.length}</b></h2>${HEAD}${rows.map(htmlRow).join('')}</section>`;
+    return `<section class="grp"><h2>${esc(title)} <b>${rows.length}</b></h2>${HEAD}<div class="card-grid">${rows.map(htmlRow).join('')}</div></section>`;
   }
   function weekCopy(rows) {
     const bounds = weekBounds(new Date());
@@ -749,19 +840,19 @@ h1{margin:0;font-size:18px;line-height:1.2;font-weight:700;letter-spacing:-0.03e
       const rows = allRows().filter(visible);
       const dec = [], mid = [], done = [];
       for (const r of rows) {
-        if (r.decide.length) dec.push(r);
-        else if (r.delivered) done.push(r);
+        if (r.delivered) done.push(r);
+        else if (r.decide.length) dec.push(r);
         else mid.push(r);
       }
       dec.sort(cmpRow); mid.sort(cmpRow); done.sort(cmpRow);
       const openDone = doneOpen;
-      let h = `<div class="week"><h2>本周要到</h2><p>${weekCopy(rows)}</p></div>`;
-      h += groupBlock('要你拍板', dec);
+      let h = `<div class="week"><h2>本周到货</h2><p>${weekCopy(rows)}</p></div>`;
+      h += groupBlock('要 Nick 拍板', dec);
       h += groupBlock('进行中', mid);
       if (done.length) {
-        h += `<section class="grp"><button type="button" class="done-toggle" data-done aria-expanded="${openDone ? 'true' : 'false'}">${chev}<span>已签收 ${done.length}</span></button>${openDone ? HEAD + done.map(htmlRow).join('') : ''}</section>`;
+        h += `<section class="grp"><button type="button" class="done-toggle" data-done aria-expanded="${openDone ? 'true' : 'false'}">${chev}<span>已签收 ${done.length}</span></button>${openDone ? HEAD + '<div class="card-grid">' + done.map(htmlRow).join('') + '</div>' : ''}</section>`;
       }
-      if (!dec.length && !mid.length && !done.length) h += '<p class="empty">没有符合的货</p>';
+      if (!dec.length && !mid.length && !done.length) h += '<p class="empty">没有符合的货。可清除筛选重新查看。</p>';
       ui.main.innerHTML = h;
       if (focusKey === 'done') {
         const again = ui.main.querySelector('[data-done]');
@@ -790,7 +881,7 @@ h1{margin:0;font-size:18px;line-height:1.2;font-weight:700;letter-spacing:-0.03e
       air: rows.filter(r => r.mode === 'air').length,
       solo: rows.filter(r => r.mode === 'solo').length
     };
-    ui.modes.innerHTML = [['all', '全部'], ['sea', '海运'], ['air', '空运'], ['solo', '未分配']].map(([k, l]) => `<button type="button" class="chip ${F.m === k ? 'on' : ''}" data-m="${k}">${l} ${n[k]}</button>`).join('');
+    ui.modes.innerHTML = [['all', '全部'], ['sea', '海运'], ['air', '空运'], ['solo', '未分配']].map(([k, l]) => `<button type="button" class="chip ${F.m === k ? 'on' : ''}" data-m="${k}" aria-pressed="${F.m === k}">${l} ${n[k]}</button>`).join('');
     const st = [...new Set(rows.map(r => r.stage).filter(has))].sort((a, b) => String(a).localeCompare(String(b), 'zh'));
     fillSelect(ui.fStage, '<option value="all">全部阶段</option>' + st.map(x => `<option value="${esc(text(x))}">${esc(text(x))}</option>`).join(''), F.st, 'st');
     const sp = [...new Set(rows.map(r => r.supplierKey))].sort((a, b) => String(a).localeCompare(String(b), 'zh'));
@@ -799,7 +890,9 @@ h1{margin:0;font-size:18px;line-height:1.2;font-weight:700;letter-spacing:-0.03e
     fillSelect(ui.fFw, '<option value="all">全部货代</option>' + fw.map(x => `<option value="${esc(x)}">${esc(x === TBD ? '缺货代' : x)}</option>`).join(''), F.fw, 'fw');
   }
 
+  let proofTrigger = null;
   function openLb(btn) {
+    proofTrigger = btn;
     let img = ui.lightbox.querySelector('img');
     if (!img) {
       img = document.createElement('img');
@@ -809,12 +902,15 @@ h1{margin:0;font-size:18px;line-height:1.2;font-weight:700;letter-spacing:-0.03e
     img.src = btn.getAttribute('data-src') || '';
     ui.lbCap.textContent = btn.getAttribute('data-cap') || btn.getAttribute('data-alt') || '';
     ui.lightbox.hidden = false;
+    ui.lbX.focus();
   }
   function closeLb() {
     ui.lightbox.hidden = true;
     const img = ui.lightbox.querySelector('img');
     if (img) img.remove();
     ui.lbCap.textContent = '';
+    if (proofTrigger && proofTrigger.isConnected) proofTrigger.focus();
+    proofTrigger = null;
   }
   ui.main.addEventListener('click', e => {
     const pic = e.target.closest && e.target.closest('.proof-open');
@@ -837,7 +933,11 @@ h1{margin:0;font-size:18px;line-height:1.2;font-weight:700;letter-spacing:-0.03e
   }, true);
   ui.lightbox.addEventListener('click', e => { if (e.target === ui.lightbox) closeLb(); });
   ui.lbX.addEventListener('click', closeLb);
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
+  document.addEventListener('keydown', e => {
+    if (ui.lightbox.hidden) return;
+    if (e.key === 'Escape') closeLb();
+    if (e.key === 'Tab') { e.preventDefault(); ui.lbX.focus(); }
+  });
   function markFilters() {
     if (F.m !== 'all' || F.st !== 'all' || F.sup !== 'all' || F.fw !== 'all' || F.q) doneOpen = true;
   }
@@ -852,6 +952,12 @@ h1{margin:0;font-size:18px;line-height:1.2;font-weight:700;letter-spacing:-0.03e
     markFilters();
     setup();
     render();
+    ui.modes.querySelector('[data-m="' + F.m + '"]').focus();
+  });
+
+  document.getElementById('reset').addEventListener('click', () => {
+    Object.assign(F, { m: 'all', st: 'all', sup: 'all', fw: 'all', q: '' });
+    ui.q.value = ''; doneOpen = false; setup(); render();
   });
 
   function ingest(d) {
