@@ -12,7 +12,7 @@ Nick scans this tracker on his phone over 5G. He needs to see, for each parcel a
 
 ## Product Purpose
 
-A static shipment tracker for China-to-Malaysia consolidations and the parcels inside them. Success is a phone card wall where those five facts are readable at a glance, and a bad field never replaces the wall with 「数据加载失败」.
+A static shipment tracker for China-to-Malaysia consolidations and the parcels inside them. Success is a compact ledger: product name first, then factory, number, carrier, stage, destination, and 预计到马. A bad field never replaces the list with 「数据加载失败」.
 
 ## Positioning
 
@@ -35,7 +35,7 @@ Inferred from the repo, not restated in the brief: consolidations carry the inte
 
 ## Brand Commitments
 
-The name on the page is 集运追踪. The rejected look is the cramped dark 「card-scan」 hierarchy (nested cards, neon accents). The replacement is a dense, clean card wall. No neon or cyber chrome.
+The name on the page is 集运追踪. The rejected look is the cramped dark 「card-scan」 hierarchy (nested cards, neon accents) and the tall card wall that showed two or three parcels per screen. The replacement is a dense ledger. No neon or cyber chrome.
 
 ## Evidence on Hand
 
@@ -45,7 +45,7 @@ The name on the page is 集运追踪. The rejected look is the cramped dark 「c
 
 ## Product Principles
 
-- The card face answers 厂家, 产品名, 单号, 承运商, and 寄去哪, then stops.
+- The row answers 品名, 厂家, 单号, 承运, 阶段, 寄往, and 预计到马, then stops. Photos, notes, and the trail open on click.
 - Missing data is a short label, never a guessed name.
 - One bad field degrades that card, not the page.
 - Phone scanning outranks decoration.

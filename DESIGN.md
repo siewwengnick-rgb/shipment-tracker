@@ -1,6 +1,6 @@
 ---
 name: 集运追踪
-description: A warehouse bin-label wall for China-to-Malaysia consolidations.
+description: A warehouse ledger for China-to-Malaysia parcels. One row, product name first, ETA on the row.
 colors:
   green: "#1b3c30"
   green-ink: "#f3f6f1"
@@ -15,6 +15,8 @@ colors:
   ink: "#14211c"
   ink-2: "#3d4a44"
   line: "#c5d1cb"
+  scrim: "rgba(18, 22, 18, 0.9)"
+  photo-well: "#111"
   stage: "#e7efe9"
   stage-ok: "#e3f2e8"
   stage-warn: "#f8ead8"
@@ -22,15 +24,15 @@ colors:
 typography:
   display:
     fontFamily: '"PingFang SC", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif'
-    fontSize: "22px"
+    fontSize: "18px"
     fontWeight: 700
     lineHeight: 1.2
     letterSpacing: "-0.03em"
   headline:
     fontFamily: '"PingFang SC", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif'
-    fontSize: "18px"
+    fontSize: "15px"
     fontWeight: 700
-    lineHeight: 1.3
+    lineHeight: 1.25
     letterSpacing: "-0.02em"
   title:
     fontFamily: '"PingFang SC", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif'
@@ -39,16 +41,16 @@ typography:
     lineHeight: 1.35
   figure:
     fontFamily: '"PingFang SC", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif'
-    fontSize: "18px"
+    fontSize: "12px"
     fontWeight: 700
-    lineHeight: 1.25
+    lineHeight: 1.3
     letterSpacing: "-0.01em"
     fontFeature: "tabular-nums lining-nums"
   body:
     fontFamily: '"PingFang SC", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif'
-    fontSize: "15px"
+    fontSize: "13px"
     fontWeight: 400
-    lineHeight: 1.4
+    lineHeight: 1.35
   label:
     fontFamily: '"PingFang SC", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif'
     fontSize: "12px"
@@ -165,9 +167,9 @@ components:
 
 ## Overview
 
-**Creative North Star: "The Warehouse Bin Label"**
+**Creative North Star: "The Warehouse Ledger"**
 
-集运追踪 is a bin-label wall. The shell is warehouse green, the page floor is sage, and every shipment is one paper card with the same slots in the same order. The supplier is the heading, the item sits under it, tracking numbers are heavy black tabular figures, the carrier is an open cell, and 寄往 is a solid amber block. The wall is for a thumb on a phone: read 厂家, 产品名, 单号, 承运商, and 寄去哪, then expand for the trail and the photos.
+集运追踪 is a ledger, not a card wall. The shell is warehouse green and the floor is sage. Each parcel is one ruled row. The product name is the only heavy line. Factory, tracking number, and carrier are secondary. 阶段 is a small pill, 寄往 is a small amber chip, and 预计到马 sits at the end of the row. Photos, notes, and the trail open on click. 要你拍板 stays pinned. 已签收 stays folded.
 
 The color stays in one family. Warehouse green is the shell, the selected mode, the focus ring, the word 海运, and the solid actions. Amber is the destination block and the text selection. Air blue is only the word 空运. Miss brown is the short miss label. The confirmed rejection is the dark nested card-scan: no neon, no glass, no gradient, no side stripe, and no card inside a card. A consignment and its parcels are separate cards, eight pixels apart.
 
@@ -175,11 +177,12 @@ Depth is tonal. The green bar, the sage floor, and the paper card are three flat
 
 **Key Characteristics:**
 
-- Warehouse-green shell, sage floor, paper cards
-- One amber 寄往 block, including when the value is 缺目的地
-- Fixed slots and heavy black tabular tracking numbers
+- Warehouse-green shell, sage floor, ruled rows
+- Product name at 15px, everything else on the row at 12px
+- One amber 寄往 chip, including when the value is 缺目的地
+- Tabular tracking numbers in bin ink
 - System Chinese type on every role
-- Forty-four pixel thumb targets, with two columns from 840px
+- Desktop filter bar is one row; phone targets stay at least 40px
 
 ## Colors
 
@@ -226,15 +229,15 @@ One green warehouse family, plus a single amber bin block. Stage washes and the 
 **Body Font:** the same stack
 **Label/Mono Font:** the same stack; figures use `tabular-nums` and `lining-nums`, not a separate mono family
 
-**Character:** One system Chinese face. Size, weight, and tabular figures make the hierarchy. The page title is 22px and steps to 26px from 840px; that step is a breakpoint, not a fluid clamp.
+**Character:** One system Chinese face. Size, weight, and tabular figures make the hierarchy. The page title is 18px. It does not grow with the viewport.
 
 ### Hierarchy
 
-- **Display** (700, 22px, line-height 1.2, letter-spacing -0.03em; 26px from 840px): the page name 集运追踪 in the green bar.
-- **Headline** (700, 18px, line-height 1.3, letter-spacing -0.02em): the supplier.
-- **Title** (600, 15px, line-height 1.35): the item name under the supplier. Carrier and destination values use this size at weight 700.
-- **Figure** (700, 18px, line-height 1.25, letter-spacing -0.01em, tabular lining figures): the domestic and international tracking numbers, in bin ink.
-- **Body** (400, 15px, line-height 1.4): the page default. Section lines such as 集运 use this size at weight 700, with tabular figures on the count. The MYT line is 13px shell dim. Trail event text is 13.5px. Notes and photo captions are 13px.
+- **Display** (700, 18px, line-height 1.2, letter-spacing -0.03em): the page name 集运追踪 in the green bar.
+- **Headline** (700, 15px, line-height 1.25, letter-spacing -0.02em): the product name. A missing name is 缺品名.
+- **Title** (600, 12px, line-height 1.3): factory, carrier, and the amber destination chip.
+- **Figure** (700, 12px, line-height 1.3, letter-spacing -0.01em, tabular lining figures): the tracking number, in bin ink. It is secondary to the product name.
+- **Body** (400, 13px, line-height 1.35): the page default, the arrival line, group headings, notes, and trail text.
 - **Label** (700, 12px, secondary ink): the slot names 国内, 国际, 承运, and 寄往. The stage pill is this size at line-height 1.2. The ID line is 12px secondary ink. Trail times and place lines are 12px.
 - **Chip** (700, 14px): mode chips and the expand control.
 - **Field** (400, 16px): search and the three selects, so a phone keyboard does not zoom the page.
@@ -242,31 +245,31 @@ One green warehouse family, plus a single amber bin block. Stage washes and the 
 
 ### Named Rules
 
-**The Tabular Figure Rule.** Tracking numbers, section counts, and trail times use tabular lining figures. A tracking number stays 18px, weight 700, and bin ink.
+**The Tabular Figure Rule.** Tracking numbers, section counts, and trail times use tabular lining figures. On the row the number is 12px, weight 700, and bin ink, smaller than the product name.
 
 **The System Face Rule.** Set every role in PingFang SC, Noto Sans SC, Microsoft YaHei, then system-ui. Keep one Chinese face for the whole wall.
 
 ## Layout
 
-Phone first. The frame is a 16px inset, centered, max 1120px. The green bar carries the page name and the MYT update (16px top, 14px bottom). Under it, a sticky filter bar (floor fill, 1px rule, 10px top, 12px bottom) stacks search, a horizontally scrolling chip row, and three selects, with 8px between them. The selects sit in three equal columns.
+The frame is a 16px inset, centered, max 1360px. The green bar is one line: page name, then the MYT update. Under it, a sticky filter bar. From 960px the search, mode chips, and three selects share one row. Below that they stack, and the selects stay three columns. Search and selects are 16px and at least 44px tall on the phone so the keyboard does not zoom the page; on the desktop row they are 13px and 32px tall.
 
-The wall is one column. Stacks are 18px apart. Inside a stack the consignment card and its parcel cards are 8px apart. Card interiors use 12px padding. The tracking block, the carrier/destination pair, and the expand control each start 10px below the previous slot. Slot rows gap 8px. At 840px the wall becomes two columns, the wall gap becomes 16px, and the page title becomes 26px. At 360px and below, the carrier and destination stack full width, and the three selects become one column.
+The ledger is one column of ruled rows, not cards. From 960px each row is a seven-column line: 品名, 厂家, 单号, 承运, 阶段, 寄往, 预计到马. Row padding is 4px and the row is about 35px, so a 1440×900 screen shows the open groups without scrolling past the first screenful. Below 960px the same cells stack: product name and stage, then ETA, factory, the full tracking number, then carrier and the amber chip. Nothing scrolls the page sideways.
 
-**The Same Slots Rule.** Every card, consignment or parcel, keeps one order: supplier, item, meta, tracking figures, carrier, destination. A blank field keeps its slot and shows the short miss label. A record that fails to render stays a card, with a dashed rule, and the rest of the wall remains.
+**The Same Slots Rule.** Every row keeps that order. A blank field keeps its slot and shows the short miss label. A record that fails to render stays a dashed row, and the rest of the ledger remains. Dates come only from an `eta` field or a tracking-history arrival line. A missing date is 待确认 or ETA 未知 plus the reason. It is never invented.
 
 **The Thumb Target Rule.** Search, mode chips, selects, the expand control, and the solid button are at least 44px tall.
 
 ## Elevation & Depth
 
-The wall is flat layers: warehouse green, sage floor, paper card. The only shadow is the card lift, `box-shadow: 0 1px 2px rgba(28, 26, 22, 0.06)`, present at rest. Hover does not add shadow. Focus is a 2px outline, offset 2px, in warehouse green; on the green bar the outline is shell ink. The photo viewer is a separate layer: a fixed scrim of `rgba(18, 22, 18, 0.9)` and an image well of `#111`. Those viewer values stay off the card wall.
+The ledger is flat layers: warehouse green, sage floor, a paper well only while a row is open. Rows themselves have no shadow. Hover tints the row with a 5% green wash. Focus is a 2px outline, offset 2px, in warehouse green; on the green bar the outline is shell ink. The photo viewer is a separate layer: a fixed scrim of `rgba(18, 22, 18, 0.9)` and an image well of `#111`.
 
 ### Shadow Vocabulary
 
-- **Paper lift** (`box-shadow: 0 1px 2px rgba(28, 26, 22, 0.06)`): the shipment card, at rest, on the sage floor.
+- No resting shadow on a row. The open panel is a flat paper fill, not a lifted card.
 
 ### Named Rules
 
-**The Paper Lift Rule.** One shadow, on the card, at rest. Chips, fields, the expand control, and the amber block do not take a shadow. Focus is an outline, not a glow.
+**The Flat Row Rule.** Rows, chips, fields, and the amber chip do not take a shadow. Focus is an outline, not a glow.
 
 ## Shapes
 
@@ -332,16 +335,16 @@ A fixed full-viewport layer. The scrim is `rgba(18, 22, 18, 0.9)`. The image is 
 
 ### Do:
 
-- **Do** keep supplier, item, tracking figures, carrier, and 寄往 in that order on every card.
-- **Do** paint 寄往 as the amber block with amber ink, and keep 缺目的地 inside that same block and corner.
-- **Do** set tracking numbers at 18px, weight 700, tabular lining figures, bin ink.
+- **Do** keep 品名, 厂家, 单号, 承运, 阶段, 寄往, and 预计到马 in that order on every row.
+- **Do** paint 寄往 as the amber chip with amber ink, and keep 缺目的地 inside that same chip.
+- **Do** set the product name heavier and larger than the factory and the tracking number.
 - **Do** use a 2px warehouse-green focus ring, offset 2px, and switch that ring to shell ink on the green bar.
-- **Do** keep search, chips, selects, the expand control, and the solid button at least 44px tall.
+- **Do** keep phone search, chips, and selects at least 44px tall.
 
 ### Don't:
 
-- **Don't** nest a card inside a card, or add a side stripe, glass, gradient, or neon accent.
-- **Don't** use amber for anything except the destination block and text selection.
-- **Don't** recolor a tracking number, or replace 缺厂家, 缺品名, 暂无单号, 缺承运商, or 缺目的地 with a guessed name.
-- **Don't** change the card corner per record, or drop the destination block when the destination is missing.
-- **Don't** put a shadow on chips, fields, the expand control, or the amber block. The card lift is the only shadow.
+- **Don't** bring back the tall card wall, nest a card, or add a side stripe, glass, gradient, or neon accent.
+- **Don't** use amber for anything except the destination chip and text selection.
+- **Don't** recolor a tracking number, invent a supplier, or replace 缺厂家, 缺品名, 暂无单号, 缺承运商, or 缺目的地 with a guessed name.
+- **Don't** invent an arrival date. Quote a tracking line or show 待确认 / ETA 未知.
+- **Don't** put a shadow on rows, chips, fields, or the amber chip.
