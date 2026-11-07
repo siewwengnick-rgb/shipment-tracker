@@ -1313,26 +1313,28 @@
    "domestic_carrier": "德邦",
    "domestic_tracking_no": "DPK212358721415",
    "item": "淘宝发光字招牌门头定制广告（不锈钢）×14",
-   "ctns": null,
-   "stage": "国内运输中",
+   "ctns": 1,
+   "weight": "10.5kg（计费重量，面单）",
+   "stage": "已入仓",
    "stage_manual": true,
-   "stage_source": "CC群 kx 发单 + 德邦轨迹",
-   "last_event": "2026-11-04 18:30 离开临沂（德邦）",
-   "last_checked": "2026-11-06T17:55+08:00",
+   "stage_source": "CC群 钟发面单 2026-11-06 21:04（inbox/20261107-0802-debang-dpk.md）",
+   "last_event": "2026-11-06 21:04 钟在CC群发面单（已到云第仓，1件 灯具 10.5kg）；21:30 钟说「小包出咯」（含义待确认）",
+   "last_checked": "2026-11-07T08:15+08:00",
    "eta": null,
-   "eta_note": "未知：德邦仍国内在途（最后记录 2026-11-04 18:30 离开临沂，inbox/20261104-2002-CC群.md）；未入仓、集运未给船期，不写马来 ETA",
+   "eta_note": "已入仓，钟 11-06 说小包出，尚无马来单号和船期",
    "destination_city": "Puchong",
    "destination_warehouse": "云第白云湖（一号仓）",
-   "hint": "海运 → Puchong",
+   "hint": "海运 → Puchong（「小包出」= 海运还是空运小包，待确认）",
    "confirm": {
     "ownership": "待确认",
     "supplier": "待确认",
     "item": "已确认",
     "destination": "已确认",
+    "shipping_mode": "待确认",
     "consolidation_link": "待确认"
    },
    "consolidation_id": null,
-   "mark": null,
+   "mark": "ZXZ/NICK88",
    "warehouse_ref": null,
    "evidence": [],
    "evidence_note": "inbox/20261104-2002-CC群.md（含电话地址，未进 evidence/）",
@@ -1342,9 +1344,15 @@
      "location": "临沂",
      "description": "离开临沂",
      "source": "微信跟进 / CC群 / inbox/20261104-2002-CC群.md"
+    },
+    {
+     "time": "2026-11-06T21:04:00+08:00",
+     "location": "云第仓（广州）",
+     "description": "钟在CC群发面单：1件，备注灯具，计费重量10.5kg，临沂X10→广州F10，收件云第仓 ZXZ/NICK88；问「只有一件，对吗」，21:27 kx回「对」，21:30 钟「小包出咯」",
+     "source": "微信跟进 / CC群 / inbox/20261107-0802-debang-dpk.md"
     }
    ],
-   "note": "2026-11-04 kx 在 CC群发德邦 DPK212358721415（淘宝发光字招牌×14，¥96.42×14），海运寄 Puchong（Orthotics Technology，群已发地址）→云第一号仓；钟 19:20 回「好」。归属/厂家待确认。来源 inbox/20261104-2002-CC群.md"
+   "note": "2026-11-04 kx 在 CC群发德邦 DPK212358721415（淘宝发光字招牌×14，¥96.42×14），海运寄 Puchong（Orthotics Technology，群已发地址）→云第一号仓；钟 19:20 回「好」。归属/厂家待确认。来源 inbox/20261104-2002-CC群.md。2026-11-06 钟发面单已到云第仓（1件 10.5kg），「小包出」含义（海运/空运小包）、归属、厂家均待确认；微信跟进所说方向相反系误读。"
   }
  ],
  "forwarders": [
