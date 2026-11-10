@@ -1,6 +1,8 @@
 # 集运追踪
 
-`index.html` + `shipments.json`. GitHub Pages serves the repo root.
+`index.html` + `style.css` + `app.js` + `map.js`，运行时读取 `shipments.json`（GitHub Pages 从仓库根目录发布）。`map.js` 只取安全展示字段（不显示 note／evidence 原文、私人地址电话）。测试：`node --test tests/map.test.js`。
+
+2026-11-10 换成 Shop 新版界面；旧版在分支 `backup/pre-shop-20261110` / tag `pre-shop-20261110`，回滚：`git checkout pre-shop-20261110 -- index.html`。新版暂不显示证据图片。
 
 ## 证据图片 / evidence photos
 
