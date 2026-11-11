@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11 10:35 MYT",
+ "updated": "2026-11-11 14:25 MYT",
  "schema_version": 3,
  "consolidations": [
   {
@@ -1364,28 +1364,30 @@
    "item": "六腔海星洗衣凝珠（8克×50粒/盒，20盒/箱，6000盒）",
    "ctns": 300,
    "weight": "3300kg / 15.6m³（送货单总毛重、总体积；单箱毛重11kg、纸箱62×35×24cm）",
-   "stage": "无单号",
+   "stage": "已入仓",
    "stage_manual": true,
-   "stage_source": "厂家已装车并发送货单，未见国内快递单号",
-   "last_event": "2026-11-11 09:05 厂家发送货单：300箱/6000盒，总毛重3300kg，体积15.6m³，收件云第一号仓 ZXZ/NICK88；国内单号待确认",
-   "last_checked": "2026-11-11T10:35+08:00",
+   "stage_source": "CC群 钟 2026-11-11 13:10 称收到300件并发送货照（inbox/20261111-1403-cc-foamfresh-warehouse.md）",
+   "last_event": "2026-11-11 13:10–13:46 钟确认收到300件洗衣凝珠；称敏感货要分票；kx发了 Port Dickson 工厂地址后，钟回「西马的」「好的」「先发100件」。入仓号和海运单号仍未见。",
+   "last_checked": "2026-11-11T14:25+08:00",
    "eta": null,
-   "eta_note": "未知：已装车送云第，尚无国内单号，也无入仓号和马来走法",
+   "eta_note": "已入仓云第；钟拟先发100件至 Port Dickson 工厂（地址是否就此定下待 Nick 确认）；尚无入仓号、船期和海运单号",
    "destination_warehouse": "云第白云湖（一号仓）",
-   "hint": "已装车送云第一号仓；走空运还是海运待确认",
+   "hint": "钟称敏感货要分票；kx 已发 PD 工厂地址，钟回先发100件（待 Nick 确认，非常用 Puchong 集运仓）",
    "confirm": {
     "supplier": "已确认",
     "item": "已确认",
     "ctns": "已确认",
-    "destination": "已确认（中国仓：云第一号仓）",
+    "china_warehouse": "已确认",
+    "destination": "待确认",
     "shipping_mode": "待确认",
+    "split_shipment": "待确认",
     "consolidation_link": "待确认"
    },
    "consolidation_id": null,
    "mark": "ZXZ/NICK88",
    "warehouse_ref": null,
    "evidence": [],
-   "evidence_note": "inbox/20261111-1011-foamfresh-shipment.md 及送货单截图（含电话地址，未脱敏，未进 evidence/）",
+   "evidence_note": "inbox/20261111-1011-foamfresh-shipment.md（送货单）与 inbox/20261111-1403-cc-foamfresh-warehouse.md（到仓，含地址电话，未脱敏，未进 evidence/）",
    "history": [
     {
      "time": "2026-11-11T08:41:00+08:00",
@@ -1398,9 +1400,28 @@
      "location": "厂家（待确认）",
      "description": "发出「广东凝珠时代科技有限公司 送货单」：六腔海星 6000盒/300箱，总毛重3300、体积15.6m³，发货日期2026/11/11，收件云第一号仓 唛头 ZXZ/NICK88；未见快递单号",
      "source": "微信跟进 / Foamfresh 洗衣凝珠群 / inbox/20261111-1011-foamfresh-delivery-note.webp"
+    },
+    {
+     "time": "2026-11-11T13:10:00+08:00",
+     "location": "云第仓（广州）",
+     "description": "钟在CC群称「收到300件」，随后发仓库堆箱照；13:15 说明是洗衣凝珠。未见可读快递单号或入仓号。",
+     "source": "微信跟进 / CC SDN BHD 运输 / inbox/20261111-1403-cc-sdnbhd-1310.webp"
+    },
+    {
+     "time": "2026-11-11T13:15:00+08:00",
+     "location": "云第仓（广州）",
+     "description": "钟称「这个敏感货要分票的」。kx 回「待会给你知道」。13:30 钟再问「确认到了么」。",
+     "source": "微信跟进 / CC SDN BHD 运输 / inbox/20261111-1403-cc-sdnbhd-bottom.webp"
+    },
+    {
+     "time": "2026-11-11T13:42:00+08:00",
+     "location": "微信 CC群",
+     "description": "kx 发出 Port Dickson 工厂地址。钟回「西马的」「好的」「先发100件」。马来目的地和是否先发100件待 Nick 确认。",
+     "source": "微信跟进 / CC SDN BHD 运输 / inbox/20261111-1403-cc-sdnbhd-bottom.webp"
     }
    ],
-   "note": "与 PKG-007（凝珠时代样品，中国酒店自取已完成）不是同一票。送货单司机签字栏有手写数字，不像标准快递单号，未当作单号录入。马来西亚走法（空运/海运）及目的仓待 Nick 确认。来源 inbox/20261111-1011-foamfresh-shipment.md。"
+   "note": "与 PKG-007（凝珠时代样品，中国酒店自取已完成）不是同一票。送货单司机签字栏有手写数字，不像标准快递单号，未当作单号录入。马来西亚走法（空运/海运）及目的仓待 Nick 确认。来源 inbox/20261111-1011-foamfresh-shipment.md。；2026-11-11 13:10 钟在CC群确认收到300件并发送货照，称敏感货要分票；13:42 kx 发了 Port Dickson 工厂地址（不是常用 Puchong 集运仓），钟回先发100件。地址/先发100件是否就此定下，待 Nick 确认。仍无入仓号和海运单号。来源 inbox/20261111-1403-cc-foamfresh-warehouse.md。",
+   "destination_city": "Port Dickson（待确认）"
   }
  ],
  "forwarders": [
