@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11 09:58 MYT",
+ "updated": "2026-11-11 10:35 MYT",
  "schema_version": 3,
  "consolidations": [
   {
@@ -1353,6 +1353,54 @@
     }
    ],
    "note": "2026-11-04 kx 在 CC群发德邦 DPK212358721415（淘宝发光字招牌×14，¥96.42×14），海运寄 Puchong（Orthotics Technology，群已发地址）→云第一号仓；钟 19:20 回「好」。归属/厂家待确认。来源 inbox/20261104-2002-CC群.md。2026-11-06 钟发面单已到云第仓（1件 10.5kg），「小包出」含义（海运/空运小包）、归属、厂家均待确认；微信跟进所说方向相反系误读。"
+  },
+  {
+   "id": "PKG-022",
+   "forwarder": "云第 yd-wl",
+   "supplier": "凝珠时代（广东凝珠时代科技有限公司）",
+   "factory": "凝珠时代（小驹姐姐）",
+   "domestic_carrier": "厂家自送（送货单，无快递号）",
+   "domestic_tracking_no": null,
+   "item": "六腔海星洗衣凝珠（8克×50粒/盒，20盒/箱，6000盒）",
+   "ctns": 300,
+   "weight": "3300kg / 15.6m³（送货单总毛重、总体积；单箱毛重11kg、纸箱62×35×24cm）",
+   "stage": "无单号",
+   "stage_manual": true,
+   "stage_source": "厂家已装车并发送货单，未见国内快递单号",
+   "last_event": "2026-11-11 09:05 厂家发送货单：300箱/6000盒，总毛重3300kg，体积15.6m³，收件云第一号仓 ZXZ/NICK88；国内单号待确认",
+   "last_checked": "2026-11-11T10:35+08:00",
+   "eta": null,
+   "eta_note": "未知：已装车送云第，尚无国内单号，也无入仓号和马来走法",
+   "destination_warehouse": "云第白云湖（一号仓）",
+   "hint": "已装车送云第一号仓；走空运还是海运待确认",
+   "confirm": {
+    "supplier": "已确认",
+    "item": "已确认",
+    "ctns": "已确认",
+    "destination": "已确认（中国仓：云第一号仓）",
+    "shipping_mode": "待确认",
+    "consolidation_link": "待确认"
+   },
+   "consolidation_id": null,
+   "mark": "ZXZ/NICK88",
+   "warehouse_ref": null,
+   "evidence": [],
+   "evidence_note": "inbox/20261111-1011-foamfresh-shipment.md 及送货单截图（含电话地址，未脱敏，未进 evidence/）",
+   "history": [
+    {
+     "time": "2026-11-11T08:41:00+08:00",
+     "location": "厂家（待确认）",
+     "description": "小驹姐姐发装车视频，并说「已经在装车了哈，请知悉」",
+     "source": "微信跟进 / Foamfresh 洗衣凝珠群 / inbox/20261111-1011-foamfresh-shipment.md"
+    },
+    {
+     "time": "2026-11-11T09:05:00+08:00",
+     "location": "厂家（待确认）",
+     "description": "发出「广东凝珠时代科技有限公司 送货单」：六腔海星 6000盒/300箱，总毛重3300、体积15.6m³，发货日期2026/11/11，收件云第一号仓 唛头 ZXZ/NICK88；未见快递单号",
+     "source": "微信跟进 / Foamfresh 洗衣凝珠群 / inbox/20261111-1011-foamfresh-delivery-note.webp"
+    }
+   ],
+   "note": "与 PKG-007（凝珠时代样品，中国酒店自取已完成）不是同一票。送货单司机签字栏有手写数字，不像标准快递单号，未当作单号录入。马来西亚走法（空运/海运）及目的仓待 Nick 确认。来源 inbox/20261111-1011-foamfresh-shipment.md。"
   }
  ],
  "forwarders": [
