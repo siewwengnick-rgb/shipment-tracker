@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11 16:36 MYT",
+ "updated": "2026-11-11 18:25 MYT",
  "schema_version": 3,
  "consolidations": [
   {
@@ -1431,6 +1431,71 @@
    ],
    "note": "与 PKG-007（凝珠时代样品，中国酒店自取已完成）不是同一票。送货单司机签字栏有手写数字，不像标准快递单号，未当作单号录入。马来西亚走法（空运/海运）及目的仓待 Nick 确认。来源 inbox/20261111-1011-foamfresh-shipment.md。；2026-11-11 13:10 钟在CC群确认收到300件并发送货照，称敏感货要分票；13:42 kx 发了 Port Dickson 工厂地址（不是常用 Puchong 集运仓），钟回先发100件。地址/先发100件是否就此定下，待 Nick 确认。仍无入仓号和海运单号。来源 inbox/20261111-1403-cc-foamfresh-warehouse.md。；2026-11-11 14:31 钟发入仓号 M202611111404092（已核图），唛头 ZXZ/NICK666（厂家送货单为 ZXZ/NICK88，差异待确认），POD M，CTNS 100-0，对应先发100件；其余约200件入仓号未见。钟另写「5.67✖690」，含义待确认。马来目的地（kx 所发 Port Dickson 工厂）仍待 Nick 确认。仍无海运单号。来源 inbox/20261111-1611-cc-foamfresh-inbound.md。",
    "destination_city": "Port Dickson（待确认）"
+  },
+  {
+   "id": "PKG-023",
+   "forwarder": "中国本地自取",
+   "supplier": "晋江鼎茂鞋业有限公司",
+   "factory": "鼎茂（cuk）",
+   "domestic_carrier": "顺丰 SF",
+   "domestic_tracking_no": "SF0203961058510",
+   "item": "木模",
+   "ctns": null,
+   "weight": null,
+   "stage": "未查到",
+   "stage_manual": true,
+   "stage_source": "cuk 一对一 2026-11-11 17:21 发单号（已核图）；未见公开轨迹，也未见面单",
+   "last_event": "2026-11-11 17:21 cuk 发来顺丰 SF0203961058510",
+   "last_checked": "2026-11-11T18:25+08:00",
+   "eta": null,
+   "eta_note": "中国酒店自取，不转运马来西亚；公开轨迹未见，到店时间未知",
+   "destination_warehouse": "中国酒店自取",
+   "destination_city": "武汉",
+   "hint": "按 Nick 11/9 在鼎茂群所发，寄武汉璨程酒店（汉阳江滩店）自取，不进云第/零零九。未见顺丰面单，收件地址未从运单独立核对。",
+   "confirm": {
+    "supplier": "已确认",
+    "item": "已确认（按 11/4 对话为木模）",
+    "china_warehouse": "不涉及",
+    "consolidation_link": "不转运",
+    "destination": "待确认（未见运单；按群内酒店地址）"
+   },
+   "consolidation_id": null,
+   "warehouse_ref": null,
+   "evidence": [],
+   "evidence_note": "inbox/20261111-1811-cuk-sf0203961058510.md 及截图（鼎茂群截图含酒店地址和电话，未脱敏，未进 evidence/）",
+   "history": [
+    {
+     "time": "2026-11-04T15:56:00+08:00",
+     "location": "微信 cuk 一对一",
+     "description": "cuk：「木模好了，你有在大陆吗」。Nick 回「不再呢，11号有在武汉」。",
+     "source": "微信跟进 / cuk 一对一 / inbox/20261111-1811-cuk-sf-tracking.webp"
+    },
+    {
+     "time": "2026-11-04T16:04:00+08:00",
+     "location": "微信 cuk 一对一",
+     "description": "cuk：「那你这个木模怎么看，给你寄过去」",
+     "source": "微信跟进 / cuk 一对一 / inbox/20261111-1811-cuk-sf-tracking.webp"
+    },
+    {
+     "time": "2026-11-09T21:03:00+08:00",
+     "location": "微信 鼎茂群",
+     "description": "Nick 在「Orthotech x 晋江鼎茂鞋业有限公司」群发出武汉酒店收件信息，并问 cuk 看完是否需要寄回。地址和电话不入库。",
+     "source": "微信跟进 / 鼎茂群 / inbox/20261111-1811-dingmao-cuk.webp"
+    },
+    {
+     "time": "2026-11-10T23:42:00+08:00",
+     "location": "微信 鼎茂群",
+     "description": "Nick @cuk：「你发我运单号，我刚到」。群内未见cuk回复。",
+     "source": "微信跟进 / 鼎茂群 / inbox/20261111-1811-dingmao-cuk.webp"
+    },
+    {
+     "time": "2026-11-11T17:21:00+08:00",
+     "location": "微信 cuk 一对一",
+     "description": "cuk 发来顺丰单号 SF0203961058510。未见面单、入仓号或马来单号。",
+     "source": "微信跟进 / cuk 一对一 / inbox/20261111-1811-cuk-sf-tracking.webp"
+    }
+   ],
+   "note": "与集运仓无关。来源 inbox/20261111-1811-cuk-sf0203961058510.md。公开顺丰轨迹未查到；收件地址未见运单，仅按 Nick 11/9 群内所发酒店信息视为武汉酒店自取，待确认。"
   }
  ],
  "forwarders": [
