@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17 23:37 MYT",
+ "updated": "2026-11-18 00:45 MYT",
  "schema_version": 3,
  "consolidations": [
   {
@@ -481,14 +481,14 @@
    "carrier": "云第 yd-wl 海运",
    "stage": "运往马来西亚",
    "stage_manual": true,
-   "stage_source": "钟 2026-11-04 CC群 yd-wl 查询页",
-   "last_checked": "2026-11-17T23:37+08:00",
+   "stage_source": "yd-wl.com 流水号查询 2026-11-18 00:42 MYT",
+   "last_checked": "2026-11-18T00:45+08:00",
    "evidence": [],
    "evidence_note": "inbox/20261104-2002-CC群.md / .webp（含电话地址，未进 evidence/）",
    "yd_bill_no": "待确认",
    "id": "CON-008",
    "tracking_no": "M202610272255319",
-   "vessel": "CS-6174",
+   "vessel": "WAN HAI 365 S047（原 CS-6174，11/07 改配）",
    "destination_city": "Puchong",
    "mark": "ZXZ/NICK88",
    "item": "EVA(PKG-003)+红包19箱(PKG-014)",
@@ -496,32 +496,62 @@
     "PKG-003",
     "PKG-014"
    ],
-   "eta": "2026-11-09（大船预计11-04开）",
-   "last_event": "2026-11-04 钟「都有发走了」；船号 CS-6174，10-29装柜，预计11-04开/11-09到港；11-02查柜/「删单退场」含义待确认",
+   "eta": "2026-11-17 晚（yd 写预计到港；尚无到港记录）",
+   "last_event": "2026-11-13 14:05 已开船 预计11-17晚到港",
    "history": [
     {
-     "time": "2026-11-04T00:00:00+08:00",
-     "location": "中国",
-     "description": "报关信息：大船预计11-04开、11-09到港",
-     "source": "微信跟进 / CC群 / inbox/20261104-2002-CC群.md"
+     "time": "2026-11-13T14:05:57+08:00",
+     "location": "云第 yd-wl",
+     "description": "已开船 预计11-17晚到港",
+     "source": "yd-wl.com 查询 M202610272255319"
     },
     {
-     "time": "2026-11-02T00:00:00+08:00",
-     "location": "中国",
+     "time": "2026-11-07T19:19:25+08:00",
+     "location": "云第 yd-wl",
+     "description": "已放行  改配WAN HAI 365 S047 11.13开，11.17到",
+     "source": "yd-wl.com 查询 M202610272255319"
+    },
+    {
+     "time": "2026-11-07T19:18:34+08:00",
+     "location": "云第 yd-wl",
+     "description": "海关放行",
+     "source": "yd-wl.com 查询 M202610272255319"
+    },
+    {
+     "time": "2026-11-02T10:42:58+08:00",
+     "location": "云第 yd-wl",
+     "description": "查验完毕，删单退场，请知悉",
+     "source": "yd-wl.com 查询 M202610272255319"
+    },
+    {
+     "time": "2026-10-29T15:05:56+08:00",
+     "location": "云第 yd-wl",
      "description": "中国查柜",
-     "source": "微信跟进 / CC群 / inbox/20261104-2002-CC群.md"
+     "source": "yd-wl.com 查询 M202610272255319"
     },
     {
-     "time": "2026-11-02T00:00:00+08:00",
-     "location": "中国",
-     "description": "「查验完毕，删单退场」（含义待确认，非确认退运）",
-     "source": "微信跟进 / CC群 / inbox/20261104-2002-CC群.md"
+     "time": "2026-10-29T10:06:01+08:00",
+     "location": "云第 yd-wl",
+     "description": "中国报关中 大船预计11-04开出，11-09到港，请知悉",
+     "source": "yd-wl.com 查询 M202610272255319"
     },
     {
-     "time": "2026-10-29T00:00:00+08:00",
-     "location": "云第",
-     "description": "装柜（船号 CS-6174）",
-     "source": "微信跟进 / CC群 / inbox/20261104-2002-CC群.md"
+     "time": "2026-10-29T09:14:29+08:00",
+     "location": "云第 yd-wl",
+     "description": "货物装柜完成。船号:CS-6174预计到港时间:2026-10-09",
+     "source": "yd-wl.com 查询 M202610272255319"
+    },
+    {
+     "time": "2026-10-27T23:13:42+08:00",
+     "location": "云第 yd-wl",
+     "description": "货物已入仓",
+     "source": "yd-wl.com 查询 M202610272255319"
+    },
+    {
+     "time": "2026-10-27T22:55:31+08:00",
+     "location": "云第 yd-wl",
+     "description": "货物已送达仓库准备入库中",
+     "source": "yd-wl.com 查询 M202610272255319"
     }
    ],
    "note": "流水号 M202610272255319；海运大单号(yd)待确认。11-02「删单退场」含义待确认。覆膜袋入仓号 M202610302108407(PKG-016) 未出现在查询页，是否同船待确认。"
@@ -530,10 +560,10 @@
    "forwarder": "云第 yd-wl",
    "mode": "sea",
    "carrier": "云第 yd-wl 海运",
-   "stage": "运往马来西亚",
+   "stage": "已到马",
    "stage_manual": true,
-   "stage_source": "钟 2026-11-04 CC群 yd-wl 查询页",
-   "last_checked": "2026-11-17T23:37+08:00",
+   "stage_source": "yd-wl.com 流水号查询 2026-11-18 00:42 MYT",
+   "last_checked": "2026-11-18T00:45+08:00",
    "evidence": [],
    "evidence_note": "inbox/20261104-2002-CC群.md / .webp（含电话地址，未进 evidence/）",
    "yd_bill_no": "待确认",
@@ -546,20 +576,56 @@
    "parcel_ids": [
     "PKG-017"
    ],
-   "eta": "2026-11-11",
-   "last_event": "2026-11-04 钟「都有发走了」；船号 SH-2300，10-31装柜，11-02海关放行，预计11-11到港",
+   "eta": "2026-11-16 已到港",
+   "last_event": "2026-11-16 09:12 到港",
    "history": [
     {
-     "time": "2026-11-02T00:00:00+08:00",
-     "location": "中国",
-     "description": "海关放行",
-     "source": "微信跟进 / CC群 / inbox/20261104-2002-CC群.md"
+     "time": "2026-11-16T09:12:19+08:00",
+     "location": "云第 yd-wl",
+     "description": "到港",
+     "source": "yd-wl.com 查询 M202610302146275"
     },
     {
-     "time": "2026-10-31T00:00:00+08:00",
-     "location": "云第",
-     "description": "装柜（船号 SH-2300）",
-     "source": "微信跟进 / CC群 / inbox/20261104-2002-CC群.md"
+     "time": "2026-11-10T22:51:21+08:00",
+     "location": "云第 yd-wl",
+     "description": "已开船 预计11-14到港",
+     "source": "yd-wl.com 查询 M202610302146275"
+    },
+    {
+     "time": "2026-11-07T11:36:55+08:00",
+     "location": "云第 yd-wl",
+     "description": "码头作业缓慢，大船预计11-10开出，请知悉",
+     "source": "yd-wl.com 查询 M202610302146275"
+    },
+    {
+     "time": "2026-11-02T19:44:14+08:00",
+     "location": "云第 yd-wl",
+     "description": "海关放行",
+     "source": "yd-wl.com 查询 M202610302146275"
+    },
+    {
+     "time": "2026-11-01T23:43:25+08:00",
+     "location": "云第 yd-wl",
+     "description": "中国报关中",
+     "source": "yd-wl.com 查询 M202610302146275"
+    },
+    {
+     "time": "2026-10-31T20:29:36+08:00",
+     "location": "云第 yd-wl",
+     "description": "货物装柜完成。船号:SH-2300预计到港时间:2026-11-11",
+     "source": "yd-wl.com 查询 M202610302146275"
+    },
+    {
+     "time": "2026-10-30T21:55:33+08:00",
+     "location": "云第 yd-wl",
+     "description": "货物已入仓",
+     "source": "yd-wl.com 查询 M202610302146275"
+    },
+    {
+     "time": "2026-10-30T21:46:27+08:00",
+     "location": "云第 yd-wl",
+     "description": "货物已送达仓库准备入库中",
+     "source": "yd-wl.com 查询 M202610302146275"
     }
    ],
    "note": "海运大单号(yd)待确认。Klang New Shop。"
@@ -598,6 +664,244 @@
    ],
    "evidence": "微信照片 inbox/20261117-2112-dex-waybill-zoom1-rotated-crop.png（含电话地址，待脱敏）",
    "note": "钟 2026-11-17 21:12 在CC群发圆通 YT2550987341234 +「这个到了要 空运」+ Puchong 收件，并附 DEX 运单（已核图 11101939236，1件，手写1kg，USD60，收件 Orthotics Technology Sdn Bhd / NICK）。"
+  },
+  {
+   "id": "CON-011",
+   "forwarder": "云第 yd-wl",
+   "mode": "sea",
+   "carrier": "云第 yd-wl 海运",
+   "tracking_no": "M202610302108407",
+   "mark": "ZXZ/NICK88",
+   "item": "Ot环保袋/覆膜袋 14件(PKG-016)",
+   "parcel_ids": [
+    "PKG-016"
+   ],
+   "vessel": "SH-2300",
+   "eta": "2026-11-16 已到港",
+   "destination_city": "Puchong",
+   "evidence": [],
+   "yd_bill_no": "待确认",
+   "note": "yd-wl.com 流水号查询（Nick 2026-11-18 指出可查）",
+   "history": [
+    {
+     "time": "2026-11-16T09:12:19+08:00",
+     "location": "云第 yd-wl",
+     "description": "到港",
+     "source": "yd-wl.com 查询 M202610302108407"
+    },
+    {
+     "time": "2026-11-10T22:51:21+08:00",
+     "location": "云第 yd-wl",
+     "description": "已开船 预计11-14到港",
+     "source": "yd-wl.com 查询 M202610302108407"
+    },
+    {
+     "time": "2026-11-07T11:36:55+08:00",
+     "location": "云第 yd-wl",
+     "description": "码头作业缓慢，大船预计11-10开出，请知悉",
+     "source": "yd-wl.com 查询 M202610302108407"
+    },
+    {
+     "time": "2026-11-02T19:44:14+08:00",
+     "location": "云第 yd-wl",
+     "description": "海关放行",
+     "source": "yd-wl.com 查询 M202610302108407"
+    },
+    {
+     "time": "2026-11-01T23:43:25+08:00",
+     "location": "云第 yd-wl",
+     "description": "中国报关中",
+     "source": "yd-wl.com 查询 M202610302108407"
+    },
+    {
+     "time": "2026-10-31T20:29:35+08:00",
+     "location": "云第 yd-wl",
+     "description": "货物装柜完成。船号:SH-2300预计到港时间:2026-11-11",
+     "source": "yd-wl.com 查询 M202610302108407"
+    },
+    {
+     "time": "2026-10-30T21:27:45+08:00",
+     "location": "云第 yd-wl",
+     "description": "货物已入仓",
+     "source": "yd-wl.com 查询 M202610302108407"
+    },
+    {
+     "time": "2026-10-30T21:08:41+08:00",
+     "location": "云第 yd-wl",
+     "description": "货物已送达仓库准备入库中",
+     "source": "yd-wl.com 查询 M202610302108407"
+    }
+   ],
+   "last_event": "2026-11-16 09:12 到港",
+   "stage": "已到马",
+   "stage_manual": true,
+   "stage_source": "yd-wl.com 流水号查询 2026-11-18 00:42 MYT",
+   "last_checked": "2026-11-18T00:45+08:00"
+  },
+  {
+   "id": "CON-012",
+   "forwarder": "云第 yd-wl",
+   "mode": "sea",
+   "carrier": "云第 yd-wl 海运",
+   "tracking_no": "M202611111404092",
+   "mark": "ZXZ/NICK666",
+   "item": "凝珠 100件 第1票(PKG-022)",
+   "parcel_ids": [
+    "PKG-022"
+   ],
+   "vessel": "KL-1107",
+   "eta": "2026-11-23（yd 预计到港）",
+   "destination_city": "待确认",
+   "evidence": [],
+   "yd_bill_no": "待确认",
+   "note": "yd-wl.com 流水号查询（Nick 2026-11-18 指出可查）",
+   "history": [
+    {
+     "time": "2026-11-13T09:26:18+08:00",
+     "location": "云第 yd-wl",
+     "description": "海关放行",
+     "source": "yd-wl.com 查询 M202611111404092"
+    },
+    {
+     "time": "2026-11-11T23:46:33+08:00",
+     "location": "云第 yd-wl",
+     "description": "中国报关中",
+     "source": "yd-wl.com 查询 M202611111404092"
+    },
+    {
+     "time": "2026-11-11T20:34:17+08:00",
+     "location": "云第 yd-wl",
+     "description": "货物装柜完成。船号:KL-1107预计到港时间:2026-11-23",
+     "source": "yd-wl.com 查询 M202611111404092"
+    },
+    {
+     "time": "2026-11-11T14:30:09+08:00",
+     "location": "云第 yd-wl",
+     "description": "货物已入仓",
+     "source": "yd-wl.com 查询 M202611111404092"
+    },
+    {
+     "time": "2026-11-11T14:04:09+08:00",
+     "location": "云第 yd-wl",
+     "description": "货物已送达仓库准备入库中",
+     "source": "yd-wl.com 查询 M202611111404092"
+    }
+   ],
+   "last_event": "2026-11-13 09:26 海关放行",
+   "stage": "运往马来西亚",
+   "stage_manual": true,
+   "stage_source": "yd-wl.com 流水号查询 2026-11-18 00:42 MYT",
+   "last_checked": "2026-11-18T00:45+08:00"
+  },
+  {
+   "id": "CON-013",
+   "forwarder": "云第 yd-wl",
+   "mode": "sea",
+   "carrier": "云第 yd-wl 海运",
+   "tracking_no": "M202611121831140",
+   "mark": "ZXZ/NICK666",
+   "item": "凝珠 100件 第3票(PKG-022)",
+   "parcel_ids": [
+    "PKG-022"
+   ],
+   "vessel": "KL-1111",
+   "eta": "2026-11-23（yd 预计到港）",
+   "destination_city": "待确认",
+   "evidence": [],
+   "yd_bill_no": "待确认",
+   "note": "yd-wl.com 流水号查询（Nick 2026-11-18 指出可查）",
+   "history": [
+    {
+     "time": "2026-11-16T16:06:39+08:00",
+     "location": "云第 yd-wl",
+     "description": "海关放行",
+     "source": "yd-wl.com 查询 M202611121831140"
+    },
+    {
+     "time": "2026-11-13T23:12:41+08:00",
+     "location": "云第 yd-wl",
+     "description": "中国报关中",
+     "source": "yd-wl.com 查询 M202611121831140"
+    },
+    {
+     "time": "2026-11-13T18:02:26+08:00",
+     "location": "云第 yd-wl",
+     "description": "货物装柜完成。船号:KL-1111预计到港时间:2026-11-23",
+     "source": "yd-wl.com 查询 M202611121831140"
+    },
+    {
+     "time": "2026-11-12T20:20:44+08:00",
+     "location": "云第 yd-wl",
+     "description": "货物已入仓",
+     "source": "yd-wl.com 查询 M202611121831140"
+    },
+    {
+     "time": "2026-11-12T18:31:15+08:00",
+     "location": "云第 yd-wl",
+     "description": "货物已送达仓库准备入库中",
+     "source": "yd-wl.com 查询 M202611121831140"
+    }
+   ],
+   "last_event": "2026-11-16 16:06 海关放行",
+   "stage": "运往马来西亚",
+   "stage_manual": true,
+   "stage_source": "yd-wl.com 流水号查询 2026-11-18 00:42 MYT",
+   "last_checked": "2026-11-18T00:45+08:00"
+  },
+  {
+   "id": "CON-014",
+   "forwarder": "云第 yd-wl",
+   "mode": "sea",
+   "carrier": "云第 yd-wl 海运",
+   "tracking_no": "M202611132113565",
+   "mark": "ZXZ/NICK666",
+   "item": "凝珠 100件 第2票(PKG-022)",
+   "parcel_ids": [
+    "PKG-022"
+   ],
+   "vessel": "KL-1113",
+   "eta": "2026-11-23（yd 预计到港）",
+   "destination_city": "待确认",
+   "evidence": [],
+   "yd_bill_no": "待确认",
+   "note": "yd-wl.com 流水号查询（Nick 2026-11-18 指出可查）",
+   "history": [
+    {
+     "time": "2026-11-16T22:58:40+08:00",
+     "location": "云第 yd-wl",
+     "description": "海关放行",
+     "source": "yd-wl.com 查询 M202611132113565"
+    },
+    {
+     "time": "2026-11-14T20:53:01+08:00",
+     "location": "云第 yd-wl",
+     "description": "中国报关中",
+     "source": "yd-wl.com 查询 M202611132113565"
+    },
+    {
+     "time": "2026-11-14T17:44:19+08:00",
+     "location": "云第 yd-wl",
+     "description": "货物装柜完成。船号:KL-1113预计到港时间:2026-11-23",
+     "source": "yd-wl.com 查询 M202611132113565"
+    },
+    {
+     "time": "2026-11-13T21:38:16+08:00",
+     "location": "云第 yd-wl",
+     "description": "货物已入仓",
+     "source": "yd-wl.com 查询 M202611132113565"
+    },
+    {
+     "time": "2026-11-13T21:13:56+08:00",
+     "location": "云第 yd-wl",
+     "description": "货物已送达仓库准备入库中",
+     "source": "yd-wl.com 查询 M202611132113565"
+    }
+   ],
+   "last_event": "2026-11-16 22:58 海关放行",
+   "stage": "运往马来西亚",
+   "stage_manual": true,
+   "stage_source": "yd-wl.com 流水号查询 2026-11-18 00:42 MYT",
+   "last_checked": "2026-11-18T00:45+08:00"
   }
  ],
  "parcels": [
@@ -679,7 +983,7 @@
    "domestic_tracking_no": "SF[已脱敏]268",
    "supplier": "晋亿鞋材（DINGDINGDING）",
    "item": "EVA 料",
-   "hint": "海运 → Puchong（CS-6174 已装柜，ETA 11-09；大单号待确认）",
+   "hint": "海运 → Puchong（WAN HAI 365 S047（原 CS-6174，11/07 改配）；2026-11-17 晚（yd 写预计到港；尚无到港记录））",
    "ctns": null,
    "warehouse_ref": "M202610272255319",
    "history": [],
@@ -691,9 +995,9 @@
    },
    "consolidation_id": "CON-008",
    "stage": "运往马来西亚",
-   "stage_source": "钟 2026-11-04 yd-wl 查询页",
-   "last_event": "2026-11-04 钟「都有发走了」：流水 M202610272255319，CS-6174，10-29装柜，预计11-09到港",
-   "last_checked": "2026-11-17T23:37+08:00",
+   "stage_source": "yd-wl.com 查询 M202610272255319",
+   "last_event": "2026-11-13 14:05 已开船 预计11-17晚到港",
+   "last_checked": "2026-11-18T00:45+08:00",
    "forwarder": "云第 yd-wl",
    "evidence": "Nick 确认",
    "weight": "8.3KG",
@@ -1036,7 +1340,7 @@
    "stage": "运往马来西亚",
    "stage_manual": true,
    "evidence": "微信截图",
-   "hint": "海运 → Puchong（CS-6174 已装柜，ETA 11-09；大单号待确认）",
+   "hint": "海运 → Puchong（WAN HAI 365 S047（原 CS-6174，11/07 改配）；2026-11-17 晚（yd 写预计到港；尚无到港记录））",
    "note": "10/26 鸿运来 19 箱红包→云第；运费¥250 已付；厂家后称中通号错误，正确为安能母单 760253231999 + 19 子单；16:39 已用错误中通号发过 CC，待 Nick 批准更正；10/26 18:30 已发 CC 更正（安能母单+子单，Orthotics）；2026-10-29 微信补扫：已通知 CC 作废中通、改安能（唛头 ZXZ/NICK88）；钟确认与 SF EVA（PKG-003）同海运；入仓待确认。（来源 inbox/20261029-wechat-catchup.md + wechat-send/catchup-20261029/cc-zhong-01/02/03.webp）；2026-10-29 约18:35 Nick批后CC群已发确认与 EVA(SF1580889297268/PKG-003)同海运；钟暂未回。；2026-10-29 18:38 钟回「嗯」确认与 EVA(SF1580889297268/PKG-003)同海运寄 Puchong；海运大单号仍待钟另发。；2026-10-30 CC群 Nick 说等环保袋（PKG-016）等到齐再一起出，钟回「好」；海运批次拟含 EVA+红包+一滴香(PKG-015)+环保袋，大单号仍待确认。；2026-10-30 18:06 环保袋(PKG-016)已到仓；钟问哪个地址、齐了么——等 Nick 批再回。；2026-10-30 19:55 Nick 在 CC 群回钟「可以」直接发（Puchong 海运）；海运大单号仍待钟发。；2026-10-30 晚 覆膜袋入仓号 M202610302108407（14件）已出；钟问「是不是只有这两件」——批次组成仍待确认；海运大单号待发。；2026-11-04 钟回催单「都有发走了」，查询页同流水 M202610272255319（ZXZ/NICK88）10-29装柜，船号 CS-6174，预计11-04开/11-09到港；11-02查柜+「删单退场」含义待确认；yd大单号待确认。来源 inbox/20261104-2002-CC群.md；旧 warehouse_ref=760253231999（安能母单）",
    "confirm": [
     "尾款是否已付"
@@ -1053,9 +1357,9 @@
    "warehouse_ref": "M202610272255319",
    "mark": "ZXZ/NICK88",
    "weight": null,
-   "last_event": "2026-11-04 钟「都有发走了」：流水 M202610272255319，CS-6174，10-29装柜，预计11-09到港",
-   "last_checked": "2026-11-17T23:37+08:00",
-   "stage_source": "钟 2026-11-04 yd-wl 查询页",
+   "last_event": "2026-11-13 14:05 已开船 预计11-17晚到港",
+   "last_checked": "2026-11-18T00:45+08:00",
+   "stage_source": "yd-wl.com 查询 M202610272255319",
    "corrected_from": {
     "domestic_carrier": "中通",
     "tracking_list": [
@@ -1142,22 +1446,22 @@
    "domestic_tracking_no": null,
    "tracking": "",
    "item": "Ot环保袋 / ORTHOTECH覆膜袋33*33*10（10000个）",
-   "stage": "已入仓",
+   "stage": "已到马",
    "stage_manual": true,
-   "stage_source": "钟发箱唛入仓号（已核 zoom 图 M202610302108407）+ 木子卸货",
-   "last_event": "2026-11-17 钟回「14件」并重发 10/30 入仓标签旧截图（M202610302108407，ZXZ/NICK88，CTNS 14-0，「2.9055✖640」），表示在仓；未给马来单号。",
-   "last_checked": "2026-11-17T23:37+08:00",
+   "stage_source": "yd-wl.com 查询 M202610302108407",
+   "last_event": "2026-11-16 09:12 到港",
+   "last_checked": "2026-11-18T00:45+08:00",
    "destination_warehouse": "云第白云湖（一号仓）",
-   "hint": "海运 → Puchong（Nick 已确认可出；大单号待确认）",
+   "hint": "海运 → Puchong（SH-2300；2026-11-16 已到港）",
    "confirm": {
     "supplier": "已确认",
     "item": "已确认",
     "destination": "已确认",
-    "consolidation_link": "待确认",
+    "consolidation_link": "已确认",
     "ctns": "已确认",
     "warehouse_ref": "已确认"
    },
-   "consolidation_id": null,
+   "consolidation_id": "CON-011",
    "evidence": [],
    "evidence_note": "截图未存；来源 inbox/20261030-1603-wechat.md",
    "history": [
@@ -1189,13 +1493,13 @@
    "domestic_tracking_no": "760253547232",
    "item": "沙发 / Klang New Shop Sofa",
    "ctns": 2,
-   "stage": "运往马来西亚",
+   "stage": "已到马",
    "stage_manual": true,
-   "stage_source": "钟 2026-11-04 yd-wl 查询页",
-   "last_event": "2026-11-04 钟「都有发走了」：SH-2300，10-31装柜，11-02海关放行，预计11-11到港",
-   "last_checked": "2026-11-17T23:37+08:00",
+   "stage_source": "yd-wl.com 查询 M202610302146275",
+   "last_event": "2026-11-16 09:12 到港",
+   "last_checked": "2026-11-18T00:45+08:00",
    "destination_city": "Klang",
-   "hint": "海运 → Klang（SH-2300 已装柜，ETA 11-11；大单号待确认）",
+   "hint": "海运 → Klang（SH-2300；2026-11-16 已到港）",
    "confirm": {
     "supplier": "待确认",
     "item": "已确认",
@@ -1411,15 +1715,15 @@
    "item": "六腔海星洗衣凝珠（8克×50粒/盒，20盒/箱，6000盒）",
    "ctns": 300,
    "weight": "送货单整批 3300kg / 15.6m³（300箱）；钟就本入仓票写「5.67✖690」（含义待确认）",
-   "stage": "已入仓",
+   "stage": "运往马来西亚",
    "stage_manual": true,
-   "stage_source": "CC群 钟 2026-11-13 21:32 发新入仓标签（已核图 M202611132113565，CTNS 100-0）；先发100件仍为 M202611111404092",
-   "last_event": "2026-11-17 22:09–22:19 钟回催单：发三张箱标说「三票」，各100件、ZXZ/NICK666：M202611111404092、M202611132113565，第三票读为 M202611121831140（缩略图读，待核）。仍无海运/空运单号。",
-   "last_checked": "2026-11-17T23:37+08:00",
-   "eta": null,
-   "eta_note": "300件分三票入云第，各100件：M202611111404092、M202611132113565、M202611121831140（第三票号待放大核对）。目的地 Port Dickson 待 Nick 确认；无船期、无马来单号。",
+   "stage_source": "yd-wl.com 三票流水号查询 2026-11-18 00:42 MYT",
+   "last_event": "三票均已装柜并海关放行：M202611111404092 KL-1107（11/13 放行）、M202611121831140 KL-1111（11/16 放行）、M202611132113565 KL-1113（11/16 放行）；yd 预计 11-23 到港；尚无开船记录。",
+   "last_checked": "2026-11-18T00:45+08:00",
+   "eta": "2026-11-23（yd 预计到港）",
+   "eta_note": "三票分别装 KL-1107/KL-1111/KL-1113，yd 均写预计 11-23 到港；第三票号 M202611121831140 已由 yd 查询证实（唛头 ZXZ/NICK666）。马来派送目的地待确认。",
    "destination_warehouse": "云第白云湖（一号仓）",
-   "hint": "Nick 重点关注。钟 11/13 称分了三票、11/14 最后一票。已见两票入仓号各100件：M202611111404092、M202611132113565（均 NICK666）；第三票入仓号和整票马来单号未见。目的地 PD、唛头与娟单（NICK88）差异、630 元送库运费待 Nick 定。",
+   "hint": "Nick 重点关注。三票各100件已装柜放行，预计 11/23 到港。目的地、630 元送库运费待 Nick 定。",
    "confirm": {
     "supplier": "已确认",
     "item": "已确认（整批为六腔海星凝珠；Nick 2026-11-15 确认娟所发「洗衣液」200件入库单即凝珠）",
@@ -1433,7 +1737,7 @@
     "price_quote": "待确认（娟称送库运费 630 元已垫付，待 Nick 定）",
     "consolidation_link": "待确认"
    },
-   "consolidation_id": null,
+   "consolidation_id": "CON-012",
    "mark": "ZXZ/NICK666",
    "warehouse_ref": "M202611111404092；M202611132113565",
    "evidence": [
@@ -1523,6 +1827,11 @@
    "destination_city": "Port Dickson（待确认）",
    "tags": [
     "重点关注"
+   ],
+   "consolidation_ids": [
+    "CON-012",
+    "CON-014",
+    "CON-013"
    ]
   },
   {
