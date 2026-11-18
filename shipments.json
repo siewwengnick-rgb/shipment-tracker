@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18 12:12 MYT",
+ "updated": "2026-11-18 14:12 MYT",
  "schema_version": 3,
  "consolidations": [
   {
@@ -2323,6 +2323,39 @@
     }
    ],
    "note": "2026-11-17 新货，台账原无此单号。"
+  },
+  {
+   "id": "PKG-025",
+   "forwarder": "云第 yd-wl",
+   "factory": "国马皮具（吴先生）",
+   "supplier": "国马皮具",
+   "carrier": "韵达",
+   "domestic_carrier": "韵达",
+   "domestic_tracking_no": "435450695957605",
+   "tracking": "435450695957605",
+   "item": "客户样板书包 3 套",
+   "stage": "国内快递",
+   "stage_manual": true,
+   "stage_source": "厂家微信 2026-11-18 13:28",
+   "last_event": "2026-11-18T13:28:00+08:00 厂家称今天发出，收件云第一号仓",
+   "last_checked": "2026-11-18T14:12+08:00",
+   "confirm": {
+    "supplier": "已确认",
+    "item": "厂家原话",
+    "china_warehouse": "待确认（未入仓）",
+    "consolidation_link": "待确认"
+   },
+   "evidence": [],
+   "evidence_note": "inbox/20261118-1410-guoma-yunda.md（包裹照）",
+   "history": [
+    {
+     "time": "2026-11-18T13:28:00+08:00",
+     "location": "国马皮具",
+     "description": "吴先生发「韵达 435450695957605 ，客户样板书包 3 套，今天发出」，13:44 发包裹照，收件云第一号仓。",
+     "source": "微信跟进 / 国马皮具-吴先生"
+    }
+   ],
+   "note": "2026-11-18 新货；走空运还是海运待 Nick 定。"
   }
  ],
  "forwarders": [
