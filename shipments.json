@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18 10:15 MYT",
+ "updated": "2026-11-18 12:12 MYT",
  "schema_version": 3,
  "consolidations": [
   {
@@ -1197,6 +1197,89 @@
    "last_checked": "2026-11-18T10:15+08:00",
    "evidence": [],
    "note": "yd-wl.com 流水号查询（号码在公开库脱敏）。此前台账停在已入仓；2026-11-18 10:15 复查：10/29 到港，11/05 第三方提货（VBU 3248）。货品待确认（群内弱线索或为柜台货）；是否已交到收货方待确认。"
+  },
+  {
+   "id": "CON-018",
+   "forwarder": "云第 yd-wl",
+   "mode": "sea",
+   "carrier": "云第 yd-wl 海运",
+   "tracking_no": "M202610282220270",
+   "mark": "ZXZ/NICK888",
+   "item": "待确认（钟 2026-11-18 11:40 在 CC 群发轨迹，kx 问怎么没有动静）",
+   "parcel_ids": [],
+   "vessel": "SH-2298",
+   "eta": "2026-11-07 已到港",
+   "destination_city": "待确认",
+   "evidence": [],
+   "yd_bill_no": "待确认",
+   "note": "11/11 第三方提货（JXW 9212），收货与否待确认",
+   "history": [
+    {
+     "time": "2026-11-11T10:00:00+08:00",
+     "location": "云第 yd-wl",
+     "description": "第三方提货 JXW 9212",
+     "source": "yd-wl.com 查询 M202610282220270"
+    },
+    {
+     "time": "2026-11-10T15:59:32+08:00",
+     "location": "云第 yd-wl",
+     "description": "货物已进目的港仓库",
+     "source": "yd-wl.com 查询 M202610282220270"
+    },
+    {
+     "time": "2026-11-09T09:44:39+08:00",
+     "location": "云第 yd-wl",
+     "description": "清关完成",
+     "source": "yd-wl.com 查询 M202610282220270"
+    },
+    {
+     "time": "2026-11-07T10:14:32+08:00",
+     "location": "云第 yd-wl",
+     "description": "到港",
+     "source": "yd-wl.com 查询 M202610282220270"
+    },
+    {
+     "time": "2026-11-02T09:09:07+08:00",
+     "location": "云第 yd-wl",
+     "description": "已开船 预计11-08到港",
+     "source": "yd-wl.com 查询 M202610282220270"
+    },
+    {
+     "time": "2026-10-31T17:05:47+08:00",
+     "location": "云第 yd-wl",
+     "description": "海关放行",
+     "source": "yd-wl.com 查询 M202610282220270"
+    },
+    {
+     "time": "2026-10-29T18:17:37+08:00",
+     "location": "云第 yd-wl",
+     "description": "中国报关中",
+     "source": "yd-wl.com 查询 M202610282220270"
+    },
+    {
+     "time": "2026-10-29T16:46:37+08:00",
+     "location": "云第 yd-wl",
+     "description": "货物装柜完成。船号:SH-2298预计到港时间:2026-11-08",
+     "source": "yd-wl.com 查询 M202610282220270"
+    },
+    {
+     "time": "2026-10-28T22:30:19+08:00",
+     "location": "云第 yd-wl",
+     "description": "货物已入仓",
+     "source": "yd-wl.com 查询 M202610282220270"
+    },
+    {
+     "time": "2026-10-28T22:20:27+08:00",
+     "location": "云第 yd-wl",
+     "description": "货物已送达仓库准备入库中",
+     "source": "yd-wl.com 查询 M202610282220270"
+    }
+   ],
+   "last_event": "2026-11-11 第三方提货",
+   "stage": "已到马",
+   "stage_manual": true,
+   "stage_source": "yd-wl.com 流水号查询 2026-11-18 12:12 MYT",
+   "last_checked": "2026-11-18T12:12+08:00"
   }
  ],
  "parcels": [
