@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-19 16:15 MYT",
+ "updated": "2026-11-20 09:55 MYT",
  "schema_version": 3,
  "consolidations": [
   {
@@ -2372,15 +2372,15 @@
    "domestic_tracking_no": "435450695957605",
    "tracking": "435450695957605",
    "item": "客户样板书包 3 套",
-   "stage": "国内快递",
+   "stage": "已入仓",
    "stage_manual": true,
-   "stage_source": "厂家微信 2026-11-18 13:28",
-   "last_event": "2026-11-18T13:28:00+08:00 厂家称今天发出，收件云第一号仓",
-   "last_checked": "2026-11-19T16:13+08:00",
+   "stage_source": "CC群 kx 2026-11-19 10:56 箱照（唛头 ZXZ/NICK88，1箱）",
+   "last_event": "2026-11-20T09:50:00+08:00 已在CC群通知走空运寄 Puchong，等钟回复/DEX单号",
+   "last_checked": "2026-11-20T09:55+08:00",
    "confirm": {
     "supplier": "已确认",
     "item": "厂家原话",
-    "china_warehouse": "待确认（未入仓）",
+    "china_warehouse": "已确认（kx 箱照）",
     "consolidation_link": "待确认"
    },
    "evidence": [],
@@ -2391,9 +2391,23 @@
      "location": "国马皮具",
      "description": "吴先生发「韵达 435450695957605 ，客户样板书包 3 套，今天发出」，13:44 发包裹照，收件云第一号仓。",
      "source": "微信跟进 / 国马皮具-吴先生"
+    },
+    {
+     "time": "2026-11-19T10:56:00+08:00",
+     "location": "云第仓（广州）",
+     "description": "kx 在CC群发箱照，唛头 ZXZ/NICK88，1箱；钟 11:23 问空运么，kx 12:15 回空运。",
+     "source": "微信跟进 / CC SDN BHD 运输"
+    },
+    {
+     "time": "2026-11-20T09:50:00+08:00",
+     "location": "CC SDN BHD 运输",
+     "description": "按 Nick 原话通知钟：这箱走空运，寄马来 Puchong，并转发韵达物流图。钟暂未回。",
+     "source": "微信跟进 / wechat-send/20261120-cc-airfreight"
     }
    ],
-   "note": "2026-11-18 新货；走空运还是海运待 Nick 定。"
+   "note": "2026-11-18 新货；2026-11-20 定空运 Puchong，等 DEX 单号。",
+   "mode": "air",
+   "destination_city": "Puchong"
   }
  ],
  "forwarders": [
