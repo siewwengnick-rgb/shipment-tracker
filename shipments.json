@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21 14:24 MYT",
+ "updated": "2026-11-21 14:40 MYT",
  "schema_version": 3,
  "consolidations": [
   {
@@ -1889,6 +1889,12 @@
      "location": "马来西亚",
      "description": "Nick 在集运群确认皮革已收到",
      "source": "Nick / 集运群"
+    },
+    {
+     "time": "2026-11-20T12:00:00+08:00",
+     "location": "马来西亚",
+     "description": "Nick 确认 11/20 已签收皮革（叫车直送，无单号，具体随哪车到待确认）",
+     "source": "Nick 群聊 2026-11-21"
     }
    ],
    "last_checked": "2026-11-21T12:09+08:00",
@@ -1903,7 +1909,7 @@
     "destination": "已确认",
     "consolidation_link": "不再追（Nick 确认已收到）"
    },
-   "last_event": "2026-11-21 Nick 确认皮革已收到",
+   "last_event": "2026-11-20 Nick 签收（叫车直送，无快递单号）",
    "supplier": "汇兴皮革（OT 皮革 2.0）"
   },
   {
