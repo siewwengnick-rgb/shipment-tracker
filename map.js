@@ -49,7 +49,7 @@
     const unverified = stage === '已到马' && !etaNotes.length ? false : stage === '已到马' && etaNotes.some(t => /无到港或签收/.test(t));
     let step, status, done = false;
     if (route === 'local') { step = 2; status = '已完成'; done = true; }
-    else if (stage === '已签收') { step = 5; status = '已签收'; done = true; }
+    else if (stage === '已签收') { step = route === 'warehouse' ? 3 : 5; status = '已签收'; done = true; }
     else if (unverified) { step = 3; status = '进度待复核'; }
     else if (stage === '已到马') { step = 4; status = '已到马'; }
     else if (stage === '运往马来西亚') { step = 3; status = '运往马来西亚'; }
