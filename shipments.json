@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21 10:25 MYT",
+ "updated": "2026-11-21 10:30 MYT",
  "schema_version": 3,
  "consolidations": [
   {
@@ -1404,7 +1404,7 @@
    "tracking_no": "[已脱敏]2",
    "destination_city": "Port Dickson",
    "weight": "1件 约26.95kg",
-   "item": "原料 27kg（中通快运 800232777283 = PKG-026，按群聊顺序与重量推断）",
+   "item": "硅油铺展剂 25kg（中通快运 800232777283 = PKG-026；宏渝 11/20 20:39 引用面单图确认）",
    "mark": "ZXZ/NICK88",
    "stage": "运往马来西亚",
    "stage_manual": false,
@@ -2548,7 +2548,7 @@
    "domestic_carrier": "中通快运",
    "domestic_tracking_no": "800232777283",
    "tracking": "中通快运 800232777283",
-   "item": "原料（面单品名；是否水溶性硅油待确认）",
+   "item": "硅油铺展剂 Silicone Oil 25kg（面单品名「原料」）",
    "ctns": 1,
    "weight": "27kg",
    "mark": "ZXZ/NICK88",
@@ -2560,12 +2560,18 @@
    "consolidation_id": "CON-020",
    "confirm": {
     "supplier": "待确认",
-    "item": "待确认",
+    "item": "已确认",
     "destination": "已确认",
     "consolidation_link": "待确认"
    },
    "evidence": [],
    "history": [
+    {
+     "time": "2026-11-20T20:39:00+08:00",
+     "location": "CC 群",
+     "description": "宏渝引用钟的 DEX 面单图，写「硅油 铺展剂 Silicone Oil 25kg」",
+     "source": "微信跟进 wechat-watch/20261121-cc-delivery/01.webp"
+    },
     {
      "time": "2026-11-20T19:13:00+08:00",
      "location": "云第仓（广州）",
