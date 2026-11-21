@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21 10:15 MYT",
+ "updated": "2026-11-21 10:25 MYT",
  "schema_version": 3,
  "consolidations": [
   {
@@ -613,7 +613,7 @@
     "PKG-017"
    ],
    "eta": "2026-11-16 已到港；11/18 清关完成；11/20 08:55 已进目的港仓库",
-   "last_event": "2026-11-20 Super Union 派送单已出（待确认签收）",
+   "last_event": "2026-11-21 Super Union 今日派送（Nick 确认；待签收）",
    "history": [
     {
      "time": "2026-11-20T08:55:15+08:00",
@@ -816,7 +816,7 @@
      "source": "yd-wl.com 查询 M202610302108407"
     }
    ],
-   "last_event": "2026-11-20 Super Union 派送单已出（待确认签收）",
+   "last_event": "2026-11-21 Super Union 今日派送（Nick 确认；待签收）",
    "stage": "已到马",
    "stage_manual": true,
    "stage_source": "yd-wl.com 流水号查询 2026-11-20 10:08 MYT",
@@ -1988,7 +1988,7 @@
    "stage": "已到马",
    "stage_manual": true,
    "stage_source": "yd-wl.com 查询 M202610302108407",
-   "last_event": "2026-11-20 Super Union 派送单已出（待确认签收）",
+   "last_event": "2026-11-21 Super Union 今日派送（Nick 确认；待签收）",
    "last_checked": "2026-11-21T10:15+08:00",
    "destination_warehouse": "云第白云湖（一号仓）",
    "hint": "海运 → Puchong（SH-2300；2026-11-16 已到港，11/18 清关完成，11/20 08:55 已进目的港仓库）",
@@ -2041,7 +2041,7 @@
    "stage": "已到马",
    "stage_manual": true,
    "stage_source": "yd-wl.com 查询 M202610302146275",
-   "last_event": "2026-11-20 Super Union 派送单已出（待确认签收）",
+   "last_event": "2026-11-21 Super Union 今日派送（Nick 确认；待签收）",
    "last_checked": "2026-11-21T10:15+08:00",
    "destination_city": "Klang",
    "hint": "海运 → Klang（SH-2300；2026-11-16 已到港，11/18 清关完成，11/20 08:55 已进目的港仓库）",
