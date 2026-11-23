@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23 15:42 MYT",
+ "updated": "2026-11-23 16:04 MYT",
  "schema_version": 3,
  "consolidations": [
   {
@@ -551,7 +551,7 @@
    "stage": "已到马",
    "stage_manual": true,
    "stage_source": "yd-wl.com 流水号查询 2026-11-20 10:08 MYT",
-   "last_checked": "2026-11-23T15:30+08:00",
+   "last_checked": "2026-11-23T16:04+08:00",
    "evidence": [],
    "evidence_note": "inbox/20261104-2002-CC群.md / .webp（含电话地址，未进 evidence/）",
    "yd_bill_no": "待确认",
@@ -565,9 +565,15 @@
     "PKG-003",
     "PKG-014"
    ],
-   "eta": "2026-11-18 23:05 已到港（yd 原预计 11-17 晚；该节点 11/19 23:05 才写入系统）",
-   "last_event": "2026-11-18 23:05 到港",
+   "eta": "2026-11-18 23:05 已到港；11/23 10:11 清关完成",
+   "last_event": "2026-11-23 10:11 清关完成（yd）；钟 15:14 微信确认清关完成，待问派送日期",
    "history": [
+    {
+     "time": "2026-11-23T10:11:08+08:00",
+     "location": "马来西亚",
+     "description": "清关完成（yd）",
+     "source": "yd-wl.com"
+    },
     {
      "time": "2026-11-18T23:05:37+08:00",
      "location": "云第 yd-wl",
@@ -1719,7 +1725,14 @@
    "hint": "海运 → Puchong（WAN HAI 365 S047（原 CS-6174，11/07 改配）；2026-11-18 23:05 已到港）",
    "ctns": null,
    "warehouse_ref": "M202610272255319",
-   "history": [],
+   "history": [
+    {
+     "time": "2026-11-23T10:11:08+08:00",
+     "location": "马来西亚",
+     "description": "清关完成（yd）",
+     "source": "yd-wl.com"
+    }
+   ],
    "confirm": {
     "supplier": "已确认",
     "item": "已确认",
@@ -1729,8 +1742,8 @@
    "consolidation_id": "CON-008",
    "stage": "已到马",
    "stage_source": "yd-wl.com 查询 M202610272255319",
-   "last_event": "2026-11-18 23:05 到港",
-   "last_checked": "2026-11-23T15:30+08:00",
+   "last_event": "2026-11-23 10:11 清关完成（yd）；钟 15:14 微信确认清关完成，待问派送日期",
+   "last_checked": "2026-11-23T16:04+08:00",
    "forwarder": "云第 yd-wl",
    "evidence": "Nick 确认",
    "weight": "8.3KG",
@@ -2196,6 +2209,12 @@
    ],
    "history": [
     {
+     "time": "2026-11-23T10:11:08+08:00",
+     "location": "马来西亚",
+     "description": "清关完成（yd）",
+     "source": "yd-wl.com"
+    },
+    {
      "time": "2026-10-26T16:11:20.256712+08:00",
      "location": "微信",
      "description": "厂家发出 19 个中通单号",
@@ -2206,8 +2225,8 @@
    "warehouse_ref": "M202610272255319",
    "mark": "ZXZ/NICK88",
    "weight": null,
-   "last_event": "2026-11-18 23:05 到港",
-   "last_checked": "2026-11-23T15:30+08:00",
+   "last_event": "2026-11-23 10:11 清关完成（yd）；钟 15:14 微信确认清关完成，待问派送日期",
+   "last_checked": "2026-11-23T16:04+08:00",
    "stage_source": "yd-wl.com 查询 M202610272255319",
    "corrected_from": {
     "domestic_carrier": "中通",
