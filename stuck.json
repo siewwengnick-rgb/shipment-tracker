@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23 15:32 MYT",
+ "updated": "2026-11-23 16:05 MYT",
  "overdue": [
   {
    "id": "PKG-010",
@@ -105,21 +105,21 @@
    "id": "PKG-003",
    "item": "EVA 料",
    "supplier": "晋亿鞋材（DINGDINGDING）",
-   "stage": "已到马·到港",
+   "stage": "已到马·清关／进仓",
    "days": 5,
-   "limit_days": 3,
+   "limit_days": 2,
    "since": "2026-11-18",
-   "chase": "CC 问清关进度"
+   "chase": "CC 问派送日期"
   },
   {
    "id": "PKG-014",
    "item": "红包成品",
    "supplier": "鸿运来（R.Amber）",
-   "stage": "已到马·到港",
+   "stage": "已到马·清关／进仓",
    "days": 5,
-   "limit_days": 3,
+   "limit_days": 2,
    "since": "2026-11-18",
-   "chase": "CC 问清关进度"
+   "chase": "CC 问派送日期"
   },
   {
    "id": "PKG-024",
