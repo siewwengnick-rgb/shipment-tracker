@@ -76,8 +76,8 @@
     document.querySelectorAll('[data-view]').forEach(b => { b.classList.toggle('active', b.dataset.view === view); b.setAttribute('aria-pressed', String(b.dataset.view === view)); });
   }
 
-  function start(raw) {
-    data = window.ShipMap.mapShipments(raw);
+  function start(raw, rules) {
+    data = window.ShipMap.mapShipments(raw, { rules: rules, now: new Date() });
     const counts = { all: data.length, transit: data.filter(x => !x.done).length, decision: data.filter(x => x.decision).length, done: data.filter(x => x.done).length };
     Object.entries(counts).forEach(([k, v]) => $('#count-' + k).textContent = v);
     $('#summary-count').textContent = counts.decision;
@@ -95,9 +95,12 @@
   function load() {
     $('#cards').innerHTML = '<p class="loading">正在读取最新货件…</p>';
     const src = new URLSearchParams(location.search).get('data') || 'shipments.json';
-    fetch(src + '?v=' + Date.now(), { cache: 'no-store' })
-      .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
-      .then(start)
+    const v = Date.now();
+    Promise.all([
+      fetch(src + '?v=' + v, { cache: 'no-store' }).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
+      fetch('sla_rules.json?v=' + v, { cache: 'no-store' }).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    ])
+      .then(([raw, rules]) => { if (window.SLA_RULES === undefined) window.SLA_RULES = rules; start(raw, rules); })
       .catch(() => { $('#cards').innerHTML = '<p class="loading">读取 shipments.json 失败。<button type="button" id="retry">重试</button></p>'; $('#retry').onclick = load; });
   }
   load();
