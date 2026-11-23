@@ -8,6 +8,7 @@ parcel stage: 无单号/国内运输中/已入仓/未查到 from own facts; once
 Air = DEX API; sea = yd-wl placeholder (manual). Domestic (SF/中通快运/安能) no reliable public API -> manual.
 Never guess supplier/item ('待确认'; seed hints in 'hint'). No phones/addresses/names."""
 import json, re, urllib.request, datetime, pathlib
+import sla
 P = pathlib.Path(__file__).with_name("shipments.json")
 MYT = datetime.timezone(datetime.timedelta(hours=8))
 DEX_URL = "https://api.dex-i.com/api/f/logistics-management/tracking/list"
@@ -91,8 +92,13 @@ def main():
                 p["stage"] = "未查到"; p["stage_source"] = "有国内单号但暂无轨迹"
         p["last_checked"] = now
     d.pop("shipments", None)
+    sla.refresh_step_dates(d)
     d["updated"] = datetime.datetime.now(MYT).strftime("%Y-%m-%d %H:%M MYT")
-    P.write_text(json.dumps(d, ensure_ascii=False, indent=1))
+    P.write_text(json.dumps(d, ensure_ascii=False, indent=1) + "\n")
+    now = datetime.datetime.now(MYT)
+    payload = sla.stuck_payload(d, now)
+    sla.write_stuck(payload, P.with_name("stuck.json"))
+    sla.print_stuck(payload)
     for c in C: print(c["id"], c["tracking_no"], c["stage"], c["parcel_ids"])
     for p in PK: print(p["id"], p.get("domestic_tracking_no"), p["stage"], p.get("consolidation_id"))
 if __name__ == "__main__": main()

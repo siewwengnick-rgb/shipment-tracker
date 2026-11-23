@@ -1,0 +1,162 @@
+{
+  "tz_offset_hours": 8,
+  "skipped_stages": [
+    "已签收",
+    "已完成（中国本地自取）"
+  ],
+  "inherit_stages": [
+    "运往马来西亚",
+    "已到马",
+    "已签收"
+  ],
+  "factory_stages": [
+    "无单号",
+    "未查到"
+  ],
+  "domestic_stages": [
+    "国内运输中",
+    "国内快递"
+  ],
+  "inbound_stages": [
+    "已入仓"
+  ],
+  "to_my_stages": [
+    "运往马来西亚"
+  ],
+  "arrived_stages": [
+    "已到马"
+  ],
+  "factory": {
+    "limit_days_after_promise": 1,
+    "limit_days_after_order": 5
+  },
+  "domestic": {
+    "limit_days": 3
+  },
+  "inbound": {
+    "limit_days_air": 3,
+    "limit_days_sea": 7
+  },
+  "to_my": {
+    "limit_days_past_eta_air": 1,
+    "limit_days_past_eta_sea": 2,
+    "limit_days_no_eta_air": 3,
+    "limit_days_no_eta_sea": 12
+  },
+  "arrived_port": {
+    "limit_days": 3
+  },
+  "cleared": {
+    "limit_days": 2
+  },
+  "delivering": {
+    "limit_days": 1
+  },
+  "labels": {
+    "factory": "厂家／无单号／未查到",
+    "domestic": "国内快递／国内运输中",
+    "inbound": "已入仓",
+    "to_my": "运往马来西亚",
+    "arrived_port": "已到马·到港",
+    "cleared": "已到马·清关／进仓",
+    "delivering": "派送中"
+  },
+  "chase": {
+    "factory": "厂家（先翻微信历史）",
+    "domestic": "厂家（先翻微信历史）",
+    "inbound": "集运仓（钟／零零九）",
+    "to_my": "集运仓（钟／零零九）",
+    "arrived_port": "CC 问清关进度",
+    "cleared": "CC 问派送日期",
+    "delivering": "问 Nick 或门店是否签收"
+  },
+  "keywords": {
+    "delivering": [
+      "第三方提货",
+      "派送单",
+      "出外派送",
+      "派送中"
+    ],
+    "cleared": [
+      "清关完成",
+      "已进目的港仓库",
+      "进目的港仓库"
+    ],
+    "arrived_port": [
+      "到港"
+    ],
+    "departed_sea": [
+      "已开船"
+    ],
+    "departed_air": [
+      "正在中转至目的地"
+    ],
+    "inbound": [
+      "货物已入仓",
+      "已入仓",
+      "钟报已到仓",
+      "送到云第",
+      "送达仓库准备入库"
+    ],
+    "domestic": [
+      "已取件",
+      "已揽收",
+      "已发出",
+      "寄出",
+      "离开"
+    ]
+  },
+  "tones": {
+    "cyan_below": 0.5,
+    "red_above": 1.0
+  },
+  "step_keywords": {
+    "delivered": [
+      "第三方提货",
+      "出外派送",
+      "派送单",
+      "派送完成",
+      "已签收",
+      "Super Union 派送",
+      "酒店自取"
+    ],
+    "arrived": [
+      "清关完成",
+      "已进目的港仓库",
+      "进目的港仓库",
+      "正在清关",
+      "到达分拣中心",
+      "到件扫描"
+    ],
+    "transit": [
+      "已开船",
+      "货物装柜完成",
+      "正在中转至目的地",
+      "航班延误",
+      "未正常起飞"
+    ],
+    "warehouse": [
+      "货物已入仓",
+      "钟报已到仓",
+      "送到云第",
+      "到云第国际仓",
+      "验收成功",
+      "货物到仓",
+      "收件云第仓",
+      "到云第仓"
+    ],
+    "domestic": [
+      "已取件",
+      "已揽收",
+      "已发出",
+      "寄出",
+      "离开",
+      "安能签收"
+    ],
+    "factory": [
+      "厂家发出",
+      "装车视频",
+      "送货单"
+    ]
+  }
+}

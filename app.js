@@ -7,6 +7,7 @@
   let data = [], filter = 'all', view = 'cards';
 
   function steps(x) {
+    if (window.ShipSla && ShipSla.routeSteps) return ShipSla.routeSteps(x.route, x.domesticLabel);
     if (x.route === 'local') return ['厂家', '国内配送', '酒店自取'];
     if (x.route === 'warehouse') return ['厂家', x.domesticLabel, '集运仓', '方式待定'];
     const air = x.route === 'air';
@@ -34,10 +35,17 @@
     const plan = x.route === 'seaPlan' ? '海运计划 · 出运待核' : x.route === 'seaProposed' ? '拟海运 · 待决定' : '';
     const showId = /^待确认/.test(x.title);
     const warn = x.decision || x.status === '进度待复核';
-    return `<article class="card"><div class="card-top"><div><h3>${esc(x.title)}${showId ? ` <small class="id">${esc(x.id)}</small>` : ''}</h3>${x.spec ? `<div class="spec">${esc(x.spec)}</div>` : ''}</div><span class="badge ${warn ? 'warn' : ''}">${x.decision ? '待决定' : x.done ? '已完成' : '追踪中'}</span></div>`
+    const tone = (window.ShipSla && ShipSla.sortTone(x)) || (x.sla && x.sla.overdue ? 'red' : '');
+    return `<article class="card${tone && tone !== 'done' ? ' tone-' + tone : ''}"><div class="card-top"><div><h3>${esc(x.title)}${showId ? ` <small class="id">${esc(x.id)}</small>` : ''}</h3>${x.spec ? `<div class="spec">${esc(x.spec)}</div>` : ''}</div><span class="badge ${warn ? 'warn' : ''}">${x.decision ? '待决定' : x.done ? '已完成' : '追踪中'}</span></div>`
       + `<div class="meta">厂家　<strong>${esc(x.supplierShort)}</strong><span class="destination">寄往　<strong>${esc(x.destination)}</strong></span></div>`
       + `<div class="statusline"><strong>${esc(x.status)}</strong><span class="eta">${x.done ? '' : esc(eta)}</span></div>${plan ? `<div class="plan">${esc(plan)}</div>` : ''}`
-      + `<div class="progress-steps" aria-label="路线进度">${route.map((s, i) => `<div class="progress-step ${i < n ? 'passed' : i === n ? 'current' : 'future'}"><i></i><span>${esc(s)}</span><small>${i < n ? '已过' : i === n ? (x.done ? '完成' : '当前') : '待到'}</small></div>`).join('')}</div>`
+      + `<div class="progress-steps" aria-label="路线进度">${(x.stepsMeta && x.stepsMeta.length ? x.stepsMeta : route.map((s, i) => ({ label: s, i, isPast: i < n, isCurrent: i === n, isFuture: i > n, whenLabel: '', dwellLabel: i > n ? '待到' : '', tone: '' }))).map((s, i) => {
+        const state = s.isPast || i < n && s.isPast !== false ? 'passed' : (s.isCurrent || i === n ? 'current' : 'future');
+        const tone = s.tone ? ' tone-' + s.tone : '';
+        const when = s.whenLabel ? `<time>${esc(s.whenLabel)}</time>` : '';
+        const dwell = s.dwellLabel ? `<em>${esc(s.dwellLabel)}</em>` : (state === 'future' ? '<small>待到</small>' : '');
+        return `<div class="progress-step ${state}${tone}"><i></i><span>${esc(s.label || route[i])}</span>${when}${dwell}</div>`;
+      }).join('')}</div>`
       + (x.batch ? `<div class="batch">关联批次　${esc(x.batch)}${x.batchNote ? ' · ' + esc(x.batchNote) : ''}</div>` : '')
       + x.warnings.map(w => `<div class="warning">${esc(w)}</div>`).join('')
       + x.payment.map(p => `<div class="batch">待核付款：${esc(p)}</div>`).join('')
@@ -56,7 +64,7 @@
     const q = $('#search').value.trim().toLowerCase();
     const items = data.filter(x => (filter === 'all' || filter === 'transit' && !x.done || filter === 'decision' && x.decision || filter === 'done' && x.done)
       && [x.item, x.title, x.spec, x.supplier, x.supplierShort, x.destination, x.id].some(v => String(v).toLowerCase().includes(q)))
-      .sort((a, b) => Number(a.done) - Number(b.done) || (a.eta || '9999').localeCompare(b.eta || '9999') || a.id.localeCompare(b.id));
+      .sort((a, b) => window.ShipSla ? ShipSla.compareCards(a, b) : (Number(a.done) - Number(b.done) || (a.eta || '9999').localeCompare(b.eta || '9999') || a.id.localeCompare(b.id)));
     let completed = false;
     $('#cards').innerHTML = items.map(x => { let h = ''; if (x.done && !completed) { completed = true; h = '<h3 class="completed-heading">已完成</h3>'; } return h + card(x); }).join('');
     $('#cards').className = 'cards ' + (view === 'list' ? 'list' : '');
@@ -87,7 +95,7 @@
   function load() {
     $('#cards').innerHTML = '<p class="loading">正在读取最新货件…</p>';
     const src = new URLSearchParams(location.search).get('data') || 'shipments.json';
-    fetch(src + '?' + Date.now(), { cache: 'no-store' })
+    fetch(src + '?v=' + Date.now(), { cache: 'no-store' })
       .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
       .then(start)
       .catch(() => { $('#cards').innerHTML = '<p class="loading">读取 shipments.json 失败。<button type="button" id="retry">重试</button></p>'; $('#retry').onclick = load; });

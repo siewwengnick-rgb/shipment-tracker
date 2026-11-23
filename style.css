@@ -6,3 +6,21 @@
 .search input::placeholder{color:#5e7064;opacity:1}
 @media(max-width:650px){.cards.list{gap:6px}.cards.list .card{padding:12px 14px}.cards.list .card h3{font-size:21px}.cards.list .meta{margin-top:5px;line-height:1.5}.cards.list .statusline{margin-top:7px}.cards.list .progress-steps{margin-top:6px}.cards.list .batch{margin-top:6px}.cards.list details{margin-top:7px;padding-top:7px}.cards.list .completed-heading{margin-top:8px;padding-top:10px}}
 .loading{padding:24px 4px;color:#5e7064;font-size:14px}.loading button{margin-left:8px}
+
+/* 每步到达日期与停留天数：青=未过半，黄=接近时限，红=超时；日期待确认用灰，不猜。 */
+.progress-step time,.progress-step em{display:block;font-style:normal;font-variant-numeric:tabular-nums;letter-spacing:-.03em;line-height:1.25}
+.progress-step time{font-size:10px;font-weight:650;margin-top:3px;color:#3e5045}
+.progress-step em{font-size:10px;margin-top:1px;color:#5e7064}
+.progress-step.current em{font-size:11px;font-weight:750}
+.progress-step.tone-cyan i{background:#2d8a84}
+.progress-step.tone-cyan time,.progress-step.tone-cyan em{color:#1b6b66}
+.progress-step.tone-yellow i{background:#c4922a}
+.progress-step.tone-yellow time,.progress-step.tone-yellow em{color:#8a6738}
+.progress-step.tone-red i{background:#b44532}
+.progress-step.tone-red time,.progress-step.tone-red em{color:#8f2f24}
+.progress-step.tone-gray time,.progress-step.tone-gray em{color:#8a9690;font-weight:400}
+.progress-step.future time,.progress-step.future em{display:none}
+.card.tone-red{border-color:#e4c5bc;box-shadow:inset 3px 0 0 #b44532}
+.card.tone-yellow{border-color:#e4d3b0;box-shadow:inset 3px 0 0 #c4922a}
+.card.tone-cyan{box-shadow:inset 3px 0 0 #2d8a84}
+@media(max-width:650px){.progress-step time,.progress-step em{font-size:9px}.progress-step.current em{font-size:10px}}

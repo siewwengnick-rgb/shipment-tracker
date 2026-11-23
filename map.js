@@ -1,5 +1,6 @@
 /* 把 shipments.json（schema v3）映射成页面卡片。只取安全展示字段：不读 note／evidence／history，电话号码一律隐去。 */
 (function (root) {
+  const Sla = (typeof require !== 'undefined') ? require('./sla.js') : root.ShipSla;
   const PHONE = /\+?\d[\d\- ]{6,}\d/g;
   const LATER = ['运往马来西亚', '已到马', '已签收'];
   // 长品名的展示简写：只在原品名未变时生效，原名仍在详情和搜索里。
@@ -97,33 +98,60 @@
       latest: latest || '暂无记录', currentStep: step, domesticLabel: sendByCar ? '国内送仓' : '国内快递',
       forwarder: tbc(p.forwarder), warehouseRef: tbc(p.warehouse_ref), weight: tbc(scrub(p.weight)), ctns: tbc(p.ctns),
       consDetails: linked.map(consDetail),
+      stage, lastEvent: text(inherit ? (cons && cons.last_event) : p.last_event),
+      stageSince: p.stage_since || (cons && cons.stage_since) || '',
+      promisedShipDate: p.promised_ship_date || '', mode: (cons && cons.mode) || p.mode || '',
+      stepDates: Sla ? Sla.mergeStepDates([p.step_dates, cons && cons.step_dates].concat(extra.map(c => c.step_dates))) : (p.step_dates || {}),
+      trackingEta: p.tracking_eta || (cons && cons.tracking_eta) || '',
       ...(destInferred ? { batch: [cons, ...extra].filter(Boolean).map(c => c.id).join(' / ') + '（关联待核）' } : {})
     };
   }
 
   function orphan(c) {
     const signed = c.stage === '已签收';
-    const step = signed ? 5 : c.stage === '已到马' ? 4 : c.stage === '运往马来西亚' ? 3 : 2;
+    const delivering = c.stage === '已到马' && /第三方提货|派送/.test(text(c.last_event));
+    const step = signed ? 5 : delivering ? 5 : c.stage === '已到马' ? 4 : c.stage === '运往马来西亚' ? 3 : 2;
     const item = tbc(s(c.item).replace('据群聊语境', '据语境'));
     return {
       id: c.id, item, title: item, spec: '', supplier: '待确认', supplierShort: '待确认',
-      destination: tbc(s(c.destination_city) || s(c.destination)), status: signed ? '已签收 · 未配对' : c.stage + ' · 未配对',
+      destination: tbc(s(c.destination_city) || s(c.destination)), status: signed ? '已签收 · 未配对' : delivering ? '派送中 · 待确认签收' : c.stage + ' · 未配对',
       route: c.mode === 'air' ? 'air' : 'sea', done: signed, decision: false, decisionText: '', payment: [],
       eta: signed ? '' : date10(c.eta), etaNotes: [text(c.eta_note)].filter(Boolean),
       warnings: ['集运单尚未配对国内包裹' + (/语境/.test(item) ? '；品名据语境。' : '。')], pending: [],
       batch: c.id + ' · 未配对国内包裹', batchNote: '', carrier: tbc(c.carrier), tracking: tbc(c.tracking_no),
       latest: text(c.last_event) || '暂无记录', currentStep: step, domesticLabel: '国内快递',
-      forwarder: tbc(c.forwarder), warehouseRef: '待确认', weight: '待确认', ctns: '待确认', consDetails: [consDetail(c)]
+      forwarder: tbc(c.forwarder), warehouseRef: '待确认', weight: '待确认', ctns: '待确认', consDetails: [consDetail(c)],
+      stage: c.stage, lastEvent: text(c.last_event), stageSince: c.stage_since || '',
+      promisedShipDate: '', mode: c.mode || '',
+      stepDates: c.step_dates || {}, trackingEta: c.tracking_eta || ''
     };
   }
 
-  function mapShipments(d) {
+  function attachSla(rows, opts) {
+    if (!Sla) return rows;
+    const rules = (opts && opts.rules) || Sla.loadRules();
+    const now = (opts && opts.now) || new Date();
+    rows.forEach(r => {
+      const inp = {
+        id: r.id, item: r.item, supplier: r.supplier, stage: r.stage,
+        lastEvent: r.lastEvent, status: r.status, eta: r.eta, etaNote: (r.etaNotes || []).join(' '),
+        mode: r.mode, route: r.route, done: r.done, promisedShipDate: r.promisedShipDate,
+        stageSince: r.stageSince, forwarder: r.forwarder, trackingEta: r.trackingEta,
+        stepDates: r.stepDates, currentStep: r.currentStep, domesticLabel: r.domesticLabel
+      };
+      r.sla = Sla.evaluate(inp, now, rules);
+      r.stepsMeta = Sla.decorateSteps(inp, now, rules);
+    });
+    return rows;
+  }
+
+  function mapShipments(d, opts) {
     const P = d.parcels || [], C = d.consolidations || [];
     const used = new Set();
     P.forEach(p => { if (p.consolidation_id) used.add(p.consolidation_id); });
     C.forEach(c => { if ((c.parcels || []).length || (c.parcel_ids || []).length) used.add(c.id); });
-    return P.map(p => parcel(p, d)).concat(C.filter(c => !used.has(c.id)).map(orphan));
+    return attachSla(P.map(p => parcel(p, d)).concat(C.filter(c => !used.has(c.id)).map(orphan)), opts || {});
   }
-  const api = { mapShipments };
+  const api = { mapShipments, attachSla };
   if (typeof module !== 'undefined') module.exports = api; else root.ShipMap = api;
 })(this);
