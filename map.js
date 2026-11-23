@@ -65,7 +65,7 @@
     let destInferred = false;
     if (!dest) { const e = extra.find(c => c.destination_city || c.destination); if (e) { dest = s(e.destination_city) || s(e.destination); destInferred = true; } }
     if (route === 'local') dest = '中国酒店自取';
-    else if (has(cf, 'destination')) dest = dest ? dest + '（待确认）' : '待决定';
+    else if (has(cf, 'destination')) dest = dest ? (dest.includes('待确认') ? dest : dest + '（待确认）') : '待决定';
     else if (destInferred) dest += '（关联单推断，待核）';
     else if (!dest && stage === '无单号' && p.destination_warehouse) dest = p.destination_warehouse + '（送仓；到仓未确认）';
     dest = dest || '待确认';

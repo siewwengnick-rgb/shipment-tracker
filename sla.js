@@ -293,13 +293,13 @@
     });
     return raw.map((s, i) => {
       if (s.isFuture) return Object.assign({ dwell: null, dwellLabel: '', whenLabel: '', tone: '' }, s);
-      if (!s.at) return Object.assign({ dwell: null, dwellLabel: '日期待确认', whenLabel: '日期待确认', tone: 'gray' }, s);
+      if (!s.at) return Object.assign({ dwell: null, dwellLabel: '', whenLabel: '日期待确认', tone: 'gray' }, s);
       let end = null;
       for (let j = i + 1; j < raw.length; j++) { if (raw[j].at) { end = raw[j].at; break; } }
       const canDwell = end || s.isCurrent;
       const dwell = canDwell ? daysBetween(s.at, s.isCurrent ? now : end, tz) : null;
       const limit = stepLimit(s.key, input, rules, s.at);
-      const tone = dwell == null ? 'gray' : toneFor(dwell, limit, rules);
+      const tone = (input.done && s.isCurrent) ? 'teal' : dwell == null ? 'gray' : toneFor(dwell, limit, rules);
       let dwellLabel = '';
       if (dwell == null) dwellLabel = '停留待确认';
       else if (input.done && s.isCurrent) dwellLabel = '完成';
