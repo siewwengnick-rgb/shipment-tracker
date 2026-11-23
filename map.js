@@ -51,6 +51,7 @@
     if (route === 'local') { step = 2; status = '已完成'; done = true; }
     else if (stage === '已签收') { step = route === 'warehouse' ? 3 : 5; status = '已签收'; done = true; }
     else if (unverified) { step = 3; status = '进度待复核'; }
+    else if (stage === '已到马' && /第三方提货|派送/.test(text(inherit ? cons.last_event : p.last_event))) { step = 5; status = '派送中 · 待确认签收'; }
     else if (stage === '已到马') { step = 4; status = '已到马'; }
     else if (stage === '运往马来西亚') { step = 3; status = '运往马来西亚'; }
     else if (stage === '已入仓') { step = 2; status = '已到仓'; }
@@ -78,6 +79,7 @@
     if (stage === '未查到') latest = '轨迹待确认';
     const warnings = [];
     if (unverified) warnings.push('缺少到港或签收证据，原“已到马”状态不可确认。');
+    if (status === '派送中 · 待确认签收') warnings.push('云第轨迹到「第三方提货」就结束，不会显示签收；请店里确认是否已收到。');
     if (stage === '无单号' && sendByCar) warnings.push('已叫车送仓，到仓尚未确认。');
     if (destInferred) warnings.push(`${dest.replace(/（.*$/, '')} 来自关联单 ${extra.map(c => c.id).join(' / ')}，关联与目的地仍待核。`);
     if (route === 'warehouse' && (has(cf, 'shipping_mode'))) warnings.push('出运方式待确认（' + text(p.hint).replace(/^.*?（|）$/g, '') + '）');

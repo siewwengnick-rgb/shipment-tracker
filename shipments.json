@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23 10:08 MYT",
+ "updated": "2026-11-23 15:20 MYT",
  "schema_version": 3,
  "consolidations": [
   {
@@ -749,12 +749,18 @@
     "PKG-016"
    ],
    "vessel": "SH-2300",
-   "eta": "2026-11-16 已到港；11/18 清关完成；11/20 08:55 已进目的港仓库",
+   "eta": "2026-11-16 已到港；11/21 已派送签收",
    "destination_city": "Puchong",
    "evidence": [],
    "yd_bill_no": "待确认",
    "note": "yd-wl.com 流水号查询（Nick 2026-11-18 指出可查）",
    "history": [
+    {
+     "time": "2026-11-21T00:00:00+08:00",
+     "location": "Puchong",
+     "description": "已签收：Super Union 11/21 派送（JXW 9212），Nick 11/23 确认已收到",
+     "source": "Nick 2026-11-23 集运群"
+    },
     {
      "time": "2026-11-21T00:00:00+08:00",
      "location": "云第 yd-wl",
@@ -828,10 +834,10 @@
      "source": "yd-wl.com 查询 M202610302108407"
     }
    ],
-   "last_event": "2026-11-21 00:00 第三方提货 JXW 9212（yd）；Super Union 11/21 派送，签收待确认",
-   "stage": "已到马",
+   "last_event": "2026-11-21 Super Union 派送到 Puchong，Nick 确认已收到（11/23 补记）",
+   "stage": "已签收",
    "stage_manual": true,
-   "stage_source": "云第 yd-wl 返回轨迹",
+   "stage_source": "Nick 2026-11-23 群聊确认已收到（yd 最后节点只到第三方提货，不会显示签收）",
    "last_checked": "2026-11-23T10:08+08:00"
   },
   {
@@ -2083,10 +2089,10 @@
    "domestic_tracking_no": null,
    "tracking": "",
    "item": "Ot环保袋 / ORTHOTECH覆膜袋33*33*10（10000个）",
-   "stage": "已到马",
+   "stage": "已签收",
    "stage_manual": true,
-   "stage_source": "继承集运单 CON-011",
-   "last_event": "2026-11-21 00:00 第三方提货 JXW 9212（yd）；Super Union 11/21 派送，签收待确认",
+   "stage_source": "Nick 2026-11-23 群聊确认已收到（yd 最后节点只到第三方提货，不会显示签收）",
+   "last_event": "2026-11-21 Super Union 派送到 Puchong，Nick 确认已收到（11/23 补记）",
    "last_checked": "2026-11-23T10:08+08:00",
    "destination_warehouse": "云第白云湖（一号仓）",
    "hint": "海运 → Puchong（SH-2300；2026-11-16 已到港，11/18 清关完成，11/20 08:55 已进目的港仓库）",
@@ -2102,6 +2108,12 @@
    "evidence": [],
    "evidence_note": "截图未存；来源 inbox/20261030-1603-wechat.md",
    "history": [
+    {
+     "time": "2026-11-21T00:00:00+08:00",
+     "location": "Puchong",
+     "description": "已签收：Super Union 11/21 派送（JXW 9212），Nick 11/23 确认已收到",
+     "source": "Nick 2026-11-23 集运群"
+    },
     {
      "time": "2026-10-30T16:10:00+08:00",
      "location": "云第",
