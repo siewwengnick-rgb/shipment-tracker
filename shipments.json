@@ -596,9 +596,9 @@
    "forwarder": "云第 yd-wl",
    "mode": "sea",
    "carrier": "云第 yd-wl 海运",
-   "stage": "已到马",
+   "stage": "已签收",
    "stage_manual": true,
-   "stage_source": "云第 yd-wl 返回轨迹",
+   "stage_source": "Nick 2026-11-23 确认已收到（yd 最后节点只到第三方提货）",
    "last_checked": "2026-11-23T10:08+08:00",
    "evidence": [],
    "evidence_note": "inbox/20261104-2002-CC群.md / .webp（含电话地址，未进 evidence/）",
@@ -612,9 +612,15 @@
    "parcel_ids": [
     "PKG-017"
    ],
-   "eta": "2026-11-16 已到港；11/18 清关完成；11/20 08:55 已进目的港仓库",
-   "last_event": "2026-11-21 00:00 第三方提货 JXW 9212（yd）；Super Union 11/21 派送，签收待确认",
+   "eta": "2026-11-16 已到港；11/21 已派送签收",
+   "last_event": "2026-11-21 Super Union 派送到 Klang 新店，Nick 2026-11-23 确认已收到",
    "history": [
+    {
+     "time": "2026-11-21T00:00:00+08:00",
+     "location": "Klang",
+     "description": "已签收：Super Union 11/21 派送（JXW 9212）",
+     "source": "Nick 2026-11-23 确认已收到"
+    },
     {
      "time": "2026-11-21T00:00:00+08:00",
      "location": "云第 yd-wl",
@@ -2148,10 +2154,10 @@
    "domestic_tracking_no": "760253547232",
    "item": "沙发 / Klang New Shop Sofa",
    "ctns": 2,
-   "stage": "已到马",
+   "stage": "已签收",
    "stage_manual": true,
-   "stage_source": "继承集运单 CON-009",
-   "last_event": "2026-11-21 00:00 第三方提货 JXW 9212（yd）；Super Union 11/21 派送，签收待确认",
+   "stage_source": "Nick 2026-11-23 确认已收到（yd 最后节点只到第三方提货）",
+   "last_event": "2026-11-21 Super Union 派送到 Klang 新店，Nick 2026-11-23 确认已收到",
    "last_checked": "2026-11-23T10:08+08:00",
    "destination_city": "Klang",
    "hint": "海运 → Klang（SH-2300；2026-11-16 已到港，11/18 清关完成，11/20 08:55 已进目的港仓库）",
@@ -2169,6 +2175,12 @@
    "evidence": [],
    "evidence_note": "inbox/20261031-0810-cc-anneng-760253547232.png、inbox/20261031-1610-cc-sofa-M202610302146275.webp（含电话地址，未脱敏进 evidence/）",
    "history": [
+    {
+     "time": "2026-11-21T00:00:00+08:00",
+     "location": "Klang",
+     "description": "已签收：Super Union 11/21 派送（JXW 9212）",
+     "source": "Nick 2026-11-23 确认已收到"
+    },
     {
      "time": "2026-10-30T21:36:00+08:00",
      "location": "云第",
