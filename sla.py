@@ -246,7 +246,7 @@ def infer_since(events, key, rules):
     for ev in events or []:
         desc = ev.get("description") or ev.get("text") or ""
         if key == "arrived_port":
-            ok = is_arrived_port_text(desc)
+            ok = is_arrived_port_text(desc) or has_kw(desc, [w for w in words if w != "到港"])
         else:
             ok = has_kw(desc, words)
         if ok and myt_date(ev.get("time")):

@@ -120,16 +120,6 @@
    "limit_days": 1,
    "since": "2026-11-19",
    "chase": "问 Nick 或门店是否签收"
-  },
-  {
-   "id": "PKG-025",
-   "item": "客户样板书包 3 套",
-   "supplier": "国马皮具",
-   "stage": "已到马·到港",
-   "days": 4,
-   "limit_days": 3,
-   "since": "2026-11-20",
-   "chase": "CC 问清关进度"
   }
  ],
  "unknown_start": []
