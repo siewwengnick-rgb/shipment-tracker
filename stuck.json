@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24 08:17 MYT",
+ "updated": "2026-11-24 10:06 MYT",
  "overdue": [
   {
    "id": "PKG-010",
@@ -125,11 +125,11 @@
    "id": "PKG-025",
    "item": "客户样板书包 3 套",
    "supplier": "国马皮具",
-   "stage": "运往马来西亚",
+   "stage": "已到马·到港",
    "days": 4,
-   "limit_days": 1,
+   "limit_days": 3,
    "since": "2026-11-20",
-   "chase": "钟（CC 群）"
+   "chase": "CC 问清关进度"
   }
  ],
  "unknown_start": []
