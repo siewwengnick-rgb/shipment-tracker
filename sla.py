@@ -631,9 +631,11 @@ def refresh_step_dates(data, rules=None):
         for k, v in (manual or {}).items():
             dates.setdefault(k, v)
         obj["step_dates"] = dates
-        if not obj.get("stage_since") and dates:
-            inp = {"stage": obj.get("stage"), "lastEvent": obj.get("last_event"), "status": obj.get("last_event"), "done": obj.get("stage") in (rules.get("skipped_stages") or [])}
-            key = sla_key(obj.get("stage"), obj.get("last_event"), obj.get("status"), rules)
+        key = sla_key(obj.get("stage"), obj.get("last_event"), obj.get("status"), rules)
+        since_ev = infer_since(events_of(obj), key, rules) if key else None
+        if since_ev:
+            obj["stage_since"] = since_ev
+        elif not obj.get("stage_since") and dates:
             sk = sla_key_to_step(key) if key else None
             if sk and dates.get(sk):
                 obj["stage_since"] = dates[sk]
@@ -650,11 +652,14 @@ def refresh_step_dates(data, rules=None):
         merged = merge_step_dates([inferred, cons.get("step_dates") if cons else None] + [c.get("step_dates") for c in linked] + [NOTE_STEP_DATES.get(p["id"])])
         # apply() would overwrite with only inferred+manual; use merged
         p["step_dates"] = {k: v for k, v in merged.items() if v}
-        if not p.get("stage_since") and p["step_dates"]:
-            inherit = cons and cons.get("stage") in (rules.get("inherit_stages") or [])
-            stage = cons.get("stage") if inherit else p.get("stage")
-            last = (cons.get("last_event") if inherit and cons else None) or p.get("last_event")
-            key = sla_key(stage, last, last, rules)
+        inherit = cons and cons.get("stage") in (rules.get("inherit_stages") or [])
+        stage = cons.get("stage") if inherit else p.get("stage")
+        last = (cons.get("last_event") if inherit and cons else None) or p.get("last_event")
+        key = sla_key(stage, last, last, rules)
+        since_ev = infer_since(events_of(p, cons, *linked), key, rules) if key else None
+        if since_ev:
+            p["stage_since"] = since_ev
+        elif not p.get("stage_since") and p["step_dates"]:
             sk = sla_key_to_step(key) if key else None
             if sk and p["step_dates"].get(sk):
                 p["stage_since"] = p["step_dates"][sk]

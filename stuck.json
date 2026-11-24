@@ -1,12 +1,12 @@
 {
- "updated": "2026-11-23 16:05 MYT",
+ "updated": "2026-11-24 08:17 MYT",
  "overdue": [
   {
    "id": "PKG-010",
    "item": "水溶性硅油 100kg",
    "supplier": "宏渝侧（厂家非威纳近期发货）",
    "stage": "厂家／无单号／未查到",
-   "days": 38,
+   "days": 39,
    "limit_days": 5,
    "since": "2026-10-16",
    "chase": "厂家（先翻微信历史）"
@@ -16,7 +16,7 @@
    "item": "抹布 10件（货号20-220-10）",
    "supplier": "Foamfresh 抹布厂",
    "stage": "厂家／无单号／未查到",
-   "days": 34,
+   "days": 35,
    "limit_days": 5,
    "since": "2026-10-20",
    "chase": "厂家（先翻微信历史）"
@@ -26,7 +26,7 @@
    "item": "有机硅油（白桶）",
    "supplier": "威纳（扬州；敏感货/宏渝语境）",
    "stage": "已入仓",
-   "days": 33,
+   "days": 34,
    "limit_days": 7,
    "since": "2026-10-21",
    "chase": "零零九（先翻微信历史）"
@@ -36,7 +36,7 @@
    "item": "待确认",
    "supplier": "待确认",
    "stage": "派送中",
-   "days": 30,
+   "days": 31,
    "limit_days": 1,
    "since": "2026-10-24",
    "chase": "问 Nick 或门店是否签收"
@@ -46,7 +46,7 @@
    "item": "12张椅子（6个包裹）淘宝",
    "supplier": "淘宝（待确认）",
    "stage": "已入仓",
-   "days": 21,
+   "days": 22,
    "limit_days": 7,
    "since": "2026-11-02",
    "chase": "钟（CC 群）"
@@ -56,7 +56,7 @@
    "item": "桌子椅子套组",
    "supplier": "淘宝（待确认）",
    "stage": "已入仓",
-   "days": 21,
+   "days": 22,
    "limit_days": 7,
    "since": "2026-11-02",
    "chase": "钟（CC 群）"
@@ -66,7 +66,7 @@
    "item": "鞋柜（6个包裹）淘宝",
    "supplier": "淘宝（待确认）",
    "stage": "已入仓",
-   "days": 21,
+   "days": 22,
    "limit_days": 7,
    "since": "2026-11-02",
    "chase": "钟（CC 群）"
@@ -76,7 +76,7 @@
    "item": "待确认",
    "supplier": "待确认",
    "stage": "派送中",
-   "days": 18,
+   "days": 19,
    "limit_days": 1,
    "since": "2026-11-05",
    "chase": "问 Nick 或门店是否签收"
@@ -86,7 +86,7 @@
    "item": "淘宝发光字招牌门头定制广告（不锈钢）×14",
    "supplier": "淘宝（待确认）",
    "stage": "已入仓",
-   "days": 17,
+   "days": 18,
    "limit_days": 7,
    "since": "2026-11-06",
    "chase": "钟（CC 群）"
@@ -96,37 +96,17 @@
    "item": "待确认（钟 2026-11-18 11:40 在 CC 群发轨迹，kx 问怎么没有动静）",
    "supplier": "待确认",
    "stage": "派送中",
-   "days": 12,
+   "days": 13,
    "limit_days": 1,
    "since": "2026-11-11",
    "chase": "问 Nick 或门店是否签收"
-  },
-  {
-   "id": "PKG-003",
-   "item": "EVA 料",
-   "supplier": "晋亿鞋材（DINGDINGDING）",
-   "stage": "已到马·清关／进仓",
-   "days": 5,
-   "limit_days": 2,
-   "since": "2026-11-18",
-   "chase": "CC 问派送日期"
-  },
-  {
-   "id": "PKG-014",
-   "item": "红包成品",
-   "supplier": "鸿运来（R.Amber）",
-   "stage": "已到马·清关／进仓",
-   "days": 5,
-   "limit_days": 2,
-   "since": "2026-11-18",
-   "chase": "CC 问派送日期"
   },
   {
    "id": "PKG-024",
    "item": "衣服（面单品名，数量1，2.5KG）",
    "supplier": "太嗨服饰（小晴，orthotech 衣服定制群）",
    "stage": "运往马来西亚",
-   "days": 5,
+   "days": 6,
    "limit_days": 1,
    "since": "2026-11-18",
    "chase": "钟（CC 群）"
@@ -136,10 +116,20 @@
    "item": "一滴香/香薰（花艺香薰等；香语生物；无酒精；约6件）",
    "supplier": "香语生物",
    "stage": "派送中",
-   "days": 4,
+   "days": 5,
    "limit_days": 1,
    "since": "2026-11-19",
    "chase": "问 Nick 或门店是否签收"
+  },
+  {
+   "id": "PKG-025",
+   "item": "客户样板书包 3 套",
+   "supplier": "国马皮具",
+   "stage": "运往马来西亚",
+   "days": 4,
+   "limit_days": 1,
+   "since": "2026-11-20",
+   "chase": "钟（CC 群）"
   }
  ],
  "unknown_start": []
