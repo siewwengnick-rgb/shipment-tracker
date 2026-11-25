@@ -814,6 +814,12 @@
      "location": "CHINA, GUANGZHOU",
      "description": "货物装袋",
      "source": "DEX api.dex-i.com"
+    },
+    {
+     "time": "2026-11-25T14:11:00+08:00",
+     "location": "CC SDN BHD 运输",
+     "description": "钟：剩下的今天清关（此前 10:15 回「还在核实」「在追了」）",
+     "source": "微信跟进 / inbox/20261125-1604.md"
     }
    ],
    "evidence": "微信照片 inbox/20261117-2112-dex-waybill-zoom1-rotated-crop.png（含电话地址，待脱敏）",
@@ -823,7 +829,8 @@
     "transit": "2026-11-18T06:10:00+08:00"
    },
    "stage_since": "2026-11-18T06:10:00+08:00",
-   "tracking_eta": "2026-11-21"
+   "tracking_eta": "2026-11-21",
+   "notes": " 2026-11-25 14:11 钟：剩下的今天清关。"
   },
   {
    "id": "CON-011",
@@ -3021,6 +3028,12 @@
      "location": "CC SDN BHD 运输",
      "description": "钟：航班分批飞，剩余的在核实中（kx 09:32 发 DEX 截图 Shipment Uplifted Partially）",
      "source": "微信跟进 / inbox/20261125-1014.md"
+    },
+    {
+     "time": "2026-11-25T14:11:00+08:00",
+     "location": "CC SDN BHD 运输",
+     "description": "钟：剩下的今天清关（此前 10:15 回「还在核实」「在追了」）",
+     "source": "微信跟进 / inbox/20261125-1604.md"
     }
    ],
    "note": "2026-11-17 新货，台账原无此单号。 2026-11-23 20:39–21:00 CC群：kx 问 11/21 Malaysia / 11/23 China 异常，钟回「就是一大批货，不确定这个有没有飞」「看看明天更新了」「双十一爆仓」「平常六七天」。 2026-11-25 10:13 CC群：钟回「11101939236 航班分批飞，剩余的在核实中」；kx 09:32 发 DEX 截图状态 Shipment Uplifted Partially（同号）。",
@@ -3029,7 +3042,8 @@
     "transit": "2026-11-18T06:10:00+08:00"
    },
    "stage_since": "2026-11-18T06:10:00+08:00",
-   "tracking_eta": "2026-11-21"
+   "tracking_eta": "2026-11-21",
+   "notes": " 2026-11-25 14:11 钟：剩下的今天清关。"
   },
   {
    "id": "PKG-025",
