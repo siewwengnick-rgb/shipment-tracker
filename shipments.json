@@ -773,6 +773,12 @@
    ],
    "history": [
     {
+     "time": "2026-11-25T10:13:00+08:00",
+     "location": "CC SDN BHD 运输",
+     "description": "钟：航班分批飞，剩余的在核实中（kx 09:32 发 DEX 截图 Shipment Uplifted Partially）",
+     "source": "微信跟进 / inbox/20261125-1014.md"
+    },
+    {
      "time": "2026-11-23T09:30:00+08:00",
      "location": "CHINA",
      "description": "部分货物未正常起飞/上车",
@@ -804,7 +810,7 @@
     }
    ],
    "evidence": "微信照片 inbox/20261117-2112-dex-waybill-zoom1-rotated-crop.png（含电话地址，待脱敏）",
-   "note": "钟 2026-11-17 21:12 在CC群发圆通 YT2550987341234 +「这个到了要 空运」+ Puchong 收件，并附 DEX 运单（已核图 11101939236，1件，手写1kg，USD60，收件 Orthotics Technology Sdn Bhd / NICK）。 2026-11-23 20:39–21:00 CC群：kx 问 11/21 Malaysia / 11/23 China 异常，钟回「就是一大批货，不确定这个有没有飞」「看看明天更新了」「双十一爆仓」「平常六七天」。",
+   "note": "钟 2026-11-17 21:12 在CC群发圆通 YT2550987341234 +「这个到了要 空运」+ Puchong 收件，并附 DEX 运单（已核图 11101939236，1件，手写1kg，USD60，收件 Orthotics Technology Sdn Bhd / NICK）。 2026-11-23 20:39–21:00 CC群：kx 问 11/21 Malaysia / 11/23 China 异常，钟回「就是一大批货，不确定这个有没有飞」「看看明天更新了」「双十一爆仓」「平常六七天」。 2026-11-25 10:13 CC群：钟回「11101939236 航班分批飞，剩余的在核实中」；kx 09:32 发 DEX 截图状态 Shipment Uplifted Partially（同号）。",
    "step_dates": {
     "warehouse": "2026-11-17T22:57:00+08:00",
     "transit": "2026-11-18T06:10:00+08:00"
@@ -2988,9 +2994,15 @@
      "location": "台账核对",
      "description": "放大圆通面单：寄件人名开头「太嗨服」，地址福建省泉州市鲤城区南环路 1139 号；与太嗨服饰小晴 2026-09-14 发的工厂定位（泉州鲤城区赤土社区南环路）同一条路。据此确认厂家为太嗨。",
      "source": "inbox/20261117-2112-dex-parcel-label-zoom.png；/workspace/wechat-watch/taihai-new-messages-2026-09-14.webp"
+    },
+    {
+     "time": "2026-11-25T10:13:00+08:00",
+     "location": "CC SDN BHD 运输",
+     "description": "钟：航班分批飞，剩余的在核实中（kx 09:32 发 DEX 截图 Shipment Uplifted Partially）",
+     "source": "微信跟进 / inbox/20261125-1014.md"
     }
    ],
-   "note": "2026-11-17 新货，台账原无此单号。 2026-11-23 20:39–21:00 CC群：kx 问 11/21 Malaysia / 11/23 China 异常，钟回「就是一大批货，不确定这个有没有飞」「看看明天更新了」「双十一爆仓」「平常六七天」。",
+   "note": "2026-11-17 新货，台账原无此单号。 2026-11-23 20:39–21:00 CC群：kx 问 11/21 Malaysia / 11/23 China 异常，钟回「就是一大批货，不确定这个有没有飞」「看看明天更新了」「双十一爆仓」「平常六七天」。 2026-11-25 10:13 CC群：钟回「11101939236 航班分批飞，剩余的在核实中」；kx 09:32 发 DEX 截图状态 Shipment Uplifted Partially（同号）。",
    "step_dates": {
     "warehouse": "2026-11-17T22:57:00+08:00",
     "transit": "2026-11-18T06:10:00+08:00"
