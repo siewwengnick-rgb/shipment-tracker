@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24 16:08 MYT",
+ "updated": "2026-11-25 10:12 MYT",
  "schema_version": 3,
  "consolidations": [
   {
@@ -13,7 +13,7 @@
    "stage": "已签收",
    "stage_source": "DEX-i 返回轨迹",
    "last_event": "2026-10-27T13:01:00+08:00 派送完成 已签收，感谢您选择，期待再次为您服务！",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "history": [
     {
      "time": "2026-10-27T13:01:00+08:00",
@@ -111,7 +111,7 @@
    "stage_manual": true,
    "stage_source": "Nick 2026-10-22 告知已在仓打木箱",
    "last_event": "正在打木箱，预计约 2026-10-23 出运（Nick 10-22 告知）",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "history": [],
    "parcel_ids": [
     "PKG-006"
@@ -143,7 +143,7 @@
    "item": "墨粉盒（据群聊语境）",
    "stage": "已签收",
    "last_event": "2026-10-19T10:24:00+08:00 派送完成 已签收，感谢您选择，期待再次为您服务！",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "history": [
     {
      "time": "2026-10-19T10:24:00+08:00",
@@ -243,7 +243,7 @@
    "stage_manual": true,
    "stage_source": "yd-wl.com 流水号查询 2026-11-18 10:15 MYT",
    "last_event": "2026-10-24 00:00 派送完成 / 第三方提货（JXW 9212）",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "eta": "2026-10-17（yd 原预计）；实际 10/19 到港",
    "eta_note": "yd 2026-11-18 10:15 复查：10/19 到港，10/24 派送完成/第三方提货（JXW 9212）。是否已交到收货方待确认。",
    "evidence": [
@@ -416,7 +416,7 @@
    "stage_source": "DEX 返回轨迹",
    "last_event": "2026-10-27T13:01:00+08:00 派送完成 已签收，感谢您选择，期待再次为您服务！",
    "tracking_no": "[已脱敏]3",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "item": "韵达435389（面单品名「日用品」，厂家待确认）+ 顺丰脚压仪 SF020751（3.3kg）；钟确认两件打包",
    "step_dates": {
     "transit": "2026-10-24T06:10:00+08:00",
@@ -441,7 +441,7 @@
    "note": "10/24 18:03 敏感货群发单；货物和国内单号待确认，含 PKG-006 有机硅油白桶（Nick 2026-10-27 确认），与 CON-002 关联；查询方式未知；已出海运单，开船日期待确认；2026-10-30 敏感货群：Nick 付 Amei 支付宝 ¥847+¥1653=¥2500，零零九 16:53 确认收到。",
    "history": [],
    "tracking_no": "LLGJ[已脱敏]",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "parcel_ids": [],
    "step_dates": {
     "warehouse": "2026-10-24"
@@ -462,7 +462,7 @@
    "stage_manual": false,
    "stage_source": "DEX-i 返回轨迹",
    "last_event": "2026-10-30T14:06:00+08:00 派送完成 已签收，感谢您选择，期待再次为您服务！",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "parcel_ids": [
     "PKG-012"
    ],
@@ -551,7 +551,7 @@
    "stage": "已到马",
    "stage_manual": true,
    "stage_source": "yd-wl.com 流水号查询 2026-11-20 10:08 MYT",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "evidence": [],
    "evidence_note": "inbox/20261104-2002-CC群.md / .webp（含电话地址，未进 evidence/）",
    "yd_bill_no": "待确认",
@@ -650,7 +650,7 @@
    "stage": "已签收",
    "stage_manual": true,
    "stage_source": "Nick 2026-11-23 确认已收到（yd 最后节点只到第三方提货）",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "evidence": [],
    "evidence_note": "inbox/20261104-2002-CC群.md / .webp（含电话地址，未进 evidence/）",
    "yd_bill_no": "待确认",
@@ -767,7 +767,7 @@
    "stage_manual": false,
    "stage_source": "DEX-i 返回轨迹",
    "last_event": "2026-11-23T09:30:00+08:00 部分货物未正常起飞/上车",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "parcel_ids": [
     "PKG-024"
    ],
@@ -913,7 +913,7 @@
    "stage": "已签收",
    "stage_manual": true,
    "stage_source": "Nick 2026-11-23 群聊确认已收到（yd 最后节点只到第三方提货，不会显示签收）",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "step_dates": {
     "warehouse": "2026-10-30T21:27:45+08:00",
     "transit": "2026-10-31T20:29:35+08:00",
@@ -980,7 +980,7 @@
    "stage": "运往马来西亚",
    "stage_manual": true,
    "stage_source": "yd-wl.com 流水号查询 2026-11-19 16:15 MYT",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "step_dates": {
     "warehouse": "2026-11-11T14:30:09+08:00",
     "transit": "2026-11-11T20:34:17+08:00"
@@ -1044,7 +1044,7 @@
    "stage": "运往马来西亚",
    "stage_manual": true,
    "stage_source": "yd-wl.com 流水号查询 2026-11-19 16:15 MYT",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "step_dates": {
     "warehouse": "2026-11-12T20:20:44+08:00",
     "transit": "2026-11-13T18:02:26+08:00"
@@ -1108,7 +1108,7 @@
    "stage": "运往马来西亚",
    "stage_manual": true,
    "stage_source": "yd-wl.com 流水号查询 2026-11-19 10:06 MYT",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "step_dates": {
     "warehouse": "2026-11-13T21:38:16+08:00",
     "transit": "2026-11-14T17:44:19+08:00"
@@ -1203,7 +1203,7 @@
    "stage": "已到马",
    "stage_manual": true,
    "stage_source": "yd-wl.com 流水号查询 2026-11-19 10:06 MYT",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "evidence": [],
    "note": "yd-wl.com 流水号查询。此前台账停在 11/02 已入仓、走法待确认；复查发现已随 CS-6175 海运，11/16 到港，11/17 清关完成，11/18 08:58 货物已进目的港仓库。目的地城市待确认。；2026-11-19 yd 复查：第三方提货 ANM 9212。",
    "step_dates": {
@@ -1296,7 +1296,7 @@
    "stage": "已到马",
    "stage_manual": true,
    "stage_source": "yd-wl.com 流水号查询 2026-11-18 10:15 MYT",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "evidence": [],
    "note": "yd-wl.com 流水号查询。此前台账停在已入仓；2026-11-18 10:15 复查：10/16 到港，10/24 第三方提货（MDT 9212）。货品/厂家/是否已交到收货方均待确认。",
    "step_dates": {
@@ -1390,7 +1390,7 @@
    "stage": "已到马",
    "stage_manual": true,
    "stage_source": "yd-wl.com 流水号查询 2026-11-18 10:15 MYT",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "evidence": [],
    "note": "yd-wl.com 流水号查询（号码在公开库脱敏）。此前台账停在已入仓；2026-11-18 10:15 复查：10/29 到港，11/05 第三方提货（VBU 3248）。货品待确认（群内弱线索或为柜台货）；是否已交到收货方待确认。",
    "step_dates": {
@@ -1482,7 +1482,7 @@
    "stage": "已到马",
    "stage_manual": true,
    "stage_source": "yd-wl.com 流水号查询 2026-11-18 12:12 MYT",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "step_dates": {
     "warehouse": "2026-10-28T22:30:19+08:00",
     "transit": "2026-10-29T16:46:37+08:00",
@@ -1504,12 +1504,42 @@
    "stage": "已到马",
    "stage_manual": false,
    "stage_source": "DEX-i 返回轨迹",
-   "last_event": "2026-11-24T10:00:00+08:00 正在清关中",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_event": "2026-11-25T09:52:00+08:00 出外派送",
+   "last_checked": "2026-11-25T10:12+08:00",
    "parcel_ids": [
     "PKG-025"
    ],
    "history": [
+    {
+     "time": "2026-11-25T09:52:00+08:00",
+     "location": "MALAYSIA",
+     "description": "出外派送",
+     "source": "DEX api.dex-i.com"
+    },
+    {
+     "time": "2026-11-25T08:20:00+08:00",
+     "location": "MALAYSIA",
+     "description": "分拣到目的地",
+     "source": "DEX api.dex-i.com"
+    },
+    {
+     "time": "2026-11-25T05:00:00+08:00",
+     "location": "MALAYSIA",
+     "description": "正在中转至目的地",
+     "source": "DEX api.dex-i.com"
+    },
+    {
+     "time": "2026-11-24T18:12:00+08:00",
+     "location": "MALAYSIA",
+     "description": "分拣到目的地",
+     "source": "DEX api.dex-i.com"
+    },
+    {
+     "time": "2026-11-24T18:11:00+08:00",
+     "location": "MALAYSIA",
+     "description": "到达分拣中心",
+     "source": "DEX api.dex-i.com"
+    },
     {
      "time": "2026-11-24T10:00:00+08:00",
      "location": "MALAYSIA",
@@ -1558,9 +1588,10 @@
    "step_dates": {
     "warehouse": "2026-11-19T22:24:00+08:00",
     "transit": "2026-11-20T06:10:00+08:00",
-    "arrived": "2026-11-24T10:00:00"
+    "arrived": "2026-11-24T10:00:00+08:00",
+    "delivered": "2026-11-25T09:52:00"
    },
-   "stage_since": "2026-11-24T10:00:00+08:00",
+   "stage_since": "2026-11-25T09:52:00+08:00",
    "tracking_eta": "2026-11-23"
   },
   {
@@ -1576,11 +1607,47 @@
    "stage": "已到马",
    "stage_manual": false,
    "stage_source": "DEX-i 返回轨迹",
-   "last_event": "2026-11-24T15:33:00+08:00 货物转交派送",
+   "last_event": "2026-11-25T09:55:00+08:00 出外派送",
    "parcel_ids": [
     "PKG-026"
    ],
    "history": [
+    {
+     "time": "2026-11-25T09:55:00+08:00",
+     "location": "SEREMBAN",
+     "description": "出外派送",
+     "source": "DEX api.dex-i.com"
+    },
+    {
+     "time": "2026-11-25T08:44:00+08:00",
+     "location": "SEREMBAN",
+     "description": "分拣到目的地",
+     "source": "DEX api.dex-i.com"
+    },
+    {
+     "time": "2026-11-25T07:51:00+08:00",
+     "location": "SEREMBAN",
+     "description": "到件扫描",
+     "source": "DEX api.dex-i.com"
+    },
+    {
+     "time": "2026-11-25T05:05:00+08:00",
+     "location": "MALAYSIA",
+     "description": "正在中转至目的地",
+     "source": "DEX api.dex-i.com"
+    },
+    {
+     "time": "2026-11-24T23:08:00+08:00",
+     "location": "MALAYSIA",
+     "description": "分拣到目的地",
+     "source": "DEX api.dex-i.com"
+    },
+    {
+     "time": "2026-11-24T23:06:00+08:00",
+     "location": "MALAYSIA",
+     "description": "到达分拣中心",
+     "source": "DEX api.dex-i.com"
+    },
     {
      "time": "2026-11-24T15:33:00+08:00",
      "location": "Selangor - Malaysia",
@@ -1632,13 +1699,14 @@
    ],
    "evidence": [],
    "note": "面单手写收件地址为 Port Dickson 工厂（Jalan Perdana 5, Bukit Palong, 71010），与 Nick 群里发的地址一致；单号从 wechat-watch/20261120-2004/11-awb.png 放大读出。",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "step_dates": {
     "warehouse": "2026-11-20T21:43:00+08:00",
     "transit": "2026-11-21T06:10:00+08:00",
-    "arrived": "2026-11-24T05:12:00+08:00"
+    "arrived": "2026-11-24T05:12:00+08:00",
+    "delivered": "2026-11-25T09:55:00"
    },
-   "stage_since": "2026-11-24T05:12:00+08:00",
+   "stage_since": "2026-11-25T09:55:00+08:00",
    "tracking_eta": "2026-11-23"
   }
  ],
@@ -1681,7 +1749,7 @@
    "stage": "已到马",
    "stage_source": "yd-wl.com 查询 M2026[已脱敏]7",
    "last_event": "2026-11-05 00:00 第三方提货 VBU 3248",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "forwarder": "云第 yd-wl",
    "evidence": [
     {
@@ -1729,7 +1797,7 @@
    "stage": "已到马",
    "stage_source": "继承 CON-001（钟 12:41「对」确认 SF1580887700171）",
    "last_event": "已并入 CON-001 空运；马来段出外派送（继承集运）",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "forwarder": "云第 yd-wl",
    "weight": "1KG",
    "note": "钟 12:41 确认并入 CON-001（DEX 0.8kg）。国内标重 1KG 与 DEX 0.8kg 略差。 旧 evidence：「微信截图」。",
@@ -1769,7 +1837,7 @@
    "stage": "已到马",
    "stage_source": "yd-wl.com 查询 M202610272255319",
    "last_event": "2026-11-23 10:11 清关完成（yd）；钟 15:14 微信确认清关完成，待问派送日期",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "forwarder": "云第 yd-wl",
    "evidence": "Nick 确认",
    "weight": "8.3KG",
@@ -1801,7 +1869,7 @@
    "stage": "已到马",
    "stage_source": "继承 CON-005（钟 12:15 面单确认打包）",
    "last_event": "已并入 CON-005 空运；马来段出外派送（继承集运）",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "forwarder": "云第 yd-wl",
    "weight": "3.3KG",
    "note": "Nick 说走空运，集运单待确认；钟 12:15 CC群用顺丰面单照确认并入 DEX 11101941653「两件打包」（CON-005）；面单另见「JC-JSWB-2609-冬季胶」、X4502",
@@ -1840,7 +1908,7 @@
    "stage": "未查到",
    "stage_source": "有国内单号但暂无轨迹",
    "last_event": "未查到轨迹",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "eta": null,
    "eta_note": "未知：有国内单号 11261621，德禄隆元／公开查询无可靠轨迹；未入仓、无马来船期（inbox 笔记 + 2026-10-29 补扫无新回复）",
    "forwarder": "零零九国际物流(待确认入仓)",
@@ -1872,7 +1940,7 @@
    "stage": "已入仓",
    "stage_source": "Nick 经私人助理确认 2026-10-27（白桶有机硅油，并进 CON-002/CON-006）",
    "last_event": "已确认：有机硅油白桶；关联 CON-002 / CON-006",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "forwarder": "零零九国际物流",
    "evidence": [
     {
@@ -1914,7 +1982,7 @@
    "stage": "已完成（中国本地自取）",
    "stage_source": "微信跟进 10-23 核对",
    "last_event": "Nick 已在中国酒店自取（微信跟进 10-23 核对）",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "eta": null,
    "eta_note": "签收日未知：中国酒店自取已由微信跟进 10-23 核对（shipments last_event）；顺丰公开轨迹无签收时间，不能补具体日期",
    "forwarder": "中国本地自取",
@@ -1950,7 +2018,7 @@
    "forwarder": "云第 yd-wl",
    "note": "旧入仓号 M202609282018586（9/28，CTNS 2）；已排除与 PKG-004/WM00668 同一票（对方为 10/21 脚压仪 3.3kg）；货品/厂家仍待确认",
    "evidence": "微信照片",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "mark": "ZXZ/NICK88",
    "stage_manual": true,
    "eta": "yd 原预计 10-15；实际 10/16 到港，10/24 第三方提货",
@@ -1990,7 +2058,7 @@
    "last_event": "2026-10-24 00:00 派送完成 / 第三方提货（JXW 9212）",
    "forwarder": "云第 yd-wl",
    "evidence": "微信照片",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "eta": "2026-10-17（yd 原预计）；实际 10/19 到港",
    "eta_note": "是否已交到收货方待确认（货品仍待确认）。",
    "mark": "ZXZ/NICK885",
@@ -2032,7 +2100,7 @@
    "forwarder": "零零九国际物流",
    "evidence": "微信截图",
    "note": "敏感货群：10/16宏渝贴条码800226512199并写「水溶性硅油100kg」「这个先别出，还有一批货」；10/19宏渝「和这个一起海运」，零零九「到了就可以一起出」。10/21白桶木箱照未绑此单号（那是PKG-006线）。群内无「已入仓/收货」描述本单。inbox文件名20261023不准，条码帖实为10/16。威纳中通图=800227256639≠本单。勿催威纳。 2026-10-29 微信补扫无新回复。",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "eta": null,
    "eta_note": "未知：中通 800226512199 公开查询无可靠轨迹；集运归属／是否已到仓待确认，无马来船期（敏感货群笔记 + 2026-10-29 补扫）",
    "stage_manual": true,
@@ -2079,7 +2147,7 @@
    "forwarder": "云第 yd-wl",
    "evidence": "微信照片",
    "note": "仓库说没代号；Nick 定空运寄马来（10-23）；10/23 20:00 钟重发运单图：常州→云仓，日用品/夏季胶；钟 12:15 CC群用韵达面单照确认并入 DEX 11101941653「两件打包」（CON-005）；面单无重量；厂家仍待确认；2026-11-21 更正：面单右下角「夏季胶」是热敏面单纸的胶型印字（同包的顺丰面单印「冬季胶」），不是货名；货名只有「日用品」。寄件人刘先生，江苏镇江，韵达常州发出 10/08，蓝色箱 1 件。厂家仍待确认。",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "step_dates": {
     "transit": "2026-10-24T06:10:00+08:00",
     "arrived": "2026-10-26T10:00:00+08:00",
@@ -2127,7 +2195,7 @@
    "hint": "空运 → Puchong（已通知 CC）",
    "stage_source": "钟确认「对」=DEX 11101941616 + DEX-i 轨迹（继承 CON-007）",
    "last_event": "2026-10-29T09:18:00+08:00 DEX 正在清关中（CON-007）",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "stage_manual": true,
    "evidence_note": "微信截图",
    "domestic_tracking_no": "YT2554709548341",
@@ -2178,7 +2246,7 @@
      "source": "Nick 群聊 2026-11-21"
     }
    ],
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "eta": null,
    "eta_note": "未知：无国内单号，无法跟踪，也无集运／船期",
    "stage_manual": true,
@@ -2252,7 +2320,7 @@
    "mark": "ZXZ/NICK88",
    "weight": null,
    "last_event": "2026-11-23 10:11 清关完成（yd）；钟 15:14 微信确认清关完成，待问派送日期",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "stage_source": "yd-wl.com 查询 M202610272255319",
    "corrected_from": {
     "domestic_carrier": "中通",
@@ -2301,7 +2369,7 @@
    "stage_manual": true,
    "stage_source": "yd-wl.com 查询 M202611021947038",
    "last_event": "2026-11-19 00:00 第三方提货 ANM 9212",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "destination_warehouse": "云第白云湖",
    "hint": "已到马（11/16 到港，11/18 进目的港仓库，11/19 第三方提货 ANM 9212）。目的地城市、0.4466✖690 报价待确认。",
    "confirm": {
@@ -2359,7 +2427,7 @@
    "stage_manual": true,
    "stage_source": "Nick 2026-11-23 群聊确认已收到（yd 最后节点只到第三方提货，不会显示签收）",
    "last_event": "2026-11-21 Super Union 派送到 Puchong，Nick 确认已收到（11/23 补记）",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "destination_warehouse": "云第白云湖（一号仓）",
    "hint": "海运 → Puchong（SH-2300；2026-11-16 已到港，11/18 清关完成，11/20 08:55 已进目的港仓库）",
    "confirm": {
@@ -2424,7 +2492,7 @@
    "stage_manual": true,
    "stage_source": "Nick 2026-11-23 确认已收到（yd 最后节点只到第三方提货）",
    "last_event": "2026-11-21 Super Union 派送到 Klang 新店，Nick 2026-11-23 确认已收到",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "destination_city": "Klang",
    "hint": "海运 → Klang（SH-2300；2026-11-16 已到港，11/18 清关完成，11/20 08:55 已进目的港仓库）",
    "confirm": {
@@ -2501,7 +2569,7 @@
    "stage_manual": true,
    "stage_source": "钟 2026-11-02 CC群打印单「这些到了安排海运」",
    "last_event": "2026-11-02 钟报已到仓，拟海运 Puchong；归属/是否敏感待 Nick 确认",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "destination_city": "Puchong",
    "hint": "海运 → Puchong（钟拟安排；归属待确认）",
    "confirm": {
@@ -2540,7 +2608,7 @@
    "stage_manual": true,
    "stage_source": "钟 2026-11-02 CC群打印单「这些到了安排海运」",
    "last_event": "2026-11-02 钟报已到仓，拟海运 Puchong；归属待 Nick 确认",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "destination_city": "Puchong",
    "hint": "海运 → Puchong（钟拟安排；归属待确认）",
    "confirm": {
@@ -2587,7 +2655,7 @@
    "stage_manual": true,
    "stage_source": "钟 2026-11-02 CC群打印单「这些到了安排海运」",
    "last_event": "2026-11-02 钟报已到仓，拟海运 Puchong；归属/是否敏感待 Nick 确认",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "destination_city": "Puchong",
    "hint": "海运 → Puchong（钟拟安排；归属待确认）",
    "confirm": {
@@ -2627,7 +2695,7 @@
    "stage_manual": true,
    "stage_source": "CC群 钟发面单 2026-11-06 21:04（inbox/20261107-0802-debang-dpk.md）",
    "last_event": "2026-11-17 钟回「有」并重发约 11/06 旧截图（手写运单+木箱），表示已收；未给马来单号。",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "eta": null,
    "eta_note": "已入仓，钟 11-06 说小包出，尚无马来单号和船期",
    "destination_city": "Puchong",
@@ -2687,7 +2755,7 @@
    "stage_manual": true,
    "stage_source": "yd-wl.com 流水号查询 2026-11-19 16:15 MYT",
    "last_event": "三票均已开船、预计 11-23 到港：第1票 M202611111404092 KL-1107、第3票 M202611121831140 KL-1111 于 2026-11-19 10:24 已开船；第2票 M202611132113565 KL-1113 于 2026-11-19 09:11 已开船。",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "eta": "2026-11-23（yd 预计到港）",
    "eta_note": "三票均已开船，yd 预计 11-23 到港。马来派送目的地待确认。",
    "destination_warehouse": "云第白云湖（一号仓）",
@@ -2822,7 +2890,7 @@
    "stage_manual": true,
    "stage_source": "鼎茂群 cuk 2026-11-12 约 15:29 发顺丰运单图（已核图）：2026-11-11 18:42 已签收",
    "last_event": "2026-11-11 18:42 顺丰运单显示已签收（泉州 李炳煌 → 武汉 璟程）。cuk 11/12 15:29 在鼎茂群补发运单图；Nick 15:29 称还没有收到，15:37 说晚点看。是否已从酒店取到，待 Nick 确认。",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "eta": null,
    "eta_note": "顺丰显示 2026-11-11 18:42 已签收；Nick 11/12 15:29 称尚未拿到，是否已从酒店取到待他确认",
    "destination_warehouse": "中国酒店自取",
@@ -2896,7 +2964,7 @@
    "stage_manual": false,
    "stage_source": "继承集运单 CON-010",
    "last_event": "2026-11-23T09:30:00+08:00 部分货物未正常起飞/上车",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "consolidation_id": "CON-010",
    "warehouse_ref": "600-K07-09-275",
    "hint": "太嗨服饰寄出的衣服 1 件 2.5KG，DEX 空运 Puchong。是样衣还是大货待确认。",
@@ -2943,8 +3011,8 @@
    "stage": "已到马",
    "stage_manual": false,
    "stage_source": "继承集运单 CON-019",
-   "last_event": "2026-11-24T10:00:00+08:00 正在清关中",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_event": "2026-11-25T09:52:00+08:00 出外派送",
+   "last_checked": "2026-11-25T10:12+08:00",
    "confirm": {
     "supplier": "已确认",
     "item": "厂家原话",
@@ -2980,9 +3048,10 @@
    "step_dates": {
     "warehouse": "2026-11-19T22:24:00+08:00",
     "transit": "2026-11-20T06:10:00+08:00",
-    "arrived": "2026-11-24T10:00:00"
+    "arrived": "2026-11-24T10:00:00+08:00",
+    "delivered": "2026-11-25T09:52:00"
    },
-   "stage_since": "2026-11-24T10:00:00+08:00",
+   "stage_since": "2026-11-25T09:52:00+08:00",
    "tracking_eta": "2026-11-23"
   },
   {
@@ -3000,7 +3069,7 @@
    "stage": "已到马",
    "stage_manual": false,
    "stage_source": "继承集运单 CON-020",
-   "last_event": "2026-11-24T15:33:00+08:00 货物转交派送",
+   "last_event": "2026-11-25T09:55:00+08:00 出外派送",
    "destination_city": "Port Dickson",
    "consolidation_id": "CON-020",
    "confirm": {
@@ -3031,13 +3100,14 @@
     }
    ],
    "note": "宏渝 11/19 14:08 曾在 CC 群发此单号。与 CON-020 的对应：宏渝直接引用 DEX 面单图写货名，已确认。",
-   "last_checked": "2026-11-24T16:08+08:00",
+   "last_checked": "2026-11-25T10:12+08:00",
    "step_dates": {
     "warehouse": "2026-11-20T21:43:00+08:00",
     "transit": "2026-11-21T06:10:00+08:00",
-    "arrived": "2026-11-24T05:12:00+08:00"
+    "arrived": "2026-11-24T05:12:00+08:00",
+    "delivered": "2026-11-25T09:55:00"
    },
-   "stage_since": "2026-11-24T05:12:00+08:00",
+   "stage_since": "2026-11-25T09:55:00+08:00",
    "tracking_eta": "2026-11-23"
   }
  ],
