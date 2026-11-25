@@ -633,6 +633,12 @@
      "location": "云第 yd-wl",
      "description": "货物已送达仓库准备入库中",
      "source": "yd-wl.com 查询 M202610272255319"
+    },
+    {
+     "time": "2026-11-25T10:59:00+08:00",
+     "location": "ZDS LOGISTICS SDN BHD",
+     "description": "ZDS 派送通知：预约 2026-11-26（星期四）送 Puchong，DO CS-6174，20 箱，待 Nick 回 YES/OK 确认",
+     "source": "Nick WhatsApp 截图（集运群 11/25 13:49）"
     }
    ],
    "note": "流水号 M202610272255319；海运大单号(yd)待确认。11-02「删单退场」含义待确认。覆膜袋入仓号 M202610302108407(PKG-016) 未出现在查询页，是否同船待确认。",
@@ -641,7 +647,8 @@
     "transit": "2026-10-29T09:14:29+08:00",
     "arrived": "2026-11-18T23:05:37+08:00"
    },
-   "stage_since": "2026-11-23 10:11 清关完成（yd）；钟 15:14 微信确认清关完成，待问派送日期"
+   "stage_since": "2026-11-23 10:11 清关完成（yd）；钟 15:14 微信确认清关完成，待问派送日期",
+   "notes": " 2026-11-25 ZDS 约 11/26（四）派送 Puchong，20 箱，DO CS-6174；待 Nick 确认。"
   },
   {
    "forwarder": "云第 yd-wl",
@@ -1831,6 +1838,12 @@
      "location": "马来西亚",
      "description": "清关完成（yd）",
      "source": "yd-wl.com"
+    },
+    {
+     "time": "2026-11-25T10:59:00+08:00",
+     "location": "ZDS LOGISTICS SDN BHD",
+     "description": "ZDS 派送通知：预约 2026-11-26（星期四）送 Puchong，DO CS-6174，20 箱，待 Nick 回 YES/OK 确认",
+     "source": "Nick WhatsApp 截图（集运群 11/25 13:49）"
     }
    ],
    "confirm": {
@@ -1854,7 +1867,8 @@
     "transit": "2026-10-29T09:14:29+08:00",
     "arrived": "2026-11-18T23:05:37+08:00"
    },
-   "stage_since": "2026-11-23 10:11 清关完成（yd）；钟 15:14 微信确认清关完成，待问派送日期"
+   "stage_since": "2026-11-23 10:11 清关完成（yd）；钟 15:14 微信确认清关完成，待问派送日期",
+   "notes": " 2026-11-25 ZDS 约 11/26（四）派送 Puchong，20 箱，DO CS-6174；待 Nick 确认。"
   },
   {
    "id": "PKG-004",
@@ -2319,6 +2333,12 @@
      "location": "微信",
      "description": "厂家发出 19 个中通单号",
      "source": "微信跟进"
+    },
+    {
+     "time": "2026-11-25T10:59:00+08:00",
+     "location": "ZDS LOGISTICS SDN BHD",
+     "description": "ZDS 派送通知：预约 2026-11-26（星期四）送 Puchong，DO CS-6174，20 箱，待 Nick 回 YES/OK 确认",
+     "source": "Nick WhatsApp 截图（集运群 11/25 13:49）"
     }
    ],
    "consolidation_id": "CON-008",
@@ -2359,7 +2379,8 @@
     "transit": "2026-10-29T09:14:29+08:00",
     "arrived": "2026-11-18T23:05:37+08:00"
    },
-   "stage_since": "2026-11-23 10:11 清关完成（yd）；钟 15:14 微信确认清关完成，待问派送日期"
+   "stage_since": "2026-11-23 10:11 清关完成（yd）；钟 15:14 微信确认清关完成，待问派送日期",
+   "notes": " 2026-11-25 ZDS 约 11/26（四）派送 Puchong，20 箱，DO CS-6174；待 Nick 确认。"
   },
   {
    "id": "PKG-015",
