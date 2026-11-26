@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26 10:04 MYT",
+ "updated": "2026-11-26 16:11 MYT",
  "overdue": [
   {
    "id": "PKG-010",
@@ -102,14 +102,24 @@
    "chase": "问 Nick 或门店是否签收"
   },
   {
-   "id": "PKG-024",
-   "item": "衣服（面单品名，数量1，2.5KG）",
-   "supplier": "太嗨服饰（小晴，orthotech 衣服定制群）",
-   "stage": "运往马来西亚",
+   "id": "PKG-003",
+   "item": "EVA 料",
+   "supplier": "晋亿鞋材（DINGDINGDING）",
+   "stage": "已到马·到港",
    "days": 8,
-   "limit_days": 1,
+   "limit_days": 3,
    "since": "2026-11-18",
-   "chase": "钟（CC 群）"
+   "chase": "CC 问清关进度"
+  },
+  {
+   "id": "PKG-014",
+   "item": "红包成品",
+   "supplier": "鸿运来（R.Amber）",
+   "stage": "已到马·到港",
+   "days": 8,
+   "limit_days": 3,
+   "since": "2026-11-18",
+   "chase": "CC 问清关进度"
   },
   {
    "id": "CON-013",
@@ -150,26 +160,6 @@
    "limit_days": 2,
    "since": "2026-11-19",
    "chase": "钟（CC 群）"
-  },
-  {
-   "id": "PKG-003",
-   "item": "EVA 料",
-   "supplier": "晋亿鞋材（DINGDINGDING）",
-   "stage": "已到马·清关／进仓",
-   "days": 3,
-   "limit_days": 2,
-   "since": "2026-11-23",
-   "chase": "CC 问派送日期"
-  },
-  {
-   "id": "PKG-014",
-   "item": "红包成品",
-   "supplier": "鸿运来（R.Amber）",
-   "stage": "已到马·清关／进仓",
-   "days": 3,
-   "limit_days": 2,
-   "since": "2026-11-23",
-   "chase": "CC 问派送日期"
   }
  ],
  "unknown_start": [
@@ -187,6 +177,26 @@
    "id": "PKG-028",
    "item": "医学模型 4 项各 x5：45CM 彩色人体脊椎、正常足/扁平足/弓形足、膝关节附韧带、四阶段病变膝关节",
    "supplier": "淘宝「中华医学模型」",
+   "stage": "国内快递／国内运输中",
+   "days": null,
+   "limit_days": 3,
+   "since": null,
+   "chase": "厂家（先翻微信历史）"
+  },
+  {
+   "id": "PKG-029",
+   "item": "待确认（疑同批凝珠另一件，未确认）",
+   "supplier": "待确认（宏渝经手）",
+   "stage": "国内快递／国内运输中",
+   "days": null,
+   "limit_days": 3,
+   "since": null,
+   "chase": "厂家（先翻微信历史）"
+  },
+  {
+   "id": "PKG-030",
+   "item": "透明亚克力书籍摆放整理架（小号 8 个装）x10",
+   "supplier": "淘宝「星家居优选生活」",
    "stage": "国内快递／国内运输中",
    "days": null,
    "limit_days": 3,
