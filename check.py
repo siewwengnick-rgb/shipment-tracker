@@ -70,7 +70,7 @@ def main():
         mine = [p for p in PK if p.get("consolidation_id") == c["id"]]
         c["parcel_ids"] = [p["id"] for p in mine]
         api_hist = [h for h in (c.get("history") or []) if str(h.get("source", "")).startswith("DEX api")]
-        if c.get("stage_manual") and not api_hist: continue  # manual fact / WeChat-sourced history: keep until real carrier API events
+        if c.get("stage_manual") and (not api_hist or c.get("stage") == "已签收"): continue  # manual fact / WeChat-sourced history: keep until real carrier API events
         if c.get("history"):
             c["stage"] = CSTAGES[max(ev_stage(h.get("description"), h.get("location")) for h in c["history"])]
             c["stage_source"] = f'{c["carrier"]} 返回轨迹'; c["last_event"] = f'{c["history"][0]["time"]} {c["history"][0]["description"]}'
