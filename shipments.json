@@ -566,7 +566,7 @@
     "PKG-014"
    ],
    "eta": "2026-11-18 23:05 已到港；11/23 10:11 清关完成",
-   "last_event": "2026-11-23 10:11 清关完成（yd）；钟 15:14 微信确认清关完成，待问派送日期",
+   "last_event": "2026-11-25T10:59:00+08:00 ZDS 预约 2026-11-26 送 Puchong，DO CS-6174，20 箱，待 Nick 回 YES/OK 并确认签收",
    "history": [
     {
      "time": "2026-11-25T10:59:00+08:00",
@@ -770,9 +770,9 @@
    "weight": "1件；运单手写 1kg（圆通面单 2.5KG），申报 USD 60",
    "item": "衣服（圆通 YT2550987341234 = PKG-024）",
    "mark": "待确认",
-   "stage": "运往马来西亚",
+   "stage": "已到马",
    "stage_manual": false,
-   "stage_source": "DEX-i 返回轨迹",
+   "stage_source": "DEX-i 返回轨迹（地点 MALAYSIA：到达分拣中心/分拣到目的地）",
    "last_event": "2026-11-26T07:37:00+08:00 分拣到目的地",
    "last_checked": "2026-11-26T10:04+08:00",
    "parcel_ids": [
@@ -1893,7 +1893,7 @@
    "consolidation_id": "CON-008",
    "stage": "已到马",
    "stage_source": "yd-wl.com 查询 M202610272255319",
-   "last_event": "2026-11-23 10:11 清关完成（yd）；钟 15:14 微信确认清关完成，待问派送日期",
+   "last_event": "2026-11-25T10:59:00+08:00 ZDS 预约 2026-11-26 送 Puchong，DO CS-6174，20 箱，待 Nick 回 YES/OK 并确认签收",
    "last_checked": "2026-11-26T10:04+08:00",
    "forwarder": "云第 yd-wl",
    "evidence": "Nick 确认",
@@ -2383,7 +2383,7 @@
    "warehouse_ref": "M202610272255319",
    "mark": "ZXZ/NICK88",
    "weight": null,
-   "last_event": "2026-11-23 10:11 清关完成（yd）；钟 15:14 微信确认清关完成，待问派送日期",
+   "last_event": "2026-11-25T10:59:00+08:00 ZDS 预约 2026-11-26 送 Puchong，DO CS-6174，20 箱，待 Nick 回 YES/OK 并确认签收",
    "last_checked": "2026-11-26T10:04+08:00",
    "stage_source": "yd-wl.com 查询 M202610272255319",
    "corrected_from": {
@@ -3037,7 +3037,7 @@
    "domestic_tracking_no": "YT2550987341234",
    "tracking": "YT2550987341234",
    "item": "衣服（面单品名，数量1，2.5KG）",
-   "stage": "运往马来西亚",
+   "stage": "已到马",
    "stage_manual": false,
    "stage_source": "继承集运单 CON-010",
    "last_event": "2026-11-26T07:37:00+08:00 分拣到目的地",
