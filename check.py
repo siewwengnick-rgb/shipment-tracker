@@ -25,9 +25,13 @@ def iso(t):
     return str(t)
 def ev_stage(desc, loc=""):
     t = desc or ""
-    if any(k in (loc or "") for k in ("中国", "云第", "广州", "CHINA", "China")): return 2  # China-side customs/装柜 != arrived
+    loc_s = loc or ""
+    if any(k in loc_s for k in ("中国", "云第", "广州", "CHINA", "China")): return 2  # China-side customs/装柜 != arrived
     if "签收" in t or "派送完成" in t: return 4
-    if any(k in t for k in ("清关", "海关", "到达马", "目的港", "提货", "派送", "派件", "Malaysia", "KUL", "吉隆坡")): return 3
+    if "预计" in t and "到达" in t: return 2  # 预计航班到达时间 != 已到马
+    if any(k in t for k in ("清关", "海关", "到达马", "目的港", "提货", "派送", "派件", "到达分拣", "分拣到目的地", "航班完成", "Malaysia", "KUL", "吉隆坡")): return 3
+    if any(k in loc_s for k in ("Malaysia", "MALAYSIA", "马来", "KUL", "吉隆坡")) and any(k in t for k in ("到达", "分拣", "中转", "清关", "提货", "派送", "航班完成")):
+        return 3
     return 2  # any forwarder event => 运往马来西亚
 def dex(nos):
     req = urllib.request.Request(DEX_URL, data=json.dumps(nos).encode(), headers={"Content-Type": "application/json"})
