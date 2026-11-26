@@ -3261,6 +3261,34 @@
    "note": "空运/海运、收货地待确认",
    "last_checked": "2026-11-26T10:04+08:00",
    "step_dates": {}
+  },
+  {
+   "id": "PKG-029",
+   "forwarder": "云第 yd-wl",
+   "supplier": "待确认（宏渝经手）",
+   "domestic_carrier": "待确认（15 位，疑申通，未核）",
+   "domestic_tracking_no": "773453902748508",
+   "tracking": "773453902748508",
+   "item": "待确认",
+   "ctns": "待确认",
+   "weight": "待确认",
+   "mark": "待确认",
+   "mode": "待确认",
+   "stage": "国内快递",
+   "stage_manual": true,
+   "stage_source": "宏渝 2026-11-26 11:01 CC 群发单号",
+   "last_event": "2026-11-26T11:01:00+08:00 宏渝在 CC 群发单号，货物/收件地待确认",
+   "destination_city": "待确认",
+   "evidence": [],
+   "history": [
+    {
+     "time": "2026-11-26T11:01:00+08:00",
+     "location": "CC 群",
+     "description": "宏渝发单号 773453902748508；只看到聊天列表预览，承运方、货物、收件地待确认",
+     "source": "微信跟进 inbox/20261126-1207.md"
+    }
+   ],
+   "note": "可能是宏渝 11/25 说的「还有其它包裹」（凝珠相关），未确认"
   }
  ],
  "forwarders": [
